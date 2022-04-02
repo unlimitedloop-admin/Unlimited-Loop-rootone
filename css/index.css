@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font: 14px/1.6 "Yu Gothic UI","ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
+    margin: 0;
+    color: #313131;
+    animation: fadeIn 4s ease 0s 1 normal;
+    -webkit-animation: fadeIn 4s ease 0s 1 normal;
+}
+
+a:link {
+    color: #00ffff;
+}
+
+a:visited {
+    color: #a0522d;
+}
+
+a:hover {
+    color: #fa8072;
+}
+
+a:active {
+    color: #f0f8ff;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.setting {
+    color: gray;
+}
+
+.background-contents {
+    background-color: #000000;
+    background-image: url("../image/index_backgroundimg.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+    filter: hue-rotate(0deg);  /* Dynamic columns */
+    height: 500px;
+}
+
+.front-contents {
+    color: #f0f8ff;
+    font-size: 18px;
+    font-family: none;
+    line-height: 1.0;
+    text-align: left;
+    filter: hue-rotate(100deg);
+    margin: 0 auto;
+    padding-right: 10px;
+    width: 1000px;
+}
+
+.front-contents .contents-menu-box {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.front-contents .contents-menu-box tr td h3 {
+    font-size: 18px;
+    font-weight: normal;
+    padding-top: 2.0em;
+}
+
+.front-contents .contents-menu-box tr td p.descriptions {
+    font-size: 14px;
+    line-height: 1.3em;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.front-contents .contents-menu-box tr td h3.small-size {
+    font-size: 12px;
+}

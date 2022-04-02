@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* Cascading Style Sheet Document */
+
+
+body {
+    
+}
+
+header {
+    background-color: white;
+    margin-top: -0.8em;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+}
+
+main {
+    padding-top: 7em;
+}
+
+main h2.brown {
+    color: chocolate;
+    background-color: antiquewhite;
+    padding: 5px 0px 5px 10px;
+}
+
+main h2.blue {
+    color: darkblue;
+    background-color: paleturquoise;
+    padding: 5px 0px 5px 10px;
+}
+
+main p {
+    line-height: 2.0em;
+}
+
+div.blank_space {
+    margin-bottom: 3em;
+}

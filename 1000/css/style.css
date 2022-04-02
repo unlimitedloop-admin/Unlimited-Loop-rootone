@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* Cascading Style Sheet Document */
+
+/* 
+============================================================
+    ■ Global style settings
+============================================================
+*/
+
+html {
+    min-height: inherit;
+}
+
+body {
+    font: 14px/1.4 "Yu Gothic UI","Consolas",Arial,sans-serif;
+    color: #211;
+}
+
+.font_bold {
+    font-weight: bold;
+}
