@@ -3,19 +3,22 @@
 
 
 body {
-    
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    margin: 0 8px;
 }
 
 header {
     background-color: white;
     margin-top: -0.8em;
     padding: 0;
-    z-index: 1;
     width: 100%;
     position: fixed;
 }
 
 main {
+    flex: 1;
     padding-top: 7em;
 }
 
@@ -31,10 +34,115 @@ main h2.blue {
     padding: 5px 0px 5px 10px;
 }
 
+main h2.pink {
+    color: red;
+    background-color: pink;
+    padding: 5px 0px 5px 10px;
+}
+
 main p {
     line-height: 2.0em;
 }
 
-div.blank_space {
+.blank_space {
     margin-bottom: 3em;
+}
+
+.middle_size_font {
+    font-size: large;
+}
+
+.linktext_fonts {
+    color: rgba(27, 149, 224, 1);
+    font-weight: bold;
+}
+
+.linktext_fonts:hover {
+    cursor: pointer;
+}
+
+.sub_window1_checker {
+    display: none;
+}
+
+.bg_sub_window1 {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bg_sub_window1:hover {
+    transition: 0.5s;
+}
+
+.sub_window1_checker:checked + .bg_sub_window1 {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s;
+}
+
+.extend_window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 30px;
+    max-height: 90%;
+    background-color: #fff;
+    overflow-y: auto;
+}
+@media screen and (max-width: 767px) {
+    .extend_window {
+        width: calc(100% - 20px);
+    }        
+}
+@media print, (min-width: 768px) {
+    .extend_window {
+        width: 90%;
+        max-width: 900px;
+    }
+}
+
+.close_sub_window1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: rotate(45deg);
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+}
+.close_sub_window1::before,
+.close_sub_window1::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #3388dd;
+    content: "";
+}
+.close_sub_window1::before {
+    width: 60%;
+    height: 3px;
+}
+.close_sub_window1::after {
+    width: 3px;
+    height: 60%;
+}
+.close_sub_window1:hover {
+    cursor: pointer;
+}
+
+.sub_window_container {
+    display: table;
+    margin: 0px auto;
 }

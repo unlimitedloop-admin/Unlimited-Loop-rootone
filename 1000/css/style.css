@@ -16,6 +16,32 @@ body {
     color: #211;
 }
 
+a {
+    color: rgba(27, 149, 224, 1);
+    font-weight: bold;
+}
+
+ul {
+    line-height: 2em;
+}
+
 .font_bold {
     font-weight: bold;
+}
+
+.red_text {
+    color: red;
+}
+
+.left_float {
+    float: left;
+}
+
+.right_float {
+    float: right;
+}
+
+.clear_float {
+    text-align: center;
+    clear: both;
 }
