@@ -40,6 +40,24 @@ main h2.pink {
     padding: 5px 0px 5px 10px;
 }
 
+main h2.yellow {
+    color: rgb(167, 21, 21);
+    background-color: yellow;
+    padding: 5px 0px 5px 10px;
+}
+
+main h2.khaki {
+    color: brown;
+    background-color: khaki;
+    padding: 5px 0px 5px 10px;
+}
+
+main h2.mono {
+    color: snow;
+    background-color: black;
+    padding: 5px 0px 5px 10px;
+}
+
 main p {
     line-height: 2.0em;
 }
@@ -54,11 +72,20 @@ main p {
 
 .linktext_fonts {
     color: rgba(27, 149, 224, 1);
-    font-weight: bold;
 }
 
 .linktext_fonts:hover {
     cursor: pointer;
+    text-decoration: underline;
+}
+
+.linktext_fonts2 {
+    color: hsl(268, 100%, 45%);
+}
+
+.linktext_fonts2:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .sub_window1_checker {
@@ -145,4 +172,46 @@ main p {
 .sub_window_container {
     display: table;
     margin: 0px auto;
+}
+
+.img-caption {
+    color: darkgray;
+    font-size: small;
+    margin-left: 1em;
+}
+
+.frame_border_thin {
+    border: thin solid black;
+}
+
+.important-things-hard {
+    padding: 0.9em 0.4em;
+    border: double 0.5ex red;
+    background-color: lightpink;
+}
+
+.important-things-hard input {
+    display: none;
+}
+
+.important-things-hard input:checked + .ninpo {
+    height: auto;
+}
+
+.pusher {
+    cursor: pointer;
+}
+
+.pusher::after {
+    content: "詳細を読む…";
+}
+
+.important-things-hard input:checked ~ .pusher::after {
+    content: "隠す…";
+}
+
+.important-things-hard .ninpo {
+    transition: 1s;
+    height: 0;
+    overflow: hidden;
 }

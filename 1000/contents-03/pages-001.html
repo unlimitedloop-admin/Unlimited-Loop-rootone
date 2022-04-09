@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - C言語入門</title>
+    </head>
+
+    <body>
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>環境構築</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                C言語の学習に必要なソフトウェアを準備します。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="yellow">最低限必要なツールの取得</h2>
+
+            <p>
+                まずはC言語プログラムをコーディングして実行するために必要な変換ソフトが必要になります。<br>
+            </p>
+            <!-- <figure><img src="images/pages-001-001.png" alt="pages-001_001"><figcaption>プログラムが実行形式になるまでの過程</figcaption></figure> -->
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-001.png" alt="pages-001_001"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">プログラムが実行形式になるまでの過程</p></td>
+                </tr>
+            </table>
+            <p>
+                C言語はコンパイル言語といい、コンパイラというものが必要になります。<br>
+                Visual Studio、gcc、Borland C++などです。<br>
+                C言語コンパイラを既にインストールして準備万端な方はこのセクションを飛ばして次のぺージに進んでもらって結構です^^<br>
+                <a href="./pages-002.html">次の記事：2. コンパイルとリンク</a>
+            </p>
+            <p>
+                おすすめのコンパイラはgcc(MinGW)です。<br>
+                私自身はMicrosoftのVisual Studioを使用しているのですが、ソフト自体に余計な機能が満載で設定項目が多く最初に触るとちょっとよく分からないので注意して下さい。<br>
+                ここではgccの導入を解説していきます。<br>
+                (現在主流のOSがWindows10 64bitなので、64bit版のソフトインストールを解説します)
+            </p>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="blue">GCCのダウンロード～インストール</h2>
+
+            <p>
+                Googleなどで「mingw w64 ダウンロード」キーワードで検索していきます。<br>
+                するとインストール解説サイトがたくさん出てくると思います。みなさん親切に解説してくれます^^<br>
+                どのぺージからでもいいので、解説通りに進んでインストールを進めてみて下さい。<br>
+                私の環境の場合、「mingw-w64-install.exe」でのインストールでは問題が発生するようで、別のインストーラを使用しました。<br>
+                以下にウェブサイトから同じMinGWのインストーラが取得可能です。
+            </p>
+            <h3>Download File List - MinGW - Minimalist GNU for Windows - OSDN</h3>
+            <p><a href="https://osdn.net/projects/mingw/releases/" target="_blank">ダウンロードぺージ（別ウインドウで開きます）</a></p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-011.png" alt="pages-001_011"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">MinGWのインストーラを入手。</p></td>
+                </tr>
+            </table>
+            <p>
+                "mingw-get-setup.exe"の左のアイコンをクリックすると自動的にぺージが切り替わって、ダウンロードが開始されます。<br>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-012.png" alt="pages-001_012" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                適当な場所へ保存します。<br>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-013.png" alt="pages-001_013" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                ダウンロードしたインストーラを実行してインストールを開始しましょう。
+            </p>
+            <div class="important-things-hard">
+                <h3 class="red_text">重要：「.exe」が付いてない！なぜ？</h3>
+                <input id="jagged_1" type="checkbox">
+                <div class="ninpo">
+                    <p>
+                        これは<span class="underline">ファイル拡張子</span>です。<br>
+                        ファイル拡張子は表示させておいたほうが良いかと思います。色々とファイルの区分を認識したい事は多々ありますので。<br>
+                    </p>
+                    <img src="images/pages-001-003.png" alt="pages-001_003" class="width_50per">
+                    <p>
+                        エクスプローラーのタブから「表示」を選択すると「ファイル名拡張子」があります。<br>
+                        ここにチェックマークを入れて下さい。
+                    </p>
+                    <img src="images/pages-001-004.png" alt="pages-001_004" class="width_50per">
+                    <p>
+                        これで見えるようになります。
+                    </p>
+                    <img src="images/pages-001-005.png" alt="pages-001_005" class="width_50per">
+                    <br>
+                </div>
+                <label for="jagged_1" class="pusher linktext_fonts2 font_larger font_bold">＋</label>
+            </div>
+            <div class="blank_space"></div>
+            <p>
+                インストーラを起動すると以下のようなウインドウが表示されます。<br>
+                「Install」をクリック。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-014.png" alt="pages-001_014" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                「Continue」をクリック。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-015.png" alt="pages-001_015" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                一時ファイルなどのダウンロードが開始されます。<br>
+                とりあえず待ちます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-016.png" alt="pages-001_016" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                すると以下の画面が表示されます。(画像が粗い場合はクリックして拡大して下さい)<br>
+                これは<span class="font_bold">「MinGW Installation Manager」</span>というアプリで、この時点でスタートメニューなどから起動できるようになります。<br>
+                ここで必要なコンパイラを選択し、インストールを開始する流れとなります。<br>
+                今回はC言語のコンパイルを行うため、基本パッケージの「mingw32-base-bin」と、「mingw32-gcc-g++-bin」を選択していきましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><a href="images/pages-001-017.png"><img src="images/pages-001-017.png" title="拡大して表示" class="frame_border_thin "></a></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                チェックマークを付けるには「Mark for Installation」をクリックして下さい。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-018.png" alt="pages-001_018" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                次にメニューバーの「Installation」→「Apply Changes」をクリックします。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-019.png" alt="pages-001_019" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                何やら書かれていますが、そのまま「Apply」をクリックしましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-020.png" alt="pages-001_020" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                パッケージのインストールが開始されるので、ひたすら待ちます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-021.png" alt="pages-001_021" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                正常にインストールが成功すると以下の画面が表示されるはずです。<br>
+                <span class="red_text">この段階でCコンパイラがインストール出来ました。</span><br>
+                「Close」をクリックし、MinGW Installation Managerを終了しましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-022.png" alt="pages-001_022" class="frame_border_thin"></td>
+                </tr>
+            </table>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し3
+            -->
+            <h2 class="blue">環境変数の設定</h2>
+
+            <p>
+                コンパイラのインストールを行ったら、もう一つだけ設定しておきたい内容があります。<br>
+                以下の手順で進めて下さい。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                Windowsのスタートメニューを表示します。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-031.png" alt="pages-001_031" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                「環境変数を編集」を起動します。<br>
+                「かんきょうへんすう」などをタイプすると通常出てきます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-032.png" alt="pages-001_032" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                下記の画面が表示されたら「環境変数(N)...」をクリック。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-033.png" alt="pages-001_033" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                システム環境変数の欄から変数「Path」を探し、クリックして選択、「編集(I)...」をクリックします。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-034.png" alt="pages-001_034" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                環境変数名の編集画面が開くので、左のリストの空いている部分をクリックしてフォルダの場所を書き込みます。<br>
+                フォルダはMinGWのインストール先フォルダのbinフォルダを指定します。<br>
+                通常は「<span class="underline">C:\MinGW\bin</span>」のはずですが、不安ならエクスプローラーで確認してみましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-035.png" alt="pages-001_035" class="frame_border_thin"></td>
+                </tr>
+                <tr>
+                    <td><img src="images/pages-001-035-sub1.png" alt="pages-001_035_sub1" class="frame_border_thin"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">アドレスバーをクリックするとフォルダのパス(場所)が確認できる。</p></td>
+                </tr>
+            </table>
+            <p>
+                パスを書き込んだら、「OK」ボタンを押して画面を全て閉じます。<br>
+                ちなみにこの登録作業は一般的に「PATHを通す」「環境変数Pathを設定」と言います。<br>
+                他のウェブサイトのインストール手順などでも紹介されているはずですので、気になる方は調べてみてください^^<br>
+            </p>
+            <label for="sub_window1" class="linktext_fonts">【補足】環境変数とはなんですか？</label>
+            <input type="checkbox" id="sub_window1" class="sub_window1_checker">
+            <label for="sub_window1" class="bg_sub_window1">
+                <label for="behind_sub_window1" class="extend_window">
+                    <label for="sub_window1" class="close_sub_window1"></label>
+                    <div class="sub_window_container">
+                        <h3>環境変数とはなんですか？</h3>
+                        <p>
+                            コンピュータがフォルダを辿っていくための道しるべだと思ってもらえれば分かりやすいかもしれません。<br>
+                            例えを変えると、カーナビのルート検索機能を保存して記憶するのがコンピュータで言ういわゆる「環境変数を設定」に該当します。<br>
+                            環境って何？という話ですが、環境はそのまま環境（パソコン自体）の事を表します。<br>
+                            つまりパソコンが認識するフォルダのパス(Path)の登録情報の一覧を環境変数と呼ぶのです。<br>
+                            <br>
+                            「C:\MinGW\bin」を環境変数のPathに設定すると、このフォルダの中にあるファイルにアクセスする際フォルダパスを省略できるようになります。<br>
+                            設定なし：「C:\MinGW\bin\[ファイル名]」<br>
+                            設定あり：「[ファイル名]」
+                        </p>
+                    </div>
+                </label>
+            </label>
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し4
+            -->
+            <h2 class="mono">コマンドプロンプト</h2>
+
+            <p>
+                コンピュータが今でこそカラフルな写真が表示された上のアイコンをクリックして、インターネットやファイル管理ができる時代になりましたが、<br>
+                ずっと以前のパソコン(Windows含め)は全て文字を打ってプログラムを起動したりしていました。<br>
+                一般的に現在主流のパソコンはGUI(グラフィカル・ユーザー・インターフェース)と呼ばれ、ウインドウが沢山あり、直感的に物に触れる形になっています。<br>
+                文字を打ってアプリなどを起動するパソコンはCUI(キャラクター・ユーザー・インターフェース)と言います。<br>
+                今からするととても信じられないかもしれませんが、アプリを立ち上げるのもアプリの場所まで全て名前をタイピングして実行していたのです。
+            </p>
+            <p>
+                その名残りを今のGUIパソコンでも使う事ができます。その代表的な機能が「<span class="font_bold red_text">コマンドプロンプト</span>」です。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                プログラミングの習得をする上でほぼ必ず知っておかなければならない知識だと思いますので、ちょっとだけ触っておきましょう。<br>
+                え？コマンドプロンプト知ってるー、コマンドプロンプトなんて余裕じゃん(^^♪<br>
+                という方もいるかもしれませんが、とりあえず実行手順を解説していきます。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                <span class="font_bold red_text">コマンドプロンプトは「cmd.exe」という名前のアプリとなります。</span><br>
+                WindowsキーとRキーを同時押しすると、画面左下辺りにテキスト入力欄が出てくるので、ここに「cmd.exe」と入力してEnterキーで実行します。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-036.png" alt="pages-001_036" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                するとおもむろに黒い画面が出てきます。<br>
+                これが噂のコマンドプロンプトになります。<br>
+                「gcc --version」と入力して下さい。誤字脱字がないように注意しましょう。<br>
+                入力したらEnterキーを押します。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-037.png" alt="pages-001_037" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                以下の文字が出力されたら、MinGWのインストールが正常に出来ている状態です。<br>
+                実はこの情報を調べるためコマンドプロンプトを使いました。<br>
+                もし「操作可能なプログラムまたはバッチ ファイルとして認識されていません」などのメッセージが出る場合は、環境変数の設定などを見直してみてください。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-038.png" alt="pages-001_038" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                C言語のファイルをコンパイル（およびリンク）するためにこのコマンドプロンプトを今後使いますので、覚えておきましょう。<br>
+                <span class="underline">コンパイルとリンクについては次のセクションで説明します。</span><br>
+                一般的にプログラムを実行するにはコンパイルのようなプログラミング言語から機械語に変換する作業が必須になります。<br>
+                この作業は通常人間がする事はないので、これを担ってくれるのが「<span class="font_bold">コンパイラ</span>」という事になります。<br>
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                コマンドプロンプトを終了する時は「exit」を入力してEnterキーを押してください。<br>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-039.png" alt="pages-001_039" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <div class="important-things-hard">
+                <h3 class="red_text">コラム：コマンドプロンプトは✕ボタンで閉じちゃいけない？</h3>
+                <p>
+                    コマンドプロンプトは終了コマンド（exit）があります。なぜわざわざexitと打って終了するのでしょうか？<br>
+                    exitを打ってコマンドプロンプトを終了させるやり方は一般的な終了のやり方です。✕はアプリを強制的に終了させます。<br>
+                    どういう違いがあるかと言えば、電源ボタンを押して電源OFFにするのがexit、電源ケーブルを引っこ抜いて電源を遮断するのが✕ボタンです。<br>
+                    これはいずれ重要になる情報です。<br>
+                    よく考えてみて下さい。CUIの時代にGUI的な✕ボタンがあるはずもないのですから、終了するにはexitと書くしかないのです。
+                </p>
+            </div>
+            <div class="blank_space"></div>
+            <p>
+                以上がメインの環境構築の作業となります。<br>
+                次はいよいよC言語プログラムを書いていきます。
+            </p>
+
+            <div class="blank_space"></div>
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="middle_size_font"><a href="./pages-000.html">前の記事：0. C言語の特徴</a></p>
+                <p><a href="../index.html#C-Language">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="middle_size_font"><a href="./pages-002.html">次の記事：2. コンパイルとリンク</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>

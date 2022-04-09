@@ -18,7 +18,16 @@ body {
 
 a {
     color: rgba(27, 149, 224, 1);
-    font-weight: bold;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -27,6 +36,10 @@ ul {
 
 .font_bold {
     font-weight: bold;
+}
+
+.font_larger {
+    font-size: larger;
 }
 
 .red_text {
@@ -44,4 +57,29 @@ ul {
 .clear_float {
     text-align: center;
     clear: both;
+}
+
+.centering {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.left_alignment {
+    text-align: left;
+}
+
+.right_alignment {
+    text-align: right;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.width_50per {
+    width: 50%;
+}
+
+.width_75per {
+    width: 75%;
 }
