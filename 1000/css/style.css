@@ -42,8 +42,20 @@ ul {
     font-size: larger;
 }
 
+.font_large {
+    font-size: large;
+}
+
+.font_big {
+    font-size: x-large;
+}
+
 .red_text {
     color: red;
+}
+
+.blue_text {
+    color: blue;
 }
 
 .left_float {

@@ -62,6 +62,20 @@ main p {
     line-height: 2.0em;
 }
 
+main pre code {
+    font-size: small;
+    font-weight: lighter;
+    font-family: Consolas, Menlo, -apple-system, BlinkMacSystemFont, monospace;
+}
+
+main ol li {
+    line-height: 2.0em;
+}
+
+main .code_space {
+    padding: 0 0em;
+}
+
 .blank_space {
     margin-bottom: 3em;
 }
@@ -174,6 +188,23 @@ main p {
     margin: 0px auto;
 }
 
+.prettyprint {
+    padding: 1em 0;
+}
+
+.prettyprint li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+    list-style-position: outside;
+    margin-left: 6px;
+    padding-left: 6px;
+  }
+
+.prettyprint ol.linenums > li {
+    line-height: 1.6em;
+	list-style-type: decimal;
+    border-left: 1px solid rgb(126, 126, 126);
+    padding-left: 15px;
+}
+
 .img-caption {
     color: darkgray;
     font-size: small;
@@ -198,14 +229,6 @@ main p {
     height: auto;
 }
 
-.pusher {
-    cursor: pointer;
-}
-
-.pusher::after {
-    content: "詳細を読む…";
-}
-
 .important-things-hard input:checked ~ .pusher::after {
     content: "隠す…";
 }
@@ -214,4 +237,18 @@ main p {
     transition: 1s;
     height: 0;
     overflow: hidden;
+}
+
+.pusher {
+    cursor: pointer;
+}
+
+.pusher::after {
+    content: "詳細を読む…";
+}
+
+.columns-things-soft {
+    padding: 0.9em 0.4em;
+    border: thin 0.5ex black;
+    background-color: lightgoldenrodyellow;
 }

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - C言語入門</title>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    </head>
+
+    <body>
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>コンパイルとリンク</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                C言語を実行する際に行うコンパイル・リンクを解説します。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="brown">exeファイルの生成</h2>
+
+            <p>
+                説明ばかりだとつまらないと思うので、早速プログラムを書いていきましょう^^<br>
+            </p>
+            <p>
+                プログラミングは通常テキストデータを作成します。<br>
+                プログラミングを行うために適したテキスト編集ソフト(テキストエディタ)は世の中に数多くありますので、好きなものを使いましょう。<br>
+                Windows標準のメモ帳で頑張る事も出来ますが、難易度が高いです。無料のテキストエディタはたくさんあるので、遠慮なくインストールして使いましょう。<br>
+                Atom、TeraPad、Visual Studio Codeなどです。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                それではプログラムコードから実行ファイルを作成するまで一通りやってみましょう。<br>
+                まずは以下のコードをテキストエディタに入力して下さい。
+            </p>
+            <div class="code_space"><pre class="prettyprint linenums">
+<code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    //printf("ハローワールド！");
+    return 0;
+}
+</code></pre>
+            </div>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-002.png" alt="pages-002_002"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">テキストをそのままコピペしてもOK</p></td>
+                </tr>
+            </table>
+            <p>
+                画像はGitHubという会社が作っている<a href="https://atom.io/" target="_blank">Atom</a>というテキストエディタに貼り付けた様子です。<br>
+                さきにも言いましたが、テキストエディタは何でもいいです。<br>
+                プログラムのコードは以降<span class="font_bold red_text">「ソースコード」</span>と表記します。<br>
+                ソースコードが記載されたファイルはそのまま<span class="font_bold red_text">「ソースファイル」</span>です。
+            </p>
+
+            <div class="blank_space"></div>
+            <p>
+                次にソースファイルを保存しましょう。<br>
+                ここでは以下のフォルダに「source」という名前で保存して説明を進めていきます(名前は好きなものを指定して下さい)。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-003.png" alt="pages-002_003" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                ファイル名の後に<span class="font_bold red_text">「.c」</span>を入力して下さい(例：source.c)。<br>
+                これはC言語用のファイル拡張子で、「.txt」などではダメです。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-004.png" alt="pages-002_004" class="frame_border_thin"></td>
+                </tr>
+                <tr>
+                    <td><img src="images/pages-002-005.png" alt="pages-002_005" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                ファイルの種類がC Sourceになりました。<br>
+                このソースファイルをgccでコンパイルしていきます。<br>
+                コマンドプロンプトを起動しましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-006.png" alt="pages-002_006" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                まずは先ほどソースファイルを保存したフォルダまで移動します。<br>
+                フォルダの移動方法が分からなければ調べていただきたいのですが、「cd [移動先のフォルダ名]」で移動できます。<br>
+                指定の場所まで移動出来たら「gcc [ソースファイル名]」(今回の場合はsource.c)を入力します。誤字脱字がないように注意しましょう。<br>
+                Enterキーを押します。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-007.png" alt="pages-002_007" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                コンパイルが実行されます。<br>
+                画面では何も起こりませんね。<br>
+                しかしエクスプローラーでソースファイルの場所を確認してみましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-008.png" alt="pages-002_008" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                いつの間にか「a.exe」があります。<br>
+                これがコンパイルしてできたファイルになります(正確にはコンパイルとリンクという処理が行われている)。<br>
+                できたファイルをダブルクリックしてみて下さい。<br>
+                …どうですか？実はこの方法では何も見れません。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-009.png" alt="pages-002_009" class="frame_border_thin"></td>
+                </tr>
+            </table>
+
+            <div class="blank_space"></div>
+            <p>
+                コマンドプロンプトから「a.exe」を実行して確認します。<br>
+                先ほどのソースファイルの場所で「a.exe」(または「a」)を入力→Enterキーを押します。<br>
+                すると何やら文字が出てきます。これが「source.c」の実行結果になります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-010.png" alt="pages-002_010" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <div class="columns-things-soft">
+                <h3>「.exe」について</h3>
+                <p>
+                    コマンドプロンプトでアプリケーション(.exe)を実行する場合は、拡張子の指定は省略して何ら問題ありません。<br>
+                    
+                </p>
+            </div>
+
+            <div class="blank_space"></div>
+            <p>
+                ここまでがC言語でプログラムを作って実行するまでの基本的な手順となります。<br>
+                ダブルクリックして起動しなかったのは、今回作成したソースコードが文字を出力するだけの命令しか書いていないからです。<br>
+                ウインドウなどが出てきてうんぬんとかも書いておりません。なので、画面上では動いていないように見えたのです。<br>
+                このソースコードの仕組みも解説したいのですが、まずはコンパイルとリンクについて説明します。
+            </p>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="pink">コンパイル</h2>
+
+            <p>
+                コンパイラ(MinGW)にソースファイルを突っ込むと.exeのアプリケーションファイルが作られました。<br>
+                この時一体何が行われたのでしょう？
+            </p>
+            <p>
+                今回の表題になります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-001-001.png" alt="pages-001_001"></td>
+                </tr>
+            </table>
+            <p>
+                セクション1で掲示したサンプルフローですが、このフローは左から順に、
+            </p>
+            <ol class="font_bold">
+                <li>人間がソースコードを作成 <span class="font_bold">(コーディング作業)</span></li>
+                <li class="red_text">作成したソースファイル</li>
+                <li class="red_text">コンパイラ実行</li>
+                <li>生成されたオブジェクトファイル</li>
+                <li class="blue_text">実行形式アプリケーションファイル</li>
+            </ol>
+            <p>
+                となっています。<br>
+                MinGWは3番のプログラムになります。<br>
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                まずコンピュータ(パソコン)本体にはOSというものが入っていますよね。<br>
+                一般的にWindows OS、Mac OSなどは知っているかと思います。<br>
+                これらOSはカーネルとも呼ばれますが、人間が作成した文字や単語を直接は読めません。<br>
+                OSが読めるのは2進数だけで構成された<span class="font_bold">機械語</span>と呼ばれるもののみです。<br>
+                コアなIT業界人からはマシン語、またはネイティブ・コードとも言われるものです。
+            </p>
+            <p>
+                <span class="underline">プログラミング言語から機械語に変換する処理の事をコンパイルと言います。</span><br>
+                そしてコンパイルを実行するソフトウェアの事をコンパイラと呼びます。<br>
+                C言語なんかは直接機械語を生成するコンパイラを使いますが、これをネイティブコンパイラとも言うかもしれません。<br>
+                それは他の高級言語(Javaなど)が直接機械語に翻訳しない事からこの呼び名があるものと思われます。<br>
+            </p>
+            <p>
+                コンパイルされたソースファイルは<span class="font_bold">オブジェクトファイル</span>という人間が理解できないバイナリ・コードが記載されたファイルになります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-011.png" alt="pages-002_011"></td>
+                </tr>
+            </table>
+            <p>
+                基本的にコンピュータと相手をする時は、<span class="font_big red_text">入力、(演算)、出力</span>を面倒見る必要があります。<br>
+                つまり命令を出して、内部の演算部分を作って、出力したものを受けとらないといけません。<br>
+                「演算」は括弧付きで記載していますが、演算については開発者としてコンピュータと関わる場合だけ関係があります。<br>
+                ソフトを使用する人にとって演算は必要ないので、気にする必要はほとんどありません。<br>
+                本当は「コンピューターの５大要素」という概念があるのですが、これについてはここでは説明しませんので気になる方は<a href="https://www.google.com/search?q=%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%BC%E3%81%AE%EF%BC%95%E5%A4%A7%E8%A6%81%E7%B4%A0" target="_blank">こちら</a>から探してみて下さい。
+            </p>
+            <p>
+                後々解説するのですが、プログラミングを続けていくと必ずソースコードが長くなります。<br>
+                一つのソースファイルに何千、何万、何十万もソースコードを並べる事はありません(そんなナンセンスな事したくないと思います)。<br>
+                そうなってくるとソースファイルが複数になってきます。<br>
+                するとそれだけファイルが増えるわけですから、当然入力が複数なら出力も・・・複数にはなりません。流石にそんなのは嫌ですよねf^^;<br>
+                <span class="underline">その複数の入力ファイルを一つの実行ファイルに結合する処理をリンクと言います。</span><br>
+                そしてリンクを行うソフトウェアの事をリンカと呼びます。<br>
+                通常、コンパイルによって作成されたオブジェクトファイルはそのまますぐコンパイラ内蔵のリンカに掛けられます。なのでリンカ単体のソフトウェアはほぼないです。<br>
+            </p>
+            <p>
+                このリンカを経由して出てきたアウトプット(出力)ファイルが.exe形式などのアプリケーションです。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-012.png" alt="pages-002_012"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">これがいわゆるコンパイラの仕事風景</p></td>
+                </tr>
+            </table>
+            <p>
+                <span class="font_bold">「ライブラリ」</span>についてはここでは説明しませんが、<span class="font_bold">.exeと同じジャンルの処理のかたまり</span>と覚えておけば良いかと思います。<br>
+                これについてはまた別のセクションで解説できたらします。
+            </p>
+
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-001.html">前の記事：1. 環境構築</a></p>
+                <p><a href="../index.html#C-Language">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-003.html">次の記事：3. ***</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>
