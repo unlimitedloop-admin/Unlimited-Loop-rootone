@@ -52,6 +52,12 @@ main h2.khaki {
     padding: 5px 0px 5px 10px;
 }
 
+main h2.orange {
+    color: floralwhite;
+    background-color: lightsalmon;
+    padding: 5px 0px 5px 10px;
+}
+
 main h2.mono {
     color: snow;
     background-color: black;

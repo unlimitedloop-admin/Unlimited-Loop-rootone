@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - C言語入門</title>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    </head>
+
+    <body>
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>C言語自体で出来ること</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                プログラミング言語としてのC言語の機能は？
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="orange">C言語の機能</h2>
+            
+            <p>
+                この講座を見に来られた方の中には何かの目的のためにプログラミングを習得したい方がいるでしょう。<br>
+                その中の方はC言語で自分が目的とするものが作れるのかが気になっているはずです。
+            </p>
+            <p>
+                例えば、C言語の話で説明するとC言語単体では文字を出力・加工する、演算処理、ファイルを作成する機能などは<span class="font_bold">標準ライブラリ</span>を使えば実現できます。<br>
+                しかし大半の人たちはそれが目的ではないと思います。<br>
+                「Androidのアプリなどはどうやって作るの？」「Windowsのウインドウアプリケーションみたいなのは作れないの？」などのような疑問を持っていると持っているでしょう。<br>
+                前回のセクションで紹介したコンソールアプリケーションに文字や計算結果を出力するだけのソフトを作っているようではダメだという話ですかね？<br>
+            </p>
+            <label for="sub_window1" class="linktext_fonts">【補足】標準ライブラリについて</label>
+            <input type="checkbox" id="sub_window1" class="sub_window1_checker">
+            <label for="sub_window1" class="bg_sub_window1">
+                <label for="behind_sub_window1" class="extend_window">
+                    <label for="sub_window1" class="close_sub_window1"></label>
+                    <div class="sub_window_container">
+                        <h3>標準ライブラリについて</h3>
+                        <p>
+                            標準ライブラリには三角関数を提供するライブラリ「math.h」、ファイル入出力などの制御をするライブラリ「stdio.h」、日付を取り扱うライブラリ「time.h」などがあります。<br>
+                            これらはシステムを作成する上でコアのコーディングをする部分をフォローアップする目的でC言語の機能として提供されます。
+                        </p>
+                    </div>
+                </label>
+            </label>
+            <div class="blank_space"></div>
+            <div class="columns-things-soft">
+                <h3>コンソールアプリケーションについて</h3>
+                <p>
+                    コマンドライン(コマンドプロンプト)を使う前提のアプリケーションの事です。<br>
+                    ついでですが、Windowsではコマンドプロンプトをターミナル、シェル、DOS窓と呼んだりする事があるようです。<br>
+                    (PowerShellはWindowsが独自に用意した専用のコマンドプロンプト)
+                </p>
+            </div>
+            <p>
+                そういう意味で言うとC言語が提供しているのはプログラムのコアな部分、いわゆる表面の構築ではなく内部計算の機能しか提供されないと思ってもらっていいでしょう。
+            </p>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="khaki">アプリケーション・プログラミング・インターフェース</h2>
+
+            <p>
+                皆さんが欲しがっている情報はここにあると思います。<br>
+                アプリケーション・プログラミング・インターフェース。通称<span class="font_bold red_text">API</span>です。<br>
+            </p>
+            <p>
+                <span class="font_large red_text">APIとは、いわゆる関数のかたまり、関数とは処理のまとまったもの</span>です。<br>
+                もしかしたら聞いた事ある人、知っている人もいるかもしれません。<br>
+                APIとか、関数とか、処理とか色々単語が出てきましたがちょっと順番にばらして説明していきましょう。
+            </p>
+            <p>
+                身近なものでは家電製品の「炊飯器」がありますね。これで説明してみます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-003-001.png" alt="pages-003_001" class="width_50per"></td>
+                </tr>
+            </table>
+            <p>
+                例えば炊飯器では「炊飯する」という機能が関数に該当すると考えていきます。<br>
+                「炊飯する」という関数の中には<span class="font_bold">処理</span>がたくさんあります。ばらして考えていきます。<br>
+                例えば「お米を水で付け置きする」「窯の温度を上げる」「圧力を上げる」などの処理です。炊飯器のメーターに炊飯時間を表示する処理もありますね。<br>
+                これらは全て炊飯器にとっては作業ですが、炊飯器を作った人はちゃんと処理として作っています。<br>
+            </p>
+            <p>
+                話を戻してAPIですが、APIとして構築されるものは一般的に汎用性の高い処理をある程度の規格に則って作られる事が多いです。<br>
+                炊飯器の製造メーカーの世界に実際にAPIがあるのかは知りませんが、お米を炊く機能を構築した炊飯APIが作られたとしましょう。<br>
+                他のメーカーが炊飯器製造メーカーとして名乗り出た時にこの炊飯APIを使う事で、基本的な機能である炊飯する機能を開発する手間が省けます。<br>
+                要するに炊飯器の大部分はAPIにまかせておいて、ニッチな売りの機能を作る事に専念する事ができるようになります。<br>
+                <span class="underline">APIを使うメリットは規格として統一された機能を簡単に使える事、開発における時間のコストを省ける事などがあります。</span>
+            </p>
+            <p>
+                最初に言った「Windowsのウインドウアプリケーション」を作れるAPI、「Androidアプリ」を作れるAPIもちゃんとあります。<br>
+                Android系APIはGoogleですね。Androidアプリ開発は専用の開発用ツール「Android SDK」というものがあります。これはとても強力です。
+            </p>
+            <p>
+                APIについてはまだまだあなたのプログラミングの世界を拡げてくれます。C言語なんてやってる場合じゃない！急げ！という方は<a href="https://www.google.com/search?q=API" target="_blank">こちら</a>からどうぞ。
+            </p>
+            <p>
+                それ以外の方はまずはC言語からスタートしてゆっくりとプログラム知識の地盤を固めていきましょう。<br>
+                ちなみこの入門サイトでは、WindowsAPIを使用した最新のWindowsOSで動作するGUIデスクトップアプリケーションを作成しながらC言語の学習を進めていきます。<br>
+                果たして何ができるでしょうか。ふふ。頑張っていきましょう^^
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                次のセクションでは、前回のセクションで少し触れたサンプルコードの解説から始めていきます。
+            </p>
+
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-002.html">前の記事：2. コンパイルとリンク</a></p>
+                <p><a href="../index.html#C-Language">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-004.html">次の記事：4. main関数・エントリーポイント</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>
