@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* Cascading Style Sheet Document */
+
+
+
+main h2.title {
+    color: black;
+    background-color: rgb(224, 255, 255);
+    padding: 5px 0px 5px 10px;
+}
+
+
+
+
+
+/* public classes style */
+.e_book_thumnail {
+    width: 140px;
+    padding-right: 25px;
+}
+
+.amazon_link_banner {
+    color:rgb(255, 255, 255);
+    font: bold 1em "‚l‚r ‚oƒSƒVƒbƒN", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "ƒƒCƒŠƒI", "Meiryo", sans-serif;
+    text-align: center;
+    padding: 0.75em 1.5em;
+    background-color: rgb(255, 166, 0);
+    width: 10em;
+}
+
+.none_decr:hover {
+    text-decoration: none;
+}

@@ -2,26 +2,6 @@
 /* Cascading Style Sheet Document */
 
 
-body {
-    display: flex;
-    flex-flow: column;
-    min-height: 100vh;
-    margin: 0 8px;
-}
-
-header {
-    background-color: white;
-    margin-top: -0.8em;
-    padding: 0;
-    width: 100%;
-    position: fixed;
-}
-
-main {
-    flex: 1;
-    padding-top: 7em;
-}
-
 main h2.brown {
     color: chocolate;
     background-color: antiquewhite;
@@ -52,6 +32,12 @@ main h2.khaki {
     padding: 5px 0px 5px 10px;
 }
 
+main h2.navy {
+    color: snow;
+    background-color: navy;
+    padding: 5px 0px 5px 10px;
+}
+
 main h2.orange {
     color: floralwhite;
     background-color: lightsalmon;
@@ -62,10 +48,6 @@ main h2.mono {
     color: snow;
     background-color: black;
     padding: 5px 0px 5px 10px;
-}
-
-main p {
-    line-height: 2.0em;
 }
 
 main pre code {
@@ -82,118 +64,9 @@ main .code_space {
     padding: 0 0em;
 }
 
-.blank_space {
-    margin-bottom: 3em;
-}
 
-.middle_size_font {
-    font-size: large;
-}
 
-.linktext_fonts {
-    color: rgba(27, 149, 224, 1);
-}
-
-.linktext_fonts:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.linktext_fonts2 {
-    color: hsl(268, 100%, 45%);
-}
-
-.linktext_fonts2:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.sub_window1_checker {
-    display: none;
-}
-
-.bg_sub_window1 {
-    display: block;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.bg_sub_window1:hover {
-    transition: 0.5s;
-}
-
-.sub_window1_checker:checked + .bg_sub_window1 {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transition: 0.5s;
-}
-
-.extend_window {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: 30px;
-    max-height: 90%;
-    background-color: #fff;
-    overflow-y: auto;
-}
-@media screen and (max-width: 767px) {
-    .extend_window {
-        width: calc(100% - 20px);
-    }        
-}
-@media print, (min-width: 768px) {
-    .extend_window {
-        width: 90%;
-        max-width: 900px;
-    }
-}
-
-.close_sub_window1 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    transform: rotate(45deg);
-    border: none;
-    outline: none;
-    width: 30px;
-    height: 30px;
-}
-.close_sub_window1::before,
-.close_sub_window1::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-color: #3388dd;
-    content: "";
-}
-.close_sub_window1::before {
-    width: 60%;
-    height: 3px;
-}
-.close_sub_window1::after {
-    width: 3px;
-    height: 60%;
-}
-.close_sub_window1:hover {
-    cursor: pointer;
-}
-
-.sub_window_container {
-    display: table;
-    margin: 0px auto;
-}
-
+/* google code pretty customize style */
 .prettyprint {
     padding: 1em 0;
 }
@@ -209,52 +82,4 @@ main .code_space {
 	list-style-type: decimal;
     border-left: 1px solid rgb(126, 126, 126);
     padding-left: 15px;
-}
-
-.img-caption {
-    color: darkgray;
-    font-size: small;
-    margin-left: 1em;
-}
-
-.frame_border_thin {
-    border: thin solid black;
-}
-
-.important-things-hard {
-    padding: 0.9em 0.4em;
-    border: double 0.5ex red;
-    background-color: lightpink;
-}
-
-.important-things-hard input {
-    display: none;
-}
-
-.important-things-hard input:checked + .ninpo {
-    height: auto;
-}
-
-.important-things-hard input:checked ~ .pusher::after {
-    content: "隠す…";
-}
-
-.important-things-hard .ninpo {
-    transition: 1s;
-    height: 0;
-    overflow: hidden;
-}
-
-.pusher {
-    cursor: pointer;
-}
-
-.pusher::after {
-    content: "詳細を読む…";
-}
-
-.columns-things-soft {
-    padding: 0.9em 0.4em;
-    border: thin 0.5ex black;
-    background-color: lightgoldenrodyellow;
 }

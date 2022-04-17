@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <!-- <base href="http://localhost/1000/" target="_blank"> -->
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
         <link href="./pages.css" rel="stylesheet" type="text/css">
         <title>プログラミング - C言語入門</title>
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
@@ -114,6 +115,9 @@ int main() {
                 <tr>
                     <td><img src="images/pages-002-007.png" alt="pages-002_007" class="frame_border_thin"></td>
                 </tr>
+                <tr>
+                    <td><img src="images/pages-002-008.png" alt="pages-002_008" class="frame_border_thin"></td>
+                </tr>
             </table>
             <p>
                 コンパイルが実行されます。<br>
@@ -122,7 +126,7 @@ int main() {
             </p>
             <table>
                 <tr>
-                    <td><img src="images/pages-002-008.png" alt="pages-002_008" class="frame_border_thin"></td>
+                    <td><img src="images/pages-002-009.png" alt="pages-002_009" class="frame_border_thin"></td>
                 </tr>
             </table>
             <p>
@@ -131,13 +135,9 @@ int main() {
                 できたファイルをダブルクリックしてみて下さい。<br>
                 …どうですか？実はこの方法では何も見れません。
             </p>
-            <table>
-                <tr>
-                    <td><img src="images/pages-002-009.png" alt="pages-002_009" class="frame_border_thin"></td>
-                </tr>
-            </table>
 
             <div class="blank_space"></div>
+
             <p>
                 コマンドプロンプトから「a.exe」を実行して確認します。<br>
                 先ほどのソースファイルの場所で「a.exe」(または「a」)を入力→Enterキーを押します。<br>
@@ -150,11 +150,20 @@ int main() {
             </table>
             <div class="blank_space"></div>
             <div class="columns-things-soft">
-                <h3>「.exe」について</h3>
-                <p>
-                    コマンドプロンプトでアプリケーション(.exe)を実行する場合は、拡張子の指定は省略して何ら問題ありません。<br>
-                    
-                </p>
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3>「.exe」について</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                コマンドプロンプトでアプリケーション(.exe)を実行する場合は、拡張子の指定は省略して何ら問題ありません。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <div class="blank_space"></div>
@@ -170,7 +179,7 @@ int main() {
             <!--
                 見出し2
             -->
-            <h2 class="pink">コンパイル</h2>
+            <h2 class="brown">コンパイル</h2>
 
             <p>
                 コンパイラ(MinGW)にソースファイルを突っ込むと.exeのアプリケーションファイルが作られました。<br>
@@ -220,6 +229,14 @@ int main() {
                     <td><img src="images/pages-002-011.png" alt="pages-002_011"></td>
                 </tr>
             </table>
+            <table>
+                <tr>
+                    <td><img src="images/pages-002-011-sub1.png" alt="pages-002_011_sub1" class="width_50per frame_border_thin"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">オブジェクトファイルの中身。16進数で表示しているが、何が何だかよく分からない羅列</p></td>
+                </tr>
+            </table>
             <p>
                 基本的にコンピュータと相手をする時は、<span class="font_big red_text">入力、(演算)、出力</span>を面倒見る必要があります。<br>
                 つまり命令を出して、内部の演算部分を作って、出力したものを受けとらないといけません。<br>
@@ -241,7 +258,7 @@ int main() {
             </p>
             <table>
                 <tr>
-                    <td><img src="images/pages-002-012.png" alt="pages-002_012"></td>
+                    <td><img src="images/pages-002-012.png" alt="pages-002_012" class="frame_border_thin"></td>
                 </tr>
                 <tr>
                     <td><p class="img-caption">これがいわゆるコンパイラの仕事風景</p></td>

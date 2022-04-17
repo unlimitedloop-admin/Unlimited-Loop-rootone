@@ -34,6 +34,10 @@ ul {
     line-height: 2em;
 }
 
+.classic_font {
+    font-family: monospace;
+}
+
 .font_bold {
     font-weight: bold;
 }
@@ -56,6 +60,14 @@ ul {
 
 .blue_text {
     color: blue;
+}
+
+.orange_text {
+    color: coral;
+}
+
+.bg_aliceblue {
+    background-color: aliceblue;
 }
 
 .left_float {
@@ -84,8 +96,28 @@ ul {
     text-align: right;
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
 .underline {
     text-decoration: underline;
+}
+
+.solid-border {
+    border: black solid thin;
+}
+
+.double-border {
+    border: black double 5px;
+}
+
+.red-border {
+    border-color: red;
+}
+
+.width_25per {
+    width: 25%;
 }
 
 .width_50per {
@@ -94,4 +126,28 @@ ul {
 
 .width_75per {
     width: 75%;
+}
+
+.width_85per {
+    width: 85%;
+}
+
+.width_autofit {
+    width: 100%;
+}
+
+.width_autofit2 {
+    width: auto;
+}
+
+.tab-space {
+    padding-left: 2em;
+}
+
+.padding-10px {
+    padding: 10px;
+}
+
+.vertical_top {
+    vertical-align: top;
 }

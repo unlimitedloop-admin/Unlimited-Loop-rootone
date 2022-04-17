@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - C言語入門</title>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    </head>
+
+    <body>
+        <!-- ★TODO -->
+        <!-- 
+            ・セクション「ヘッダーファイル」のぺージリンクを追加する。
+        -->
+
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>main関数・エントリーポイント</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                C言語の基本構文を解説します。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="navy">エントリーポイント</h2>
+            
+            <p>
+                さて、それでは前々回セクションから説明がおざなりになっているソースコードについてお話をしていきます。<br>
+                次のサンプルソースコードです。
+            </p>
+            <div class="code_space"><pre class="prettyprint linenums">
+<code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    //printf("ハローワールド！");
+    return 0;
+}
+</code></pre>
+            </div>
+            <p>
+                コンピュータはプログラムを指示された順番通り忠実に実行します。<br>
+                その開始地点は<span class="font_bold red_text"> main関数 </span>と呼ばれる部分になります。
+            </p>
+            <p class="double-border red-border classic_font padding-10px">
+                int main() { ... }
+            </p>
+            <p>
+                C言語のプログラムでは基本 main関数 をソースコードの中から探し出し自動的にその地点をプログラムの開始とします。<br>
+                これをプログラムの<span class="font_bold"> エントリーポイント </span>と言います。
+            </p>
+            <p>
+                "main"という単語の後に(空っぽの)丸括弧が書かれていますが、これは関数を表す文法で「mainという名前の関数」である事を表す目的で付加されます。<br>
+                <span class="underline">単語の後に丸括弧を付けると関数が作成されます。</span><br>
+                また関数の名前は自由に付けることができます。
+            </p>
+            <p class="double-border red-border classic_font padding-10px">
+                　　printf("Hello, World!");<br>
+                　　//printf("ハローワールド！");<br>
+                　　return 0;
+            </p>
+            <p>
+                これが一連の処理の本体になります。<br>
+                先ほどの出力結果をもう一度見てみましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-001.png" alt="pages-004_001" class="frame_border_thin"></td>
+                </tr>
+            </table>
+            <p>
+                「Hello, World!」が出力されています。<br>
+                ソースコードを見ると、どうやらダブルクォーテーションの間に同様の文字列が書かれていますよね。これがそうです。<br>
+                printf([文字列])で文字が出力できます。これがかの有名な<span class="font_bold"> printf関数 </span>になります。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                その次の行も日本語で「ハローワールド！」と書いていますが、半角スラッシュがその前に2つあります。<br>
+                これはこの一行分のソースコードを無効化する<span class="font_bold"> コメント </span>の機能になります。<br>
+                つまりこの一文は全て実行処理から完全にスルーされます。放置プレイです。<br>
+                <span class="underline">半角スラッシュ2つ以降の右の構文は全て無視されるのがC言語のソースコードの仕様となります。</span>コメントはいくらでも自由に追加可能です。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                最後に「return 0;」が書いてありますが、これは<span class="font_bold"> 戻り値 </span>と呼ばれるものですが今は説明しません。<br>
+                戻り値については別のセクションで詳しく解説します。<br>
+                関数に対してほぼ必ず必要になる要素なので、いずれ関わってきます。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                あとセミコロン( ; )ですが、C言語では文の最後に付けるルールとなっているので、付けましょう。<br>
+                ただし中括弧の最後などには不要です。<br>
+                こちらも慣れるまでは分かりにくいと思いますが、また構文ルールについて説明する時に詳しく解説します。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                ここまでで一通り解説したのですが、、、え？なんか忘れてるって？<br>
+                さっきから無視していましたが、「#include &lt;stdio.h&gt;」がありましたね。<br>
+                これはちょっと難しいです。しかしこれが今回の文字出力機能の肝になるキーパーソンです。
+            </p>
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="navy">ライブラリ</h2>
+
+            <p class="double-border red-border classic_font padding-10px">
+                #include &lt;stdio.h&gt;
+            </p>
+            <p>
+                これは他のファイルを取り込む(インクルードする)構文です。<span class="font_bold"> Preprocessor directives(プリプロセッサ・ディレクティブ) </span>と言います。<br>
+                他のファイルというとちょっとピンときませんが、これまでにもチラッと説明した<span class="font_bold red_text"> ライブラリ </span>になります。stdio.hという名前のファイルがあるのです。<br>
+                このstdio.hの中に printf関数の定義 が含まれており、この一文を記述しないとprintfは使用できません(厳密には他のファイルを取り込んでも使用できる場合があります)。<br>
+                また stdio.h の呼び方は「スタジオ・エイチ」ではありませんのでご注意下さい・・・(.hの拡張子については別セクション「ヘッダーファイル」で解説します)
+            </p>
+            <label for="sub_window1" class="linktext_fonts">【補足】「#」は「シャープ」ではありません。</label>
+            <input type="checkbox" id="sub_window1" class="sub_window_checker">
+            <label for="sub_window1" class="bg_sub_window">
+                <label for="behind_sub_window1" class="extend_window">
+                    <label for="sub_window1" class="close_sub_window"></label>
+                    <div class="sub_window_container">
+                        <h3>「#」の名称について</h3>
+                        <p>
+                            これ間違えやすいのですが、厳密には「シャープ」ではありません。<br>
+                            自動音声ガイダンスなどでよく「シャープを押してください」とか言ってますが、あれ実は「シャープ」ではなく「番号記号」と言うそうです。<br>
+                        </p>
+                        <table>
+                            <tr>
+                                <td><img src="images/pages-004-004.png" alt="番号記号"></td>
+                                <td>　　</td>
+                                <td><img src="images/pages-004-003.png" alt="シャープ" class="width_85per"></td>
+                            </tr>
+                        </table>
+                        <p>
+                            なんとなく微妙に違いますね。<br>
+                            特段違うからどうのこうのという話では別に無いのですが、一応補足的に。知っておくとちょっと物知りレベルの雑学です。<br>
+                            番号記号って言いづらいような気もしなくもないのですが、他にも色んな呼び名があって「井桁」とか「ナンバーサイン」とかも言われるようです。<br>
+                            ついでなのでどんな呼び名があるのか調べてみてもいいかもしれません。<br>
+                            正直言うと「シャープ」と言って伝わるのでそれでいいのですが^^;<br>
+                            <span class="strike">まあ、私も「シャープ」って言ってるけどね</span><br>
+                        </p>
+                    </div>
+                </label>
+            </label>
+            <div class="blank_space"></div>
+            <p>
+                前回のセクションで少し言いましたが、C言語にはいくつかの標準ライブラリというものが存在します。<br>
+                これらのファイルは誰でも自由に使う事ができます。<br>
+                標準ライブラリファイルなど他のファイルの機能を取り込む場合は「#」マークの後に「include」を書き、山括弧で括ってファイル名を記述します。<br>
+                また自作した別ファイルを取り込む場合は、ダブルクォーテーションで括ってファイル名(場合によってはファイルパスを含めて)を記述する事でそのファイルを取り込む事ができます。
+            </p>
+            <p class="double-border red-border classic_font padding-10px">
+                #include &lt;stdlib.h&gt;<br>
+                #include "sub.h"<br>
+                #include "inc/g_variable.h"
+            </p>
+            <p>
+                基本的に外部ファイルのインクルードは何個でも行う事ができます。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3>山括弧とダブルクォーテーションの違いは？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="behind-contents">
+                            <input id="jagged_1" type="checkbox">
+                            <div class="ninpo">
+                                <p>
+                                    <span class="font_bold">基本的には同じです。</span><br>
+                                    ですが、解説サイトなどではダブルクォーテーションを使ってstdio.hなどはインクルードしていないと思います。それはなぜでしょうか。<br>
+                                    詳細な理由ですが、ダブルクォーテーションを使った場合カレントディレクトリのファイルを探して、見つからない場合はインクルードパスからファイルを探します。<br>
+                                    一方の山括弧を使った場合は、インクルードパスの中しかファイルを探しません。そこになければファイルがないよ、とエラーが出力されます。<br>
+                                    つまりstdio.hはソースコードと同じ場所には無いわけですから、コンパイラの参照先パスなどで該当するはずです。<br>
+                                    インクルードパスは今回のgccの場合で言うと、stdio.hなどが実際に配置されているインクルードパスをgcc.exeが内部で参照しているためインクルードできています。<br>
+                                    もしかすると他のコンパイラは標準ライブラリのインクルードパスを設定してあげないといけないものもあるかもしれません。<br>
+                                    ちなみにMinGWの場合、stdio.h は以下の場所にありました。
+                                </p>
+                                <div class="blank_space"></div>
+                                <img src="images/pages-004-002.png" alt="pages-004_002" class="width_50per">
+                                <div class="blank_space"></div>
+                                <p>
+                                    逆に言うと、カレントディレクトリに置いてあるファイルを山括弧で取り込もうとするとインクルードできない事になりますね。<br>
+                                    これは覚えておいたほうがいいかと思います。
+                                </p>
+                            </div>
+                            <label for="jagged_1" class="pusher linktext_fonts2 font_larger font_bold">＋</label>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div class="blank_space"></div>
+            <p>
+                stdio.h は「スタンダードIO」を意味する単語になっています。Standard IO → stdio。<br>
+                「IO」はインプット(Input)とアウトプット(Output)を意味するものです。<br>
+                printf関数の他にファイルを開くfopen関数、入力文字を取得するscanf関数などがあります。<br>
+                文字入出力、ファイル入出力系の処理は基本的に stdio.h をインクルードする事で作る事ができます。
+            </p>
+            <p>
+                最初は覚えないといけない事が多いかもしれませんが、すぐ慣れます。<br>
+                特徴を掴むためには色々実験してみるのが一番です。先ほどのソースコードを適当に弄って遊んでみて下さい。
+            </p>
+            <p>
+                例えば次のようにしてみます。
+            </p>
+            <div class="code_space"><pre class="prettyprint linenums">
+<code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("While My Guitar Gently Weeps BEST SONG EVER.");
+    //printf("ハローワールド！");
+    return 0;
+}
+</code></pre>
+            </div>
+            <div class="blank_space"></div>
+            <p>
+                コマンドプロンプトを起動してgccでコンパイルし、実行してみます。<br>
+                すると以下のようになります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-005.png" alt="pages-004_005"></td>
+                </tr>
+            </table>
+            <p>
+                printf関数丸括弧の中の文字列を変更すると、文字列が変わりましたね。<br>
+                では次は、コメントアウトしているすぐ下の行を出力してみたいと思います。4行目をコメントアウトして、5行目のコメントアウトを解除します。<br>
+                どうなるでしょうか。
+            </p>
+            <div class="code_space"><pre class="prettyprint linenums">
+<code>#include &lt;stdio.h&gt;
+
+int main() {
+    //printf("While My Guitar Gently Weeps BEST SONG EVER.");
+    printf("ハローワールド！");
+    return 0;
+}
+</code></pre>
+            </div>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-006.png" alt="pages-004_006"></td>
+                </tr>
+            </table>
+            <p>
+                どうやら想定通り出力されました。<br>
+                ・・・とここで結果が異なっている方がもしかしたらいらっしゃるかもしれません。<br>
+                もしかして以下のような文字列が生成されませんでしたか？
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-007.png" alt="pages-004_007"></td>
+                </tr>
+            </table>
+            <p>
+                なにこれちょっと怖い・・・という感じかもしれませんが、まず落ち着きましょう。<br>
+                このように文字が化けてしまっているのは理由があります。<br>
+                それは<span class="font_larger font_bold"> ファイルエンコードの問題 </span>です。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                それでは少し細工をしてみましょう。<br>
+                ひとまずコマンドプロンプトで「chcp 65001」と入力してEnterキーを押してください。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-008.png" alt="pages-004_008"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                再度「a」→Enterキー押下でプログラムを実行します。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-009.png" alt="pages-004_009"></td>
+                </tr>
+            </table>
+            <p>
+                するとどうでしょうか。意図した通りに表示されましたね。<br>
+                おっと、先ほど正常に出力されていた方が同じ事をやってしまうと今度はそちらの方々は文字化けになってしまいますので、ご注意下さい^^;<br>
+                (先に言えよ！って感じですが) <br>
+                それでは一体何が起きたのかを説明していきましょう。
+            </p>
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し3
+            -->
+            <h2 class="navy">文字コード</h2>
+
+            <p>
+                文字コードについてはプログラムに関わった事がない方でも知っている方がいると思います。<br>
+                Shift-JISとか、UTF-8とか聞いた事ないでしょうか？<br>
+                先ほどの出力結果の文字化けはいわゆるこれらの設定の問題です。<br>
+                WindowsのコマンドプロンプトはShift-JIS文字列を出力するように設定されており、「chcp 65001」コマンドはこの設定をUTF-8に変更するコマンドです。<br>
+                つまり文字化けした方々はコンパイルしたソースファイルがUTF-8形式で保存されているのです。
+            </p>
+            <p>
+                一度ソースコードをWindowsのメモ帳で起動してみます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-011.png" alt="pages-004_011"></td>
+                </tr>
+            </table>
+            <p>
+                ソースファイルを右クリックして「編集」をクリック。<br>
+                するとメモ帳でソースコードが表示されます。
+            </p>
+            <div class="blank_space"></div>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-012.png" alt="pages-004_012"></td>
+                </tr>
+            </table>
+            <p>
+                赤丸の箇所を見ると「UTF-8」と表示されています。<br>
+                とはいえ世界的に見て<span class="font_bold"> プログラミングソースは大体「UTF-8」で作成されています。</span><br>
+                それではコマンドプロンプトがShift-JISデフォルトなので、ちょっと都合が悪いですね。<br>
+                一般的には「UTF-8」でソースコードを保存していって問題ありません。ではコンソールに表示する時はどうすればいいでしょうか？<br>
+                これには様々な対応方法、議論があります。毎度プログラムを実行する度にコマンドプロンプトの文字コードを変更する方法もあります。しかしそれは面倒でしょ、という声もあるでしょう。<br>
+                私はそもそも日本語を含む2バイト文字を極力使わずにプログラムを書くようにしていますが、もちろん日本語使いたい！という話になると思います。
+            </p>
+            <p>
+                しかし以前Microsoftがこのような内容の記事を投稿しました。<br>
+                <a href="https://blogs.windows.com/japan/2020/02/20/about-windows-and-japanese-text/" target="_blank">Windows と日本語のテキストについて（別ウインドウで開きます）</a><br>
+                <br>
+                簡単に言うと外字（旧字のこと。廣(広)・邉(辺)など）は使わないようにしてね、というお願いのようです。<br>
+                そして最終的にはUnicode形式の文字コードにシステムなどを移行してほしい趣旨の文になります。
+            </p>
+            <label for="sub_window2" class="linktext_fonts">【補足】Shift-JISはいつかなくなる？</label>
+            <input type="checkbox" id="sub_window2" class="sub_window_checker">
+            <label for="sub_window2" class="bg_sub_window">
+                <label for="behind_sub_window2" class="extend_window">
+                    <label for="sub_window2" class="close_sub_window"></label>
+                    <div class="sub_window_container">
+                        <h3>Shift-JISはいつかなくなる？</h3>
+                        <p>
+                            Shift-JISは1982年にコンピュータを販売していた業界著名人が共同で開発したものとされ、1997年までその仕様が規格化されていませんでした。<br>
+                            この状況には問題があり、様々な会社が発売するコンピュータにShift-JISで定義した文字に追加で独自定義の文字を組み込んだ個々特有の文字コードが存在する形になりました。<br>
+                            またShift-JISは日本語しか全角文字が考慮されておらず、台湾の漢字、中国語などは使用できません。<br>
+                            そこへ全世界の文字を収録した更なる広領域文字コードである「Unicode」が誕生します。UnicodeはUTF-8、UTF-16などです。<br>
+                            これは全世界の文字のみならず絵文字などもサポートするものです。<br>
+                            グローバル化が進む近代の世界で文字コードもユニバーサルデザインを意識してUnicodeへと移行する事が予測され、Shift-JISはいずれレガシーコードとして取り扱われる日が来るかもしれません。<br>
+                            (これは決してShift-JISが今後一切使用できなくなるという話ではありませんので注意)
+                        </p>
+                    </div>
+                </label>
+            </label>
+            <div class="blank_space"></div>
+            <p>
+                結論として、どちらを使うも自由です。<br>
+                しかし私個人的には「UTF-8」でソースコードを書き、なるべく出力文字などには日本語などの文字を使わないポリシーを持つようにしています。<br>
+                (もちろん日本語は使ってもいいですし、使っちゃダメよという話では決してありませんので、その点はご安心下さい^^)
+            </p>
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し4
+            -->
+            <h2 class="navy">その他のコーディング書式について</h2>
+
+            <p>
+                もう少しソースコードについてお話をさせて頂きます。<br>
+                まずは<span class="font_bold"> インデント </span>。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-021.png" alt="pages-004_021"></td>
+                </tr>
+            </table>
+            <p>
+                いわゆる字下げですね。<br>
+                これは他のプログラマーも普通に行ってます。コードの見やすさが圧倒的によくなるので使いましょう。<br>
+                またインデントはタブを使うか、スペースを使うかで意見が割れる事があるようですが、好きなほうを使っていいと思います。<br>
+                私はタブ文字を使わずに、スペース4文字分を1インデントとしてコーディングします。<br>
+                <span class="font_larger red_text underline">(全角スペースは使わないようにしましょう！全角スペースはスペースではないので、コンパイルエラーの要因になります)</span>
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                <span class="font_bold">スペース </span>については基本的に半角スペースのみ使用する事ができます。<br>
+                全角スペースは半角スペースと同じようには使う事はできませんので注意して下さい。<br>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-022.png" alt="pages-004_022"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">空白はたくさん入れて大丈夫</p></td>
+                </tr>
+            </table>
+            <p>
+                後は<span class="font_bold"> 改行 </span>ですが、関数名や文字列の途中などでなければこれも問題なく使用する事ができます。<br>
+                全くコンパイルや出力内容には影響ありません。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-023.png" alt="pages-004_023"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <p>
+                ただし、<span class="red_text underline">プリプロセッサ・ディレクティブの行は改行できません</span>のでその点はご注意ください。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-004-024.png" alt="pages-004_024"></td>
+                </tr>
+            </table>
+            <div class="blank_space"></div>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/searching-zoom-icon.png" alt="評論" class="icons"></td>
+                        <td><h3 class="orange_text">コラム：綺麗なソースコードを書きたい</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                プログラムコーディングを行っていき段々慣れてくると、ソースコードの体裁が気になってきたりします。<br>
+                                段落が乱れていたりするとソースコードを見直したくなります。<br>
+                                それは誰しもある事です。<br>
+                                そうなった時に手戻り作業が増えないように、コーディングを開始する前にコーディングの書式や禁止事項などを決めたルールを定義したりする事があります。<br>
+                                このルールを業界では、<span class="font_bold"> コーディング規約 </span>と呼んだりします。<br>
+                                システム開発企業などはこのような規約を設ける事が多く、企業としてのシステム開発の裁量を表現したりする目的でも使用される事があります。<br>
+                                勿論個人がアプリケーションなどを開発する際にもコーディング規約を作っておく事で、プログラム全体としてまとまりが出るので、ドキュメントとしてまとめておくと良いかもしれません。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-003.html">前の記事：3. C言語自体で出来ること</a></p>
+                <p><a href="../index.html#C-Language">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-005.html">次の記事：5. 変数</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>

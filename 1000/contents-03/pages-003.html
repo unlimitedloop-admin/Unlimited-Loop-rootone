@@ -5,9 +5,9 @@
         <meta charset="utf-8" />
         <!-- <base href="http://localhost/1000/" target="_blank"> -->
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
         <link href="./pages.css" rel="stylesheet" type="text/css">
         <title>プログラミング - C言語入門</title>
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
     </head>
 
     <body>
@@ -44,10 +44,10 @@
                 前回のセクションで紹介したコンソールアプリケーションに文字や計算結果を出力するだけのソフトを作っているようではダメだという話ですかね？<br>
             </p>
             <label for="sub_window1" class="linktext_fonts">【補足】標準ライブラリについて</label>
-            <input type="checkbox" id="sub_window1" class="sub_window1_checker">
-            <label for="sub_window1" class="bg_sub_window1">
+            <input type="checkbox" id="sub_window1" class="sub_window_checker">
+            <label for="sub_window1" class="bg_sub_window">
                 <label for="behind_sub_window1" class="extend_window">
-                    <label for="sub_window1" class="close_sub_window1"></label>
+                    <label for="sub_window1" class="close_sub_window"></label>
                     <div class="sub_window_container">
                         <h3>標準ライブラリについて</h3>
                         <p>
@@ -59,12 +59,22 @@
             </label>
             <div class="blank_space"></div>
             <div class="columns-things-soft">
-                <h3>コンソールアプリケーションについて</h3>
-                <p>
-                    コマンドライン(コマンドプロンプト)を使う前提のアプリケーションの事です。<br>
-                    ついでですが、Windowsではコマンドプロンプトをターミナル、シェル、DOS窓と呼んだりする事があるようです。<br>
-                    (PowerShellはWindowsが独自に用意した専用のコマンドプロンプト)
-                </p>
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3>コンソールアプリケーションについて</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                コマンドライン(コマンドプロンプト)を使う前提のアプリケーションの事です。<br>
+                                ついでですが、Windowsではコマンドプロンプトをターミナル、シェル、DOS窓と呼んだりする事があるようです。<br>
+                                (PowerShellはWindowsが独自に用意した専用のコマンドプロンプト)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <p>
                 そういう意味で言うとC言語が提供しているのはプログラムのコアな部分、いわゆる表面の構築ではなく内部計算の機能しか提供されないと思ってもらっていいでしょう。
@@ -75,7 +85,7 @@
             <!--
                 見出し2
             -->
-            <h2 class="khaki">アプリケーション・プログラミング・インターフェース</h2>
+            <h2 class="orange">アプリケーション・プログラミング・インターフェース</h2>
 
             <p>
                 皆さんが欲しがっている情報はここにあると思います。<br>
