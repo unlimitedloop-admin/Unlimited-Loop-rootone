@@ -240,6 +240,10 @@ main p {
     margin-bottom: 3em;
 }
 
+.blank_line {
+    margin-bottom: 2em;
+}
+
 .img-caption {
     color: darkgray;
     font-size: small;

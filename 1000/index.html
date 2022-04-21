@@ -24,6 +24,20 @@
                 return false;
             });
         });
+        $(function() {
+            // 別ページの場合は以下
+            var urlHash = location.hash;
+            if (urlHash) {
+                $("body,html").stop().scrollTop(0);
+                setTimeout(function(){
+                    // ヘッダー固定の場合はヘッダーの高さを数値で入れる、固定でない場合は0
+                    var headerHeight = $('header').height();
+                    var target = $(urlHash);
+                    var position = target.offset().top - headerHeight;
+                    $("body,html").stop().animate({scrollTop:position}, 400);
+                }, 100);
+            }
+        });
         </script>
     </head>
     
@@ -114,60 +128,62 @@
                 <p class="content-linkmenu">
                     <a href="contents-01/pages-000.html">0. 前提条件とか</a><br>
                     <a href="contents-01/pages-001.html">1. おすすめの書籍など</a><br>
-                    <a href="contents-01/pages-002.html">2. 数字に慣れる</a><br>
-                    <a href="contents-01/pages-003.html">3. プログラミングの基礎知識</a><br>
-                    <a href="contents-01/pages-004.html">4. プログラム言語の歴史と発展</a><br>
-                    <a href="contents-01/pages-005.html">5. 「データ」について</a><br>
-                    <a href="contents-01/pages-006.html">6. 変数と値</a><br>
-                    <a href="contents-01/pages-007.html">7. 変数と値(もっと詳しく)</a><br>
+                    <a href="contents-01/pages-002.html">2. 学問に慣れる</a><br>
+                    <!--<a href="contents-01/pages-003.html">-->3. 論理的思考力の習得<!--</a>--><br>
+                    <!--<a href="contents-01/pages-004.html">-->4. プログラム言語の歴史と発展<!--</a>--><br>
+                    <!--<a href="contents-01/pages-005.html">-->5. 「データ」について<!--</a>--><br>
+                    <!--<a href="contents-01/pages-006.html">-->6. 変数と値<!--</a>--><br>
+                    <!--<a href="contents-01/pages-007.html">-->7. 変数と値(もっと詳しく)<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-SP1.html">【閑談】数学が嫌いだった話</a><br>
+                    <!--<a href="contents-01/pages-SP1.html">-->【閑談】数学が嫌いだった話<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-008.html">8. 順次実行</a><br>
-                    <a href="contents-01/pages-009.html">9. 条件分岐</a><br>
-                    <a href="contents-01/pages-010.html">10. 繰り返し</a><br>
-                    <a href="contents-01/pages-011.html">11. 日本語でプログラミングしてみる</a><br>
-                    <a href="contents-01/pages-012.html">12. フローチャートを書く</a><br>
+                    <!--<a href="contents-01/pages-008.html">-->8. 四則演算<!--</a>--><br>
+                    <!--<a href="contents-01/pages-009.html">-->9. データ型<!--</a>--><br>
+                    <!--<a href="contents-01/pages-010.html">-->10. エラーについて<!--</a>--><br>
+                    <!--<a href="contents-01/pages-011.html">-->11. データ型(もっと詳しく)<!--</a>--><br>
+                    <!--<a href="contents-01/pages-012.html">-->12. 計算式の理屈を理解する<!--</a>--><br>
+                    <!--<a href="contents-01/pages-013.html">-->13. 真と偽<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-SP2.html">【閑談】人間をプログラム化できる？</a><br>
+                    <!--<a href="contents-01/pages-SP2.html">-->【閑談】人間をプログラム化できる？<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-013.html">13. 四則演算</a><br>
-                    <a href="contents-01/pages-014.html">14. データ型</a><br>
-                    <a href="contents-01/pages-015.html">15. エラーについて</a><br>
-                    <a href="contents-01/pages-016.html">16. データ型(もっと詳しく)</a><br>
-                    <a href="contents-01/pages-017.html">17. 計算式の理屈を理解する</a><br>
-                    <a href="contents-01/pages-018.html">18. 真と偽</a><br>
-                    <a href="contents-01/pages-019.html">19. プログラム制御のおさらい+α</a><br>
+                    <!--<a href="contents-01/pages-014.html">-->14. 順次実行<!--</a>--><br>
+                    <!--<a href="contents-01/pages-015.html">-->15. 条件分岐<!--</a>--><br>
+                    <!--<a href="contents-01/pages-016.html">-->16. 繰り返し<!--</a>--><br>
+                    <!--<a href="contents-01/pages-017.html">-->17. 日本語でプログラミングしてみる<!--</a>--><br>
+                    <!--<a href="contents-01/pages-018.html">-->18. フローチャートを書く<!--</a>--><br>
+                    <!--<a href="contents-01/pages-019.html">-->19. プログラム制御のおさらい+α<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-SP3.html">【閑談】英語が読めない</a><br>
+                    <!--<a href="contents-01/pages-SP3.html">-->【閑談】英語が読めない<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-020.html">20. 色んなデータの持ち方について</a><br>
-                    <a href="contents-01/pages-021.html">21. 関数と引数</a><br>
-                    <a href="contents-01/pages-022.html">22. ファイル</a><br>
-                    <a href="contents-01/pages-023.html">23. データベース</a><br>
-                    <a href="contents-01/pages-024.html">24. 仮想環境(クラウド)</a><br>
-                    <a href="contents-01/pages-025.html">25. オブジェクト指向プログラミング</a><br>
-                    <a href="contents-01/pages-026.html">26. ネイティブシステムの作り方</a><br>
-                    <a href="contents-01/pages-027.html">27. Webシステムの作り方</a><br>
+                    <!--<a href="contents-01/pages-020.html">-->20. 色んなデータの持ち方について<!--</a>--><br>
+                    <!--<a href="contents-01/pages-021.html">-->21. 関数と引数<!--</a>--><br>
+                    <!--<a href="contents-01/pages-022.html">-->22. メモリアドレス<!--</a>--><br>
+                    <!--<a href="contents-01/pages-023.html">-->23. データベース<!--</a>--><br>
+                    <!--<a href="contents-01/pages-024.html">-->24. 仮想環境(クラウド)<!--</a>--><br>
+                    <!--<a href="contents-01/pages-025.html">-->25. オブジェクト指向プログラミング<!--</a>--><br>
+                    <!--<a href="contents-01/pages-026.html">-->26. ネイティブシステムの作り方<!--</a>--><br>
+                    <!--<a href="contents-01/pages-027.html">-->27. Webシステムの作り方<!--</a>-->
                 </p>
                 <hr>
                 <p class="content-linkmenu">
-                    <a href="contents-01/pages-END.html">【補足】終わりに</a><br>
+                    <!--<a href="contents-01/pages-END.html">【補足】終わりに</a>-->
+                </p>    
                     
-                    <div class="blank_space"></div>
+                <div class="blank_space"></div>
                 
+                <p>
                     <a href="#Imenu">▲メニューに戻る</a>
                 </p>
             </div>
@@ -189,16 +205,18 @@
             <!-- コンテンツ02 - メニュー -->
             <div id="content-table">
                 <p class="content-linkmenu">
-                    <a href="contents-02/pages-001.html">1. なぜプログラムをつくるのか</a><br>
-                    <a href="contents-02/pages-002.html">2. コンピュータはなぜ動くのか</a><br>
-                    <a href="contents-02/pages-003.html">3. プログラマーに必要な条件</a><br>
-                    <a href="contents-02/pages-004.html">4. 失敗してでもやってみる</a><br>
-                    <a href="contents-02/pages-005.html">5. 失敗の分析とリスクの分析</a><br>
-                    <a href="contents-02/pages-006.html">6. アルゴリズム</a><br>
-                    <a href="contents-02/pages-007.html">7. ソフトウェア開発の真意</a><br>
+                    <!--<a href="contents-02/pages-001.html">-->1. なぜプログラムをつくるのか<!--</a>--><br>
+                    <!--<a href="contents-02/pages-002.html">-->2. コンピュータはなぜ動くのか<!--</a>--><br>
+                    <!--<a href="contents-02/pages-003.html">-->3. プログラマーに必要な条件<!--</a>--><br>
+                    <!--<a href="contents-02/pages-004.html">-->4. 失敗してでもやってみる<!--</a>--><br>
+                    <!--<a href="contents-02/pages-005.html">-->5. 失敗の分析とリスクの分析<!--</a>--><br>
+                    <!--<a href="contents-02/pages-006.html">-->6. アルゴリズム<!--</a>--><br>
+                    <!--<a href="contents-02/pages-007.html">-->7. ソフトウェア開発の真意<!--</a>-->
+                </p>
                     
-                    <div class="blank_space"></div>
+                <div class="blank_space"></div>
                 
+                <p>
                     <a href="#Imenu">▲メニューに戻る</a>
                 </p>
             </div>
@@ -224,13 +242,13 @@
                     <a href="contents-03/pages-002.html">2. コンパイルとリンク</a><br>
                     <a href="contents-03/pages-003.html">3. C言語自体で出来ること</a><br>
                     <a href="contents-03/pages-004.html">4. main関数・エントリーポイント</a><br>
-                    <a href="contents-03/pages-005.html">5. 変数</a><br>
-                    <a href="contents-03/pages-006.html">6. データ型</a>
-                    <!-- <a href="contents-**/pages-***.html"></a><br> -->
+                    <!--<a href="contents-03/pages-005.html">-->5. 変数<!--</a>--><br>
+                    <!--<a href="contents-03/pages-006.html">-->6. データ型<!--</a>-->
+                </p>
 
-
-                    <div class="blank_space"></div>
+                <div class="blank_space"></div>
                 
+                <p>
                     <a href="#Imenu">▲メニューに戻る</a>
                 </p>
             </div>

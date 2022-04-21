@@ -21,7 +21,7 @@ main h2.title {
 
 .amazon_link_banner {
     color:rgb(255, 255, 255);
-    font: bold 1em "‚l‚r ‚oƒSƒVƒbƒN", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "ƒƒCƒŠƒI", "Meiryo", sans-serif;
+    font: bold 1em "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3", "Hiragino Kaku Gothic Pro", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
     text-align: center;
     padding: 0.75em 1.5em;
     background-color: rgb(255, 166, 0);
@@ -30,4 +30,20 @@ main h2.title {
 
 .none_decr:hover {
     text-decoration: none;
+}
+
+.down-border {
+    border-bottom: black solid thin;
+}
+
+.down-border h3 {
+    margin-bottom: 0em;
+}
+
+.clear_top_margin {
+    margin-top: 0;
+}
+
+.little_top_margin {
+    margin-top: 2em;
 }

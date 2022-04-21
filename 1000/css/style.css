@@ -151,3 +151,7 @@ ul {
 .vertical_top {
     vertical-align: top;
 }
+
+.vertical_bottom {
+    vertical-align: baseline;
+}
