@@ -19,14 +19,11 @@ main {
     padding-top: 7em;
 }
 
-p {
-}
-
 p.content-desc {
     color: #1caa58;
 }
 
-div#content-table {
+.content-table {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
