@@ -30,7 +30,7 @@ a:hover {
     text-decoration: underline;
 }
 
-ul {
+ul, ol {
     line-height: 2em;
 }
 

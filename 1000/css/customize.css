@@ -16,6 +16,7 @@ header {
     padding: 0;
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 
 main {
@@ -36,8 +37,6 @@ footer {
 main p {
     line-height: 2.0em;
 }
-
-
 
 
 
@@ -77,6 +76,7 @@ main p {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    z-index: 2;
 }
 
 .bg_sub_window:hover {
@@ -88,6 +88,7 @@ main p {
     opacity: 1;
     pointer-events: auto;
     transition: 0.5s;
+    z-index: 1;
 }
 
 .extend_window {
@@ -239,6 +240,27 @@ main p {
     transition: 1s;
     height: 0;
     overflow: hidden;
+}
+
+
+
+
+
+/* Blur the outer edge */
+main .blur {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+main .blur::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 18px 18px white;
 }
 
 

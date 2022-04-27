@@ -11,6 +11,31 @@ main h2.title {
 
 
 
+/* balloon text custom styles */
+.balloon {
+    position: relative;
+    background-color: #429c3a;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin: 15px;
+}
+    
+.balloon::before {
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+    border-right: 12px solid #429c3a;
+    top: 20%;
+    left: -24px;
+}
+    
+.balloon p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
 
 
 /* public classes style */
@@ -46,4 +71,8 @@ main h2.title {
 
 .little_top_margin {
     margin-top: 2em;
+}
+
+.large_space_line {
+    line-height: 3.5em;
 }
