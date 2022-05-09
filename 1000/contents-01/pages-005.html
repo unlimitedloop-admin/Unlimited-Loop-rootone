@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - プログラミング超入門</title>
+    </head>
+
+    <body>
+        <!-- ★TODO -->
+        <!-- 
+            ・セクション「先の記事：22. オペレーティングシステム(OS)」のぺージリンクを追加する。
+            ・セクション「先の記事：25. オブジェクト指向プログラミング」のページリンクを追加する。
+        -->
+
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>プログラム言語の歴史と発展</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                プログラミングの分野はどういった進化をしてきたのでしょうか。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <p>
+                プログラミングで何ができるのか、プログラミングで行われる一連の作業はどうしてこのようになっているのかを紐解く事で、プログラムに対する理解力は確実に上がります。<br>
+                それはコンピュータやパソコンのメカニズムを知る事にもなり、はたまた機械仕掛けのロジックに親近性をもたらすと思います。<br>
+                <span class="font_bold underline">ようはもっとプログラムとコンピュータの関係性に気付けるようになるはずです。</span><br>
+                今回はコンピュータの歴史を辿っていきながら、プログラム言語がどういった形で変わってきたのかを追っていきましょう。
+            </p>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し1
+            -->
+            <h2 class="title">プログラムの歴史はコンピュータ史</h2>
+
+            <p>
+                パソコンが現代で当たり前に存在するずっと前、トーマス・エジソンが電球を作る以前の事です。<br>
+                ジェロラモ・カルダーノが電磁と電気を区別して、ニコラ・テスラが交流発電機を発明した歴史にもあるように、最初は科学の分野でしか電気を使う事はありませんでした。<br>
+                世界で最初に電卓の元になる計算機「アリスモメーター」が作られたのが今から100年以上前の話になります。<br>
+                コンピュータは色んな分野の技術を応用して作られる事になります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-001.jpg" alt="pages-005-001" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">世界で初めて実用化されたとされるヴィンテージ計算機</p></td>
+                </tr>
+            </table>
+            <p>
+                コンピュータは基本的に<span class="font_bold underline">「計算機」</span>(Calculator)です。<br>
+                日本では1902年、「自動算盤」というメカニック計算機が矢頭良一氏によって作成されました。<br>
+                コンピュータは初期の頃、機械仕掛けの計算マシンと電力で動くモーターが出現した後に実現可能になりました。<br>
+                その後パンチカードという特定の数字に対応するエリアに穴を開けて数字を表現する技術が生み出されます。<br>
+                初期のコンピュータはこのパンチカードシステムを使ったアウトプットイメージを利用したものが主流でした。時はまだ19世紀でした。
+            </p>
+            <p>
+                世界初のプログラミングが可能なコンピュータはドイツの発明家ツーゼが自ら製作した「Z1」という機械とされます。1938年に完成。<br>
+                これは2進数によりコンピュータが動作する現代のコンピュータの原型とも言える最初の発明でした。しかしこのコンピュータはその後の世界大戦で消失したそうです。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-002.png" alt="pages-005-002" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">バイナリデータ (2進数)</p></td>
+                </tr>
+            </table>
+            <p>
+                しかし「Z1」は2進数でのみ構成され、実質その状況下でプログラミングを行うのは至難の業だったでしょう。当時としてはそれしか無かったのですが。<br>
+                そこで2進数の特定の羅列を組み合わせて演算機能やレジスタ(※)代入などを行えるように命令を定義してはどうか？という発想で生み出されたのが<span class="font_bold underline red_text">「アセンブリ言語」</span>というプログラム言語です。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">レジスタとは？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                レジスタはCPU(もといマイクロプロセッサー)の内部に存在する記憶領域の名前です。<br>
+                                記憶領域と言うとメモリの事と思いがちですが、レジスタに関してはメモリと違いプログラミングで自由に制御する事はできない仕組みになっています。<br>
+                                そのためCPU専用の特別な値保持スペースであるという認識で良いでしょう。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="title">プログラミング言語の誕生</h2>
+
+            <p>
+                コンピュータとして初めてプログラム言語が定着したのは1948年に開発された「The Baby」というコンピュータです。<br>
+                その翌年(1949年)に「EDSAC」というコンピュータが誕生、このEDSACは大量の真空管で構成され本体は12畳の部屋くらいの大きさがあり、搭載していたメモリの容量は2キロバイトほどしかありませんでした。<br>
+                2キロバイトは現在のパソコンで日本語などの全角文字を1000文字ほど使えるサイズです。とても少ないですね。<br>
+                <span class="font_bold underline">プログラミングの仕組みにはプログラム言語から機械語に翻訳する作業がある</span>のですが、この作業を行うベーシックプログラムがEDSACに搭載されていました(イニシャルオーダーと呼ばれていたそうです)。<br>
+                これがアセンブラの元になったと言われています。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-003.png" alt="pages-005-003" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">アセンブリ言語 (ニーモニック)</p></td>
+                </tr>
+            </table>
+            <p>
+                アセンブラ(アセンブリ言語を機械語に翻訳するプログラム)は機械語によるプログラミングをより効率よく行うために生み出されました。<br>
+                メモリとレジスタとのデータのやり取りを行うための専用の命令を単語で指定できるようになっています(movとかintとか)。0とか1とかの羅列で指定するより圧倒的に分かりやすいですよね。<br>
+                しかしどうでしょうか？我々が見たところで何をやっているかはちんぷんかんぷんの人がほとんどのはずです。この段階ではまだ一部の専門家だけが扱う技術と言った感じでしょうか。
+            </p>
+            <p>
+                しかしこのプログラム言語の登場は当時革新的でした。<span class="font_bold underline red_text">いわゆるプログラミングするために人間が理解できる言語を生み出す可能性を与えたのです。</span><br>
+                また<span class="font_bold underline">「ノイマン型」</span>と呼ばれるコンピュータが発明され、「EDSAC」や「EDVAC」などがその黎明期に台頭しました。<br>
+                ノイマン型コンピュータとは、ソフトウェアという概念を取り入れ、予めメインメモリにプログラムを突っ込んでおき、それを順番に実行するような仕組みを取っているものです。<br>
+                これは現在のWindowsパソコンなどもこの形式です。ソフトウェアはメモリ領域に読み込んで実行します。これはノイマン型コンピュータです。<br>
+                こうしてプログラムによってソフトウェアを構築する形態が生まれました。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-004.png" alt="pages-005-004" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">FORTRAN77</p></td>
+                </tr>
+            </table>
+            <p>
+                1956年に<span class="font_bold underline red_text">「FORTRAN」(フォートラン)</span>というプログラム言語が誕生します。ちょっとだけモダンな雰囲気になりましたね^^<br>
+                ちなみにFORTRANが出た当時はもっと分かりづらい構文だったそうですが、改良が加えられていき今でも実際に使われている機関があります。<br>
+                FORTRANは世界で初めて生まれた高水準言語(※)です。この言語が登場した事によりプログラム言語は実行するプログラムだけでなく、<span class="font_bold underline">構造化プログラミング</span>としての道を辿る事になります。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">高水準言語って何ですか？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                高水準というのは、より人間が理解できる高い水準の事を意味します。<br>
+                                つまりコンピュータと人間との間に距離を取り、より人間の言語に近い単語などが使われているものを高水準言語(または高級言語)と言い、<br>
+                                反対にコンピュータが理解できる機械語と互換性が高いアセンブリ言語などは低水準言語(または低級言語)と呼ばれます。<br>
+                                アセンブリ言語も大昔は機械語に比べて高級な言語として受け入れられていたと思われますが、現代のプログラミングの現場では数少ないネイティブな言語となってしまいました。<br>
+                                今で言うとC言語やFORTRANもゆくゆくは低水準の位置づけになっていく、のかもしれません。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>
+                また1958年に現代のコンピュータの基盤となる<span class="font_bold underline red_text">「集積回路」</span>が発明されます。これは驚くべき事にコンデンサや抵抗などの部品の元となる素子を混ぜ合わせて作られた全く別のパーツでした。<br>
+                この集積回路の登場により、コンピュータ産業が一気に加速していきます。<br>
+                それはこれまで専門家が使うのみだったコンピュータが、大衆に広く受け入れられていく未来が始まった瞬間でした。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-006.png" alt="pages-005-006" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">集積回路(Integrated Circuit)</p></td>
+                </tr>
+            </table>
+            <p>
+                またもう一つ大きな出来事があったのが1960年代。(この辺は分からない単語がたくさん出てくるので無理をせずにGoogle検索を使いましょう)<br>
+                初めて世界でオペレーティングシステム(OS)として呼ばれたと言われる<span class="font_bold underline red_text">「OS/360」</span>が出てきました。このOSはNASA(アメリカ航空宇宙局)が使っていました。<br>
+                このOSは世界で初めて複数のプログラムを同時に稼働させる<span class="font_bold underline red_text">マルチタスク</span>を実現します。この技術はIBM社が作りました。<br>
+                またこのOSが搭載されていたIBM社のコンピュータ「System/360」は<span class="font_bold underline red_text">コンピュータの機種が変更になってもプログラムが互換的に使用できる仕組み</span>(※)になっていました。この仕組みで成功したのはIBM社が初めてです。<br>
+                更にハードディスクの元祖のようなディスクドライブと接続を可能にし、プログラムデータの長期保存ができました。そしてこれら<span class="font_bold underline red_text">ハードディスク</span>も<span class="font_bold underline red_text">フロッピーディスク</span>もIBM社が作りました。<br>
+                更に更に、現代のプログラムでもその存在を垣間見る事ができる<span class="font_bold underline red_text">「8ビットが1バイトである」</span>という定義もIBM社が作りました。<br>
+                現代に存在するパソコンの源流に位置する大半の概念はIBM社によって拵えられました。まさにコンピュータ界の重鎮ならぬ、パーフェクト超人的な存在だったのです。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">互換的に使用できる仕組みとはどういう事ですか？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                互換性があるかどうかの事です。「A」と「B」どちらでも対応できるよ、という状態。<br>
+                                例えばWindowsで言うと、Windows XPやWindows Vistaなどで使われていたプログラム (ソフトウェア) は現在Windows 10でも何事もなかったかのように使用できます。<br>
+                                これは「プログラムに互換性がある」と言います。(場合によってはWindowsとMacintosh、両方で使用可能なソフトウェアもある) <br>
+                                IBMの360が出る以前、コンピュータは互換機能が一切ありません。機種が変わるとプログラムは一から全部作り直していました！Σ（・□・；）ﾋｬｰ <br>
+                                今の時代、もしWindows 8からWindows 10に変わる場合で、それまで使っていたソフトウェアが全部使えなくなると言われたらおそらく社会問題になるかもしれません。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し3
+            -->
+            <h2 class="title">構造化プログラミングの登場</h2>
+
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-005-sub1.png" alt="pages-005-005-sub1" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                1960年～1970年代には数多くのプログラム言語が誕生し、現代で最も有名であろうプログラム言語の<span class="font_bold underline red_text">「C」</span>もここで誕生しました。<br>
+                C言語の登場で構造化プログラミングが一気に浸透する事になります。C言語を開発したデニス・リッチーという人は、かの有名なOSである<span class="font_bold underline red_text">「UNIX」</span>を作った人です。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">UNIX？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                これはユニックスと言います。UNIXはオペレーティングシステム(OS)の一つです。<br>
+                                OSの中でも有名すぎるOSで、現在ではMacOSやIBMのAIX、Androidの源流でもあるLinux、BSD、Solarisなどが全てこのUNIXに該当するものです。<br>
+                                そもそもOSとはなんぞや？となった方は以下を参照下さい。
+                            </p>
+                            <div class="blank_line"></div>
+                            <p>
+                                <a href="https://e-words.jp/w/OS.html" target="_blank">OS（オペレーティングシステム / 基本ソフト）とは - IT用語辞典 e-Words（別ウインドウで開きます）</a>
+                            </p>
+                            <div class="blank_line"></div>
+                            <p>
+                                またOSについては、当ウェブサイトでも少し先の記事で紹介する予定です。
+                            </p>
+                            <p>
+                                <!-- <a href="./pages-022.html">先の記事：22. オペレーティングシステム(OS)</a> -->
+                                先の記事：22. オペレーティングシステム(OS) (作成中)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="blank_space"></div>
+
+            <p>
+                C言語が登場した背景には<span class="font_bold underline">「ソフトウェア危機」</span>という時代背景がありました。<br>
+                この問題は結局のところ需要と供給がアンバランスとなり、開発が間に合わなかったり仕様の調整などがうまくいかず信用問題などを引き起こす事が懸念された事でした。<br>
+                それだけソフトウェア開発に対する期待は当時から相当なものであり、まだ発展途上だったコンピュータ業界にとって大きな問題でした。<br>
+                プログラミング言語の発展はこの問題に対処するもので、工数削減や構造の簡易化により専門家を増やすといった試みがあったのではないでしょうか。<br>
+                プログラミング言語の<span class="font_bold underline red_text">「BASIC」や「COBOL」</span>と言った言語はこういった経緯で生み出されてきたものであると考えられます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-005.png" alt="pages-005-005" class="frame_border_thin width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">構造化プログラミングで難解コードから脱却</p></td>
+                </tr>
+            </table>
+            <p>
+                構造化プログラミングとは、具体的にはジャンプ命令などの多用によるスパゲティコードの氾濫による問題を解決するために制御構造の思想を追加したものです。<br>
+                これは具体的に<span class="font_bold underline red_text">「順次実行」(sequence)、「条件分岐」(selection)、「反復」(repetition)</span>の事でこの思想は現代のプログラミングにおいても基本的な思考概念として根強いです。<br>
+                これらを使う事によってこれまで問題となっていた「ソフトウェア危機」に対応しようとしました。<br>
+            </p>
+            <label for="sub_window1" class="linktext_fonts">【補足】スパゲティコードとgoto(ジャンプ)命令</label>
+            <input type="checkbox" id="sub_window1" class="sub_window_checker">
+            <label for="sub_window1" class="bg_sub_window">
+                <label for="behind_sub_window1" class="extend_window">
+                    <label for="sub_window1" class="close_sub_window"></label>
+                    <div class="sub_window_container">
+                        <h3>スパゲティコードとgoto(ジャンプ)命令</h3>
+                        <p>
+                            スパゲティコードとは、プログラムが順番に実行される基本概念において、コードブロックの再利用のために突然違うコードブロックへ強引に移動したりするプログラムジャンプを多用しているコードの事。<br>
+                            俗に言う容量節約などのために共通する処理を使い回して使う事をするためにこのような事が起きてしまうのです。<br>
+                            あちこちに実行カーソルが移動してプログラムが読めないレベルでgotoを使用するのは望ましくない。<br>
+                            だが、goto自体が悪である、という風潮については賛否分かれるところです。<br>
+                            構造化プログラミングを使用している場合でもgoto命令が有効なケースがない事もないので、完全に禁止するよりかは選択の余地は残しておいてもいいかもしれません。<br>
+                            近年ではファイル分割やオブジェクト指向プログラミングなどのパラダイムが登場しほとんど使われる事はなくなりました。<br>
+                            プログラミングのメンテナンス(保守性)などを重視するようなシステムにとってこの制限は重要な意味を持っており、<br>
+                            スパゲティコードの場合値を一つ直すだけでも影響範囲が定めきれずプログラムの修正が困難になる可能性もあります。
+                        </p>
+                        <p>
+                            そういったリスクを考えてgoto文の使用は慎重に判断する必要があるでしょう。
+                        </p>
+                        <p>
+                            <a href="https://e-words.jp/w/%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3%E3%82%B3%E3%83%BC%E3%83%89.html" target="_blank">スパゲッティコード（spaghetti code）とは - IT用語辞典 e-Words</a>
+                        </p>
+                    </div>
+                </label>
+            </label>
+
+            <div class="blank_space"></div>
+
+            <p>
+                構造化プログラミングの登場により、プログラミングはより人間に近しい応用技術分野へ進出する事となります。<br>
+                この頃からMPU(マイクロプロセッサ)の高性能化やメモリの大容量化が始まった事もあって、より一層プログラムコードのデザインや再利用性を重視するようになっていきました。<br>
+                70年代より前は、プログラミングコードの可読性より容量の節約や前述の問題もあり、開発理論を重視できなかった時代背景もありました。<br>
+                C言語などで代表的な先進技術の一つとして<span class="font_bold underline">「ファイル分割」</span>があります。<br>
+                これは<span class="font_bold">プログラムのひと塊を「モジュール」として定義する事で、プログラムの仕様変更や改訂に対して軽微な対応で済ませる事ができる考え</span>です。<br>
+                この思想も応用ですね。<br>
+                プログラム言語の進化はプログラム自体のコード体系の利便性から、システム全体としての保守性に変わっていきました。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-007.png" alt="pages-005-007" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">ファイル分割やポインタ変数などの技術も構造化プログラミングで生まれた思想</p></td>
+                </tr>
+            </table>
+
+            <div class="blank_space"></div>
+
+            <p>
+                1975年にパーソナルコンピューターという名目で<span class="font_bold underline red_text">「ALTAIR」</span>が販売開始、その後アップル社のパソコン<span class="font_bold underline red_text">「APPLE-Ⅰ」</span>が登場しました。<br>
+                またアイコンをクリックしてプログラムが実行される<span class="font_bold underline red_text">「GUI」</span>という形式を初めて採用した<span class="font_bold underline red_text">「Macintosh」</span>(マッキントッシュ。愛称はマック)が発売されます。<br>
+                これまで文字だけの制御でしかコンピュータを動かせなかったコンピュータ界に更なる激震が走りました。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-008.png" alt="pages-005-008" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">個人がコンピュータを所有できるのは当時まさに夢のようでした</p></td>
+                </tr>
+            </table>
+            <p>
+                またインテルのCPU(当時はMPU)やアップル、NEC、コモドールなどの会社が挙ってコンピュータ業界へ進出したのもこの頃です。<br>
+                次第に専門家だけでなく、大衆に受け入れられる市場へ参入するという一連の流れは、時代がコンピュータに依存し始めていた証拠でもありました。
+            </p>
+            <p>
+                その後も8bitのマイクロプロセッサ<span class="font_bold underline red_text">「Z-80」</span>やインテル社やモトローラ社が16bitのマイクロプロセッサを販売するなど、パソコン普及の動きが加速していきます。<br>
+                また70年代後半になるとゲームセンターなどで稼働していたアーケードゲームが人気を博し、やがて家庭用ゲーム機という形でエンターテインメントのコンピュータも登場しました。<br>
+                中でも「ファミリーコンピュータ」というゲーム機は超絶的な大ヒットで6000万台以上売りさばかれたそうです。<br>
+                NEC社や富士通のパソコンではゲームソフトウェアも販売を行うなど、パソコンはゲーム業界でも一世を風靡しました。
+            </p>
+            
+            <div class="blank_space"></div>
+
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">「GUI」と「CUI」について</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                これは説明するより見てもらったほうが早いと思いますので、以下をご覧ください。<br>
+                                (あくまでイメージです。実際にはもっと見にくい場合があります)
+                            </p>
+                            <div class="blank_line"></div>
+                            <table>
+                                <tr>
+                                    <td><img src="images/pages-005-012.png" alt="pages-005-012" class="width_autofit2"></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="img-caption">CUI (Character User Interface)</p></td>
+                                </tr>
+                            </table>
+                            <div class="blank_line"></div>
+                            <table>
+                                <tr>
+                                    <td><img src="images/pages-005-011.png" alt="pages-005-011" class="width_autofit2"></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="img-caption">GUI (Graphical User Interface)</p></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し4
+            -->
+            <h2 class="title">オブジェクト指向プログラミングの登場</h2>
+
+            <p>
+                1995年にマイクロソフト社が<span class="font_bold underline red_text">「Windows 95」</span>を発売しました。<br>
+                これは社会現象にまでなり、この時に世間でインターネットブームが巻き起こります。もしかすると知っている方もいらっしゃるかも・・・？<br>
+                ここでいきなりマイクロソフトが出てきましたが、マイクロソフトは80年代から<span class="font_bold underline red_text">「MS-DOS」</span>というオペレーティングシステムを開発し、IBMのパソコンに入れて販売していました。<br>
+                これが大ヒットして、マイクロソフトの名が急速に知れ渡ったと言われています。<br>
+                90年代当時普及していたパソコンでは、ワードプロセッサーやオフィスコンピューターなどがありましたが、Windowsのパソコンが普及し始めるとそれらは次第にその影を薄くしていきます。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-013.png" alt="pages-005-013" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                時を同じくしてプログラミング言語<span class="font_bold underline red_text">「Java」</span>がリリースされます。<br>
+                この言語はCの拡張言語である「C++」に似た性質を持っており、<span class="font_bold underline red_text">「オブジェクト指向プログラミング」</span>の概念を世間に定着させた言語です。<br>
+                (実際にはオブジェクト指向として最初に話題になったのは「Smalltalk」という言語でしたが、Javaはサーバアプリ開発などで注目されたため広範囲にオブジェクト指向が再認識されました)
+            </p>
+            <p>
+                オブジェクト指向プログラミングとは、変数(※)や関数をグループとして管理しようとする概念を含んだプログラミングパラダイムです。<br>
+                ちょっと抽象的ですが、オブジェクト(物質)としてグループを作り、そのオブジェクトを作るために必要なデータをそのグループ内に定義してやる事で「グローバル変数」などの問題を解消できる仕組みが備わっているものです。<br>
+                このオブジェクト指向の考え方は現代のプログラミングでも度々有効利用されているものであり、現時点(2022年)で最もモダンなプログラミング思想となっています。<br>
+                「Ruby」や「C#」、「PHP」、「Swift」、「Python」なども全部オブジェクト指向言語になります。
+            </p>
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">変数とは何ですか？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                変数はデータを保管するための    ものの事です。<br>
+                                ちょっと馴染みがない言葉かもしれませんが、数学の世界では「変化する数値を入れられる文字」です。<br>
+                                変数を理解するためにもう一つ知っておきたいのが<span class="font_bold underline red_text">「定数」</span>です。定数は決まった値しか保持できないものの事です。<br>
+                                定数が固定された値しか持てないのに対し、変数は値を変化させる事ができる特徴があります。<br>
+                                詳細は次のセクションで詳しく説明します。
+                            </p>
+                            <p>
+                                <a href="./pages-006.html">次の記事：6. 変数と値</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                Javaはこれまでのプログラム言語になかった概念をたくさん持っていて、中でも<span class="font_bold underline red_text">「クラス」</span>という概念が特徴的です。<br>
+                クラスとは複数の変数やサブルーチンがひとまとまりになったグループの事です。このグループをオブジェクトとして扱い、様々な「物質」として取り扱っていくのがJavaの特徴です。<br>
+                「物質」というのは例えば「肉」であったり「魚」であったり、「家」であったり「町」であったりするものです。それは大なり小なり様々です。<br>
+                これはちょっと理解するのが難しいかもしれません。<br>
+                <span class="font_bold underline red_text">オブジェクト指向プログラミングというのは、「もの」として定義できる一塊のグループ単位にシステムを構築するというものです。</span>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-005-014.png" alt="pages-005-014" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                「・・・？？？」となっている方、多いと思います。すいません^^; <br>
+                <span class="font_larger font_bold">オブジェクト指向は一言で説明できるような単純なプログラミング手法ではないのです。<br>
+                むしろ簡単に説明したくないですし、あらゆる問題を解決できるもので、非常に奥が深いです。</span><br>
+                この件についてはこのウェブサイトの終盤のほうのセクションで解説していますので、よろしければそちらをご覧ください。
+            </p>
+            <p>
+                <!-- <a href="contents-01/pages-025.html">先の記事：25. オブジェクト指向プログラミング</a> -->
+                先の記事：25. オブジェクト指向プログラミング (作成中)
+            </p>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し5
+            -->
+            <h2 class="title">現代のプログラム言語</h2>
+
+            <p>
+                21世紀に入るとコンピュータの大容量化や「Git」に代表されるバージョン管理ソフトウェアなどが登場した事で、<br>
+                プログラム言語から選択するのではなく、ハードウェアや実装したい環境から言語が選択されるようになります。<br>
+                これは逆にGUI環境やWebサーバーなどが様々な開発言語に対応する流れを後押ししました。<br>
+                開発者、デベロッパーは環境に合った言語、自分のなじみ深いコードを使って最適な工数で開発作業に取り組めるようになりました。
+            </p>
+            <p>
+                C言語では<span class="font_bold underline">構造化プログラミング</span>のパラダイムが話題となり、それまで問題だった「goto文」が横行していた業界に最適化のメスを入れる形となりました。<br>
+                その後C言語は<span class="font_bold underline red_text">「C++」「Objective-C」</span>と変遷していきます。<br>
+                C++は世界初のオブジェクト指向パラダイムと言われる「Simula67」の概念を取り入れたものだったそうで、その後様々な仕様改定が行われます。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                マイクロソフトのWindowsからはGUIアプリ開発専用言語として<span class="font_bold underline red_text">「Visual Basic」「C#」「F#」</span>などが開発されます。<br>
+                これは<span class="font_bold underline">「.NET Framework」</span>と呼ばれるWindowsの開発エンジンのシェアを伸ばすものとなりました。<br>
+                .NET FrameworkはWindowsのアプリケーションだけではなく、Webアプリの開発などもできます。
+            </p>
+            <p>
+                今の時代では当たり前となったAmazonやYahoo!ショッピング、楽天市場などはWebアプリケーションです。<br>
+                これは<span class="font_bold underline">「ECサイト」</span>とも呼ばれます(EC = Electronic Commerce(電子商取引))。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                「Google」のような様々な情報を検索するようなサービスや、「Twitter」などのように情報共有(シェアリング)に重点を置いたサービスなど、色々な要素を含めたオンラインサービスが登場しました。<br>
+                ウェブサービス、ウェブサーバのアプリケーションなどもプログラム言語で作られています。これは<span class="font_bold underline red_text">「PHP」</span>や<span class="font_bold underline red_text">「Ruby」</span>などが用いられ、データベースシステムなどを使用して構築されるのが一般的です。<br>
+                データベースというのは、いわゆるデータを管理するためのデータセンターみたいなもので、<span class="font_bold underline red_text">「データベース管理システム」</span>と呼ばれるものです。関連用語で「SQL」などが有名ですかね。<br>
+                会員情報などの大量の情報をデータベースで管理します。
+            </p>
+            <div class="blank_space"></div>
+            <p>
+                こういった形で近年では、色んな言語や環境、ネットワーク、フレームワークなどを活用してシステムとして作られているのが特徴です。<br>
+                これらの基底にはプログラミングの技術がありますが、そのプログラミングもツールなどが使われていたりしたりしていて、純粋なプログラミングをしなくてもれっきとしたシステムを作っているケースも多くみられるようになりました。<br>
+                近年では、機械学習技術を使ったAI(人工知能)の開発や、Scratchと呼ばれる教育現場で使用されるプログラミング学習ツールなどが人気になったりしており、<br>
+                これまでITの世界とは全く無縁だった人たちも積極的にコンピュータの開発サイドに参加する流れになりつつあります。
+            </p>
+            <p>
+                次の記事はどのプログラミング言語でも共通する要素である「変数」について触れていこうと思います。<br>
+                コンピュータとプログラムの関係性を知ったらいよいよ実際にコンピュータとの対話を始めていきましょう。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <!--
+                コラム記事
+            -->
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/searching-zoom-icon.png" alt="コラム" class="icons"></td>
+                        <td><h3 class="orange_text">コラム：プログラミングの発展について</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                「BASIC」や「C」などの高水準言語が登場した事により、エンジニアや研究者たちは次第にプログラミング言語自体の体裁を意識するようになりました。<br>
+                                現代では、高機能化したハードウェアの功績によりそれほど制約を意識する事なく、プログラミングに打ち込む事ができます。先人方々には感謝ですね^^<br>
+                                <br>
+                                プログラムは目的のシステムをただ完成させればいいというものではなく、保守性 (運用をしていく上での管理に耐えられるかどうか) が重視されるようになります。<br>
+                                それは、例えばある程度塊として定義できる処理を分割して再利用、メンテナンスを容易にしたりする事などが挙げられます。なおこの関数は<span class="font_bold underline">「サブルーチン」</span>と呼ばれるものです。<br>
+                                <br>
+                                プログラムの規模がどんどん大きくなるにつれてそこには大きな問題が発生してきます。その中の一つに「goto文問題」がありました。<br>
+                                そしてそれに呼応するように「構造化プログラミング」の概念が登場しますが、更にここへ問題が発生しました。<br>
+                                それは<span class="font_bold underline">「グローバル変数」</span>というどこからでもアクセスできる誰とでもイチャイチャできる浮気性なデータが発生する事でした。(例えが下手( ^ω^)) <br>
+                                そしてこれを解決するためにまた次世代の技術や概念が生み出される、その繰り返しです。<br>
+                                <br>
+                                歴史は繰り返すという言葉があるように、ITの世界も試行錯誤・時代錯誤の末に成り立った結果でしかないのです。<br>
+                                我々がこうやって歴史を振り返るとそこにはどうやって思いついたのだろう？というような摩訶不思議な技術が記載されていますが、彼らも同じ人間です。<br>
+                                進化と呼ばれる現象は生まれるべくして生まれてきたのです。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-004.html">前の記事：4. 「データ」について</a></p>
+                <p><a href="../index.html#beginner">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-006.html">次の記事：6. 変数と値</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>

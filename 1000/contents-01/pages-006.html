@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - プログラミング超入門</title>
+    </head>
+
+    <body>
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>変数と値</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                コンピュータの演算。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="title">計算式の答えはどこへ行く？</h2>
+
+            <p>
+                さて今回は計算をコンピュータにやってもらいます。
+            </p>
+            <p>
+                まず我々が使っている数字は 0 ～ 9 までの10個の数字で構成される10進数と呼ばれるものです。0 とか 10 とか 99 とか 1000000 とかですね。<br>
+                一般的に10進数とは会話などでは使わないと思いますが、難しく考えずに言うといわゆる数字です。<br>
+                しかしこの数字はコンピュータにとって分かりやすい数字とは言えません。これまでの記事でも説明した通り、コンピュータが読める数字は2進数のみです。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-002.png" alt="pages-006-002" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                もちろん計算式では「1＋1」のような数字以外にも<span class="font_bold underline">足すという情報</span>がありますよね。これを2進数しか読めないコンピュータに教えるにはどうするのでしょうか？
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-001.png" alt="pages-006-001" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                これは<a href="./pages-005.html"> 前回の記事 </a>でお話した<span class="font_bold underline">アセンブラ</span>にヒントが隠れています。<br>
+                「1＋1」をしようと思った場合、コンピュータに「1＋1」と投げて 2 と教えてもらうには色々と手続きが必要になります。<br>
+                「そんなもん人間が一瞬で計算できるのになんでコンピュータはそんな事もすぐできないの？」と思ったらダメです。それがコンピュータです。<br>
+                不便だねぇと思っている方々。ちょっと屁理屈を言って申し訳ないが、「41866÷837.32」のような計算は一瞬でできますか？<br>
+                答えは 50 なのですが、コンピュータは手続きさえ前もってしておけば一瞬で計算できます。コンピュータにとっては「1＋1」も「41866÷837.32」もほぼ同じです。<br>
+                ほぼ同じと言ってしまうとちょっとまた異論が飛び交うのですが、人間から見て、の話です。分かりやすくいうとミリ秒単位の差しか出ません。ミリ秒なんてものは人間にとっては大した時間ではないと思います。
+            </p>
+            <p>
+                はい。話が脱線事故しております～^^ <br>
+                それでは少し分かりやすい説明をするために、例えば割とメジャーなC言語とアセンブリ言語とで「1＋1」のプログラムコードを比較してみましょう。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-003.png" alt="pages-006-003" class="width_autofit"></td>
+                    <td>　</td>
+                    <td><img src="images/pages-006-004.png" alt="pages-006-004" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                左がC言語、右がCASLというアセンブリ言語です。<br>
+                上記が実際のプログラムコードでこれらを機械語に変換して、コンピュータが答えを返してくれるようになります。<br>
+                「1＋1」でもこれだけ色々書かないといけません。大変ですね。右のCASLのコードは何をやっているか分からない方がほとんどかと思います。
+            </p>
+            <p>
+                上記のCASLのコードを眺めてみましょう。<br>
+                <span class="font_bold underline">「ADDA」</span>と書いてある部分が見えるかと思いますが、これは追加する意味の "add" と、算術 "arithmetic" の "a" です。<br>
+                ADDAの後に「GR0, B」と書いてありますが、これがADDAと相まって「GR0 + B」という事になっているように見えます。<br>
+                GR0、Bは何を意味しているの？という疑問が残りますが、まずはADDAという「命令」が足し算を担っているものである事が分かると思います。
+            </p>
+            <p>
+                次はC言語のコードです。<br>
+                「a = 1 + 1」が書いてあります。これはすぐ分かりそうですね。<br>
+                a というアルファベットは何でしょうか？a と 1 + 1が同等である？みたいな恰好でコードが書かれていますが、これは<span class="font_bold underline red_text">代入式</span>と言います。<br>
+                代入式は、そのまま代入する式の事です。式には色々な形態がありますが、C言語の場合ですと <span class="font_bold underline">[結果を保持したい要素] = [四則演算などの計算式]</span> となっています。<br>
+                1 + 1の計算結果を a に代入する、という意味になります。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-005.png" alt="pages-006-005" class="width_autofit"></td>
+                </tr>
+            </table>
+
+            <div class="blank_space"></div>
+
+            <p>
+                C言語も元をたどればアセンブリ言語なので、実質アセンブリ言語も a のような値を代入するスペース (場所) があるはずです。<br>
+                そこで一旦、CASLのコードに戻ってみましょう。<br>
+                CASLのコードにも A B C と書かれたものがある事に気付きます。これらが値を保持するスペースです。<br>
+                「A　　DC　1」となっていますが、DC は固定された数を意味していて、A というスペースに固定値 1 を入れるという意味になります。<br>
+                つまり A や B が値を入れる定義です。GR0 については<span class="font_bold underline">レジスタ</span>と呼ばれるもので、コンピュータが独自に保持している計算用の値管理スペースです。
+            </p>
+            <p>
+                そこまで分かったところで上記のアセンブリ言語などから、"ADDA"などの単語があると思いますが、これを更に2進数として定義していく事になります。<br>
+                つまり「ADDA GR0, B」であれば、レジスタGR0 に B の値を ADDA (加算) する、と言った形の2進数を定義します。<br>
+                5とか10とかであれば、2進数にすると[101]、[1010]などになりますが、ADDAなどの命令も2進数に変換します。それは実際にどんな2進数になるのかは分からないのですが 111010010… みたいな数値であるはずです。<br>
+                <span class="font_bold underline red_text">コンピュータが2進数しか読めないので、「加算する」などの情報も2進数として定義してやる必要があります。</span>
+            </p>
+            <p>
+                「じゃあADDAは実際の機械語でどういう2進数になるの？」とお思いかもしれません。しかし残念ながら筆者である私が機械語について詳しくない上に、ここでどうしても説明できない理由があるのです。<br>
+                <span class="font_bold underline">それは、CPUの種類によって機械語が異なるという点があるという事と、分解・解析(Reverse Engineering/RE)した結果の情報を垂れるのは権利の問題が発生する点です。</span><br>
+                もちろんそれはWindowsで普遍的に使えるCPUなどは互換性があるので、Windows 2000で作ったものが未だにWindows 10で使えるという話になっているだけです。実際には大昔のCPUなどでは一切動きません。<br>
+                CPUによって機械語が違う理由についてはあまり多くは語りませんが、例えば昔使っていた洗濯板で今の時代洗濯をしますか？というぐらいの理由です。仕組みが違うものは互換性がありませんので^^;
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                ここまでの話を総合して考えると、コンピュータが計算する時はあらゆるデータを保管する仕組みなどを利用しているという事です。
+            </p>
+            <p>
+                数字を保管しておくための定義 (aなど) を<span class="font_bold underline red_text">「変数」(variable)</span> と言います。<br>
+                定義した変数に値をセットする作業を<span class="font_bold underline red_text">「代入」(assignment)</span> と言います。<br>
+                「=」や「+」等の記号は<span class="font_bold underline red_text">「演算子」(operator)</span> と言います。数学の世界ではこれを数学記号と言います。<br>
+                このように変数に値を代入するなどの定義を一般的に<span class="font_bold underline red_text">「文」(statement) (または式 (expression))</span> と言います。文と式については厳密な区分はあいまいで、言語によって単語の意味は異なっています。<br>
+                色々単語が出てきますが最後、これらの構文で構成される処理を<span class="font_bold underline red_text">「サブルーチン」(subroutine)</span>、
+                <span class="font_bold underline red_text">「手続き」(procedure)</span>、<span class="font_bold underline red_text">「関数」(function)</span> などと呼びます。これも言語によって呼び方は様々です。
+            </p>
+            <p>
+                <a href="https://e-words.jp/w/%E5%A4%89%E6%95%B0.html" target="_blank">変数（variable）とは - IT用語辞典 e-Words（別ウインドウで開きます）</a>
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                このようにコンピュータの内部で計算処理を行う時は、変数やレジスタと言った入れ物を使います。<br>
+                これは大切なのでよく覚えておきましょう。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/question-mark-icon12.png" alt="疑問" class="icons"></td>
+                        <td><h3 class="orange_text">リバース・エンジニアリングとは何ですか？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                リバース・エンジニアリングは、完成した製品などを分解して中身を解析する作業などを言います。逆アセンブルなどとも言います。<br>
+                                この作業は少し注意が必要です。<br>
+                                リバース・エンジニアリング自体は問題ではありませんが、リバース・エンジニアリングによって得られた情報を取り扱う際は知的財産法に抵触する可能性があるからです。<br>
+                                これについては過去にソフトウェアのオブジェクトコードと呼ばれるものを解析してその一部をインターネットに公開、その事実で損害賠償金を請求された事例が起きたことがあります。<br>
+                                一方でリバース・エンジニアリング自体は色々な企業が他社の製品を解析のために行っている事は割と知られています。<br>
+                                必ずしも解析などを行う事が悪いわけではない事から、その線引きが毎回議論されたりします。<br>
+                                これは既知の問題で、現在も度々話題になるので、リバース・エンジニアリングを行う際は念のため気をつけてください。<br>
+                                <br>
+                                <a href="https://www.google.com/search?q=%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AB" target="_blank">逆アセンブル - Google 検索（別ウインドウで開きます）</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                見出し2
+            -->
+            <h2 class="title">レジスタと変数の違い</h2>
+
+            <p>
+                さっきから言ってるレジスタって何なのさ？という事で、レジスタと変数について解説したいと思います。<br>
+                まずは<span class="font_bold red_text">レジスタ</span>について。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-006.png" alt="pages-006-006" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                <span class="font_bold underline red_text">コンピュータの頭脳とも言える「CPU」の中にレジスタがあります。</span><br>
+                レジスタとは、CPU自身が演算処理を行う際に使う記憶装置です。変数との違いとしては<span class="font_bold underline">データにアクセスできる速度</span>です。<br>
+                プログラムから自由にアクセスできるレジスタ<span class="font_bold underline">「汎用レジスタ」</span>と、プログラムからアクセスできないCPU処理専用のレジスタ<span class="font_bold underline">「専用レジスタ」</span>があり、アセンブラでは特にレジスタの特徴を知る必要があります。
+            </p>
+            <h3>専用レジスタの種類 (一部)</h3>
+            <ul>
+                <li><span class="font_bold">アキュムレータ (A)</span>　・・・　CPUの計算結果を保管するレジスタ。</li>
+                <li><span class="font_bold">プログラムカウンタ (PC)</span>　・・・　実行する命令が格納されているメモリアドレスの場所を保管するレジスタ。サブルーチン呼び出しなどができます。</li>
+                <li><span class="font_bold">スタックポインタ (SP)</span>　・・・　スタックと呼ばれる仕組みでアドレスの場所を保管するレジスタ。プログラムカウンタなどと併用される事が多いです。</li>
+                <li><span class="font_bold">インデックスレジスタ (IX)</span>　・・・　配列と呼ばれるメモリ管理の仕組みで使用されるレジスタ。</li>
+            </ul>
+
+            <p>
+                他にも様々なレジスタがあり、汎用レジスタは用途が決まっておらず「GR0」「GR1」「GR2」・・・という名前である事が多いです。
+            </p>
+
+            <p>
+                次は<span class="font_bold red_text">変数</span>です。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-006-007.png" alt="pages-006-007" class="width_autofit"></td>
+                </tr>
+            </table>
+            <p>
+                <span class="font_bold underline">変数はレジスタと違って、場所を確保しないと使う事はできません。逆に言うと定義さえしてしまえばメモリ領域が尽きるまでいくつでも使う事ができます。</span><br>
+                また確保した変数は別の変数に故意に上書きされたりはしません。しかしそれは、<span class="font_bold underline">メモリアドレス上に作った変数を意図的に消さないとメモリ領域がどんどん食い潰されていってしまうという事です。</span><br>
+            </p>
+            <p>
+                変数は取り扱いの制限がレジスタに比べて緩い事に対して、メモリ領域の管理を徹底する必要があり、<br>
+                レジスタは変数のように自由に定義して使用するには制限が多いが、CPU内部機関なのでアクセス速度が高速という特徴があります。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/searching-zoom-icon.png" alt="コラム" class="icons"></td>
+                        <td><h3 class="orange_text">コラム：メモリアドレスいっぱいに変数を配置したらどうなる・・・？</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                コンピュータは頭脳であるCPUで計算を行いますが、その計算を行うために様々な情報をデータとして保持しなければなりません。<br>
+                                それは例えばレジスタで保持する事、メモリで保持する事が挙げられますが、当然計算をする作業スペースが無くなったら人間と同じく作業困難な状態になります。<br>
+                                メモリアドレスいっぱいに変数が確保された状態は<span class="font_bold underline">「メモリ枯渇」</span>、メモリが確保されたままで未使用スペースが増えた状態を<span class="font_bold underline">「メモリリーク」</span>と言います。<br>
+                                <br>
+                                CPUは人間で、メモリは勉強机と例えられる事が多いです。勉強机は人間が作業するスペースなので、スペースの余裕は常に持っておく必要があるのです。<br>
+                                メモリがいっぱいになるとやがてCPUも動かなくなる事が懸念され、そうなるとPCが「フリーズ」したりする場合があります。<br>
+                                <br>
+                                しかし現代の多くのプログラム言語ではこの問題を予め発生させない仕組みが備わっています (主にOOP/オブジェクト指向言語)。<br>
+                                変数を確保してもプログラムのコマンドが必要ない箇所まで進むと自動解放する<span class="font_bold underline">「ガベージコレクタ」</span>というプログラムが組み込まれているものも多いです。
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-005.html">前の記事：5. プログラム言語の歴史と発展</a></p>
+                <p><a href="../index.html#beginner">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-007.html">次の記事：7. 変数と値(もっと詳しく)</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>
