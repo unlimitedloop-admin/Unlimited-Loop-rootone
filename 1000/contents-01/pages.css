@@ -11,6 +11,49 @@ main h2.title {
 
 
 
+
+
+/* special pages background photo image */
+.SP1_bg {
+    height: 100%;
+    background-image: url("images/pages-SP1-background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+
+
+
+
+
+/* extra tracking text zone */
+#vertical_route {
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+.cloud_epic {
+    color : rgb(0, 0, 0);
+    margin: 1.8em auto;
+    padding: 21px;
+    width: 83%;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cloud_epic p {
+    line-height: 2.0em;
+}
+
+.cloud_epic a {
+    color: rgb(3, 85, 238);
+}
+
+
+
+
 /* balloon text custom styles */
 .balloon {
     position: relative;
@@ -30,6 +73,28 @@ main h2.title {
 }
     
 .balloon p {
+    margin: 0;
+    padding: 0;
+}
+
+.red_balloon {
+    position: relative;
+    background-color: #b23;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin: 15px;
+}
+    
+.red_balloon::before {
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+    border-right: 12px solid #b23;
+    top: 20%;
+    left: -24px;
+}
+    
+.red_balloon p {
     margin: 0;
     padding: 0;
 }

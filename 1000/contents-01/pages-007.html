@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <!-- <base href="http://localhost/1000/" target="_blank"> -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/customize.css" rel="stylesheet" type="text/css">
+        <link href="./pages.css" rel="stylesheet" type="text/css">
+        <title>プログラミング - プログラミング超入門</title>
+    </head>
+
+    <body>
+        <header>
+            <!--
+                ぺージの表紙名
+            -->
+            <h1>変数と値(もっと詳しく)</h1>
+
+            <!--
+                ぺージの説明
+            -->
+            <p>
+                変数と値の知られざる関係とか。
+            </p>
+
+            <hr> <!-- ----------------区切り線---------------- -->
+        </header>
+
+        <main>
+            <!--
+                見出し1
+            -->
+            <h2 class="title">左辺と右辺</h2>
+
+            <p>
+                変数についてもう少し詳しく見ていきましょう。
+            </p>
+            <p>
+                前回の記事でプログラミングでは足し算の計算を以下のような文で表現する事を解説しました。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    int a; <br>
+                    a = 1 + 1;
+                </p>
+            </div>
+            <p>
+                これは a という名前の<span class="font_bold underline">変数</span>に 1 + 1 の計算結果を保持する、という意味です。
+            </p>
+            <p>
+                「int a」の「int」は数値(integer)を意味している<span class="font_bold underline">変数の型</span>になります。<br>
+                変数の型については後の記事で詳しく解説していきますが、数値を代入したい時は int [変数名] と書いて変数を宣言する、と覚えておいてください。
+            </p>
+            <p>
+                この文に関する疑問点として、式を逆にして書いてはダメなの？というものがあるかと思います。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="bg_lightpink double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    1 + 1 = a;
+                </p>
+            </div>
+            <p>
+                <span class="font_bold red_text">これはダメです。</span><br>
+                違和感を抱く事は必然的でしょうか。それは学校で習った算数・数学的な計算式の書式が上記の形だからです。7 - 5 = 2とか、10 × 5 + 7 = 57と書きますからね。<br>
+            </p>
+            <p>
+                まぁはっきり言うと逆で分かりにくいと思います。<br>
+                しかしこれはプログラミングの業界での標準だと思ってください。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="bg_lightblue double-border blue-border padding-side10px">
+                <p class ="font_larger">
+                    a = 1 + 1;
+                </p>
+            </div>
+            <p>
+                <span class="font_bold red_text">これがプログラミングのお作法として、正しい「文」になります。</span><br>
+                「1 + 1」は<span class="font_bold underline red_text">「式」</span>なので、<span class="font_bold underline red_text">「=」(イコール) より右側に書かないといけません。</span>つまり「文」の右側ですね。
+            </p>
+            <table>
+                <tr>
+                    <td><img src="images/pages-007-001.png" alt="pages-007-001" class="width_autofit"></td>
+                </tr>
+                <tr>
+                    <td><p class="img-caption">式と文の定義</p></td>
+                </tr>   
+            </table>
+            <p>
+                「a = 1 + 1」というのは、変数a に 1 + 1 の結果が代入されるので<span class="font_bold underline">結論的には a と 1 + 1 が等しい</span>と言えると思います。言い換えるとこの式は「=」によって式の意味合いが強まっていると言えます。<br>
+                <span class="font_bold">「=」が式の中心人物であり、その右側にある「1 + 1」を<span class="red_text">「右辺値」</span>、反対側の「a」は<span class="red_text">「左辺値」</span></span>と呼ぶ事があります。
+            </p>
+            <p>
+                「1 + 1」のような式は必ず右辺に書いてください。<br>
+                よって「1 + 1 = a」のような文は無効となります。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                更にプログラミングの式ではこんな風にも書く事ができます。
+            </p>
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    int a;<br>
+                    a = 1 + 1;<br>
+                    a = a + 2;<br>
+                    a = a + 4;<br>
+                    a = a + 8;<br>
+                    a = a + 16;<br>
+                    a = a + 32;<br>
+                    a = a + 64;<br>
+                    a = a + 128;<br>
+                    a = a + 256;<br>
+                    a = a + 512;
+                </p>
+            </div>
+            <p>
+                変数については何度でも使い回したり代入する事ができ、更に式の「右辺値」に配置する事もできます。<br>
+                上記の場合は、数がどんどん倍化されていく例を示しています。最後の文で変数aには 1024 が代入されます。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                「ちょっと待って。「a = a + 2」ってどうなってるのこれ・・・？」とお思いかもしれませんが落ち着いてください。一つの文に変数aが複数回登場しているのは紛らわしいですね。<br>
+                この場合、まず右辺の「a + 2」が先に処理されます。変数a には先の文「a = 1 + 1」で 2 が入っているのでつまるところ「2 + 2」です。その計算結果 4 が 変数a に代入されます。<br>
+                プログラミングの「制御構造」を使えばもっと簡略化出来るのですが、それについてはもう少し先の記事で解説したいと思います。
+            </p>
+            
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+
+            <!--
+                見出し2
+            -->
+            <h2 class="title">変数と定数</h2>
+
+            <p>
+                変数と相反する存在として<span class="font_bold underline red_text">定数</span>が存在します。
+            </p>
+            <p>
+                これは以前の記事で少し触れたかもしれませんが、変数が変化する数字なのに対し、定数は変化しない不変の数字の事です。<br>
+                「a = 1 + 1」を例にすると、右辺の「1」は定数と言えます。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                以下例を挙げてみます。
+            </p>
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    int a; <br>
+                    a = 1 + 1; <br>
+                    <br>
+                    const int b = 3; <br>
+                    a = b + a;
+                </p>
+            </div>
+            <p>
+                この場合、変数a と 定数b になります。<br>
+                定数b は代入変数として利用する事はできません。言い換えると<span class="font_bold underline">定数定義以外において、文の左辺に配置できません。</span><br>
+                上記の例文を見てもらうと分かりますが、「int b」という変数宣言と同時に 3 をセットしていますよね。(const は定数(constant)という意味の単語です)
+            </p>
+            <p>
+                事実として、以下定数bに値を代入する事はできません。
+            </p>
+            <div class="bg_lightpink double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    const int b = 0; <br>
+                    b = 3;
+                </p>
+            </div>
+            <p>
+                「b = 3」は処理できません。これはエラーとなります。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                定数は円周率とか消費税率みたいな一定して不変の数値などでよく使われます。<br>
+                <span class="font_bold underline red_text">定数はプログラムの中で誤って値が変更されるリスクを無くす意味があります。</span>
+            </p>
+            
+            <div class="blank_space"></div>
+            <hr> <!-- ----------------区切り線---------------- -->
+
+            <!--
+                見出し3
+            -->
+            <h2 class="title">変数で取り扱えるデータの種類</h2>
+
+            <p>
+                ここまでは数字の計算を主に使って変数の説明をしてきましたが、もちろん数字以外の文字も変数に入れる事ができます。<br>
+                例えば以下のような値です。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    char* a; <br>
+                    a = "漢字"; <br>
+                    <br>
+                    char* b; <br>
+                    b = '1'; <br>
+                </p>
+            </div>
+            <p>
+                漢字のような文字列も変数に代入できます。「char」というのは文字(character)を意味する変数の型になります。<br>
+                また上記の<span class="font_bold underline red_text">「"1"」は数字の 1 ではなく文字の 1</span> です。
+            </p>
+            <p>
+                当然文字ですから、例え 1 であっても、文字の足し算などはできません。
+            </p>
+            <div class="bg_lightpink double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    char* b; <br>
+                    b = '1'; <br>
+                    <br>
+                    char* c; <br>
+                    <span class="font_bold red_text">c = b + b;</span> <span class="red_balloon">✕ これはできない</span>
+                </p>
+            </div>
+            
+            <div class="blank_space"></div>
+
+            <p>
+                <span class="font_bold underline red_text">コンピュータの世界では、数字と文字は区別されます。</span>
+            </p>
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    int a; <br>
+                    a = 1; <span class="balloon">これは数値</span><br>
+                    <br>
+                    char* b; <br>
+                    b = '1'; <span class="balloon">これは文字</span><br>
+                </p>
+            </div>
+            <p>
+                int や char などはデータ型と呼ばれ他にもたくさんあり、今はよく分からないかもしれません。<br>
+                詳細については別の記事で詳しく解説します。
+            </p>
+            <p>
+                <a href="contents-01/pages-011.html">先の記事：11. データ型</a>
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                文字同士の連結であれば、言語によっては可能です。<br>
+                ここでは分かりやすい構文になっている Java言語 の文字連結を見てみましょう。
+            </p>
+            
+            <div class="blank_space"></div>
+
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    String a1 = "プログラミング"; <br>
+                    String a2 = "超"; <br>
+                    String a3 = "入門"; <br>
+                    String b = a1 + a2 + a3; <br>
+                </p>
+            </div>
+            <p>
+                「String」というのは文字列を保有できるJava言語特有のデータ型です。<br>
+                最終的に 変数b には「プログラミング超入門」という文字列が代入されます。<br>
+                Java言語などの比較的最近の高水準言語では文字の取り扱いが簡単にできます。<br>
+                もちろん他の言語でも文字連結はできるのですが、若干手続きが難しいですかね。
+            </p>
+            <p>
+                先ほど紹介したダメな例での「c = b + b;」の文字連結はダメ、しかしJavaのString型変数では文字連結ができる理屈ですが、<br>
+                <span class="font_bold underline">これはプログラム言語個々の仕様による差です。</span>
+            </p>
+            <p>
+                ダメな例の言語はC言語を基準にしていますので、C言語で文字連結を行う場合は、別の方法(strcat関数など)を使う必要があります。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <p>
+                もう一つの代表的な変数の型として、<span class="font_bold underline red_text">論理型</span>と呼ばれる一対の判定フラグのような型があります。
+            </p>
+            <p>
+                <span class="font_bold underline">ブール型 (Boolean)</span>とも呼ばれ、この型で定義した変数は<span class="font_bold underline">真</span>と<span class="font_bold underline">偽</span>という値を入れる事ができます。
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="double-border red-border padding-side10px">
+                <p class ="font_larger">
+                    bool a; <br>
+                    a = true; <br>
+                    a = false;
+                </p>
+            </div>
+
+            <div class="blank_space"></div>
+
+            <p>
+                この型は制御構造の「条件分岐」や「繰り返し」などでよく使われます。<br>
+                この辺りの詳細もデータ型について解説する予定の記事で説明します。
+            </p>
+            <p>
+                <a href="contents-01/pages-011.html">先の記事：11. データ型</a>
+            </p>
+
+            <div class="blank_space"></div>
+
+            <div class="columns-things-soft">
+                <table>
+                    <tr>
+                        <td class="icons_col"><img src="icons/searching-zoom-icon.png" alt="コラム" class="icons"></td>
+                        <td><h3 class="orange_text">コラム：変数の名前は意味のあるものを付けましょう</h3></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p>
+                                ここまで説明してきた変数の名前は a や b などありきたりなものでした。<br>
+                                本来<span class="font_bold underline">変数の名前は意味のある名前を付けて下さい。</span>これはプログラミングをする人たちの中ではお約束事になります。<br>
+                                <br>
+                                プログラムコードを書いている時は 変数a や 変数b の意味は分かると思います。<br>
+                                しかしそれはコードを書いている時の話であって、プログラムを作って次の日には「あれ？」となってしまう可能性が高いです。<br>
+                                分からなくなってしまったら、またサブルーチン全体を調べて動きを把握するところから始めないといけません。<br>
+                                <br>
+                                それはやはり面倒なので、そうなるのが分かっているのであれば変数の名前に何のための変数なのか名づけておくのがいいでしょう。<br>
+                                例えば時間を取得する処理で変数に「時」「分」「秒」を格納する場合、<br>
+                                変数hour、変数min、変数secなどとします。<br>
+                                <br>
+                                ただし注意したいのが、変数の名前に指定できない名称がある事に気をつけてください。<br>
+                                これは int や char など言語自体が命令として使用する単語が該当します。変数int などとしようものなら文は「int int;」となってしまいコンピュータは困ってしまいます。<br>
+                                何が使えて何が使えないか。それを事前によく調べておきましょう。以下も参照してみて下さい。<br>
+                                <br>
+                                <a href="https://e-words.jp/w/%E4%BA%88%E7%B4%84%E8%AA%9E.html" target="_blank">予約語（reserved word）とは - 意味を分かりやすく - IT用語辞典 e-Words（別ウインドウで開きます）</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </main>
+
+        <footer>
+            <hr> <!-- ----------------区切り線---------------- -->
+            <!--
+                隣接記事リンク
+            -->
+            <div class="left_float">
+                <p class="font_large"><a href="./pages-006.html">前の記事：6. 変数と値</a></p>
+                <p><a href="../index.html#beginner">索引に戻る</a></p>
+            </div>
+            <div class="right_float">
+                <p class="font_large"><a href="./pages-008.html">次の記事：8. 四則演算</a></p>
+            </div>
+
+            <!--
+                コピーライト
+            -->
+            <div class="clear_float">
+                <p>
+                    ©UNLIMITED LOOP √1
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>
