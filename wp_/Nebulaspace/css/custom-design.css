@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font: 16px/1.6 "Meiryo UI","ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
+    font: 16px/1.6 "Yu Gothic UI","Meiryo UI","ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
     color: #f0f8ff;
     min-height: 100vh;
     background-color: rgba(0, 0, 32, 0.7);
@@ -277,7 +277,7 @@ ol {
 }
 
 .main-contents .entry-area .singles .size-post-thumbnail {
-    width: 90%;
+    width: 75%;
     height: auto;
 }
 
@@ -297,34 +297,45 @@ ol {
     margin: 20px 0;
 }
 
+.main-contents .entry-area .singles .entry hr {
+    margin: 1.5em 0;
+}
+
 .main-contents .entry-area .singles .entry h2 {
-    font-size: 25px;
+    font-family: "Segoe UI";
+    font-size: 150%;
+    border-bottom: solid 1px;
+}
+
+.main-contents .entry-area .singles .entry h2:before {
+    content: "■ ";
 }
 
 .main-contents .entry-area .singles .entry h3 {
-    font-size: 16px;
+    font-family: "Segoe UI";
+    font-size: 125%;
     line-height: 1.4em;
 }
 
 .main-contents .entry-area .singles .entry p {
     font-size: 14px;
-    line-height: 1.6;
-    padding: 13px 8px;
+    line-height: 2.0;
+    padding: 20px 8px;
 }
 
-.main-contents .entry-area .singles .entry ul {
+.main-contents .entry-area .singles .entry ul,
+.main-contents .entry-area .singles .entry ol {
     font-size: 14px;
-    font-style: italic;
-    line-height: 1.2;
+    /*font-style: italic;*/
     margin: 10px 15px;
     padding: 13px 8px;
-    border: 1px solid;
-    list-style-type: decimal;
-    list-style-position: inside;
+    list-style-position: outside;
 }
 
-.main-contents .entry-area .singles .entry ul li {
-    padding: 8px 16px;
+.main-contents .entry-area .singles .entry ul li,
+.main-contents .entry-area .singles .entry ol li {
+    line-height: 1.5em;
+    padding: 10px 16px;
 }
 
 .main-contents .entry-area .singles .entry ul ul {
@@ -341,17 +352,18 @@ ol {
     padding: 2px 5px;
 }
 
-.main-contents .entry-area .singles .entry .wp-block-table figcaption {
+.main-contents .entry-area .singles .entry .wp-block-image figcaption {
+    color: yellow;
     font-size: small;
-    text-align: center;
+    text-align: left;
 }
 
-.main-contents .entry-area .singles .entry .wp-block-image figcaption {
+.main-contents .entry-area .singles .entry .wp-block-gallery {
     color: yellow;
     font-size: x-small;
     font-family: "Meiryo UI";
+    margin: 2.0em 0;
     background-color: rgba(0, 0, 0, 0.5);
-    padding-left: 15px;
 }
 
 .main-contents .entry-area .singles .entry .wp-block-embed figcaption {
@@ -359,6 +371,14 @@ ol {
     margin-bottom: 2em;
     font-size: small;
 }
+
+.main-contents .entry-area .singles .entry #toc_container.no_bullets li {
+    font-weight: 800;
+    font-size: larger;
+    line-height: 1.3em;
+    padding: 10px 16px;
+}
+
 
 
 /* **************************
