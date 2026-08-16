@@ -1,0 +1,351 @@
+/* ============================================================
+   StageSmith Editor Help — style.css
+   ============================================================ */
+
+:root{
+  --bg:#191c24;
+  --bg-elevated:#20242f;
+  --bg-elevated-2:#262b38;
+  --text:#ece8dc;
+  --text-secondary:#a9a6a0;
+  --text-muted:#6e6b66;
+  --accent:#6fb3d9;
+  --accent-strong:#8fcbea;
+  --accent-warm:#e0793f;
+  --accent-warm-dim:#a65a30;
+  --border:rgba(236,232,220,0.12);
+  --border-strong:rgba(236,232,220,0.22);
+  --font-body:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+  --font-mono:"JetBrains Mono","Consolas",monospace;
+  --sidebar-w:264px;
+  --content-max:760px;
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--accent-strong);text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--accent-strong);
+  outline-offset:2px;
+}
+
+/* ---------- タイルグリッド背景（装飾） ---------- */
+.tile-grid-bg{
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size:16px 16px;
+  background-position:-1px -1px;
+  opacity:0.35;
+}
+
+/* ---------- レイアウト ---------- */
+.layout{
+  display:flex;
+  min-height:100vh;
+  align-items:flex-start;
+}
+
+/* ---------- サイドバー ---------- */
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  background:var(--bg-elevated);
+  border-right:0.5px solid var(--border);
+  padding:1.75rem 0 2rem;
+}
+
+.sidebar-brand{
+  padding:0 1.5rem 1.25rem;
+  border-bottom:0.5px solid var(--border);
+  margin-bottom:0.75rem;
+}
+
+.sidebar-brand a{
+  color:var(--text);
+  text-decoration:none;
+  display:block;
+}
+
+.sidebar-brand .brand-title{
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:0.02em;
+}
+
+.sidebar-brand .brand-sub{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-muted);
+  margin-top:2px;
+}
+
+.sidebar-nav{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.sidebar-nav li{margin:0;}
+
+.sidebar-nav a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 1.5rem;
+  color:var(--text-secondary);
+  font-size:14px;
+  text-decoration:none;
+  border-left:2px solid transparent;
+  transition:background 0.12s ease, color 0.12s ease;
+}
+
+.sidebar-nav a:hover{
+  background:rgba(236,232,220,0.04);
+  color:var(--text);
+  text-decoration:none;
+}
+
+.sidebar-nav a .addr{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-muted);
+  min-width:30px;
+  flex-shrink:0;
+}
+
+.sidebar-nav a.current{
+  color:var(--text);
+  background:rgba(224,121,63,0.08);
+  border-left:2px solid var(--accent-warm);
+  font-weight:700;
+}
+
+.sidebar-nav a.current .addr{color:var(--accent-warm);}
+
+.sidebar-foot{
+  padding:1.25rem 1.5rem 0;
+  margin-top:1rem;
+  border-top:0.5px solid var(--border);
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-muted);
+  line-height:1.7;
+}
+
+/* ---------- メインコンテンツ ---------- */
+.main{
+  flex:1;
+  min-width:0;
+  padding:3rem 3rem 5rem;
+}
+
+.content{
+  max-width:var(--content-max);
+  margin:0 auto;
+}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:0.06em;
+  margin:0 0 0.6rem;
+}
+
+h1{
+  font-size:28px;
+  font-weight:700;
+  margin:0 0 0.4rem;
+  letter-spacing:0.01em;
+}
+
+.version-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-muted);
+  border:0.5px solid var(--border-strong);
+  border-radius:4px;
+  padding:2px 8px;
+  margin-bottom:2rem;
+}
+
+h2{
+  font-size:19px;
+  font-weight:700;
+  margin:2.5rem 0 0.9rem;
+  padding-bottom:0.5rem;
+  border-bottom:0.5px solid var(--border);
+}
+
+h3{
+  font-size:16px;
+  font-weight:700;
+  margin:1.75rem 0 0.6rem;
+  color:var(--accent-strong);
+}
+
+p{margin:0 0 1rem;color:var(--text);}
+p.lead{font-size:17px;color:var(--text-secondary);}
+
+ul,ol{margin:0 0 1rem;padding-left:1.4rem;}
+li{margin-bottom:0.35rem;}
+
+code{
+  font-family:var(--font-mono);
+  font-size:0.88em;
+  background:var(--bg-elevated-2);
+  border:0.5px solid var(--border);
+  border-radius:4px;
+  padding:1px 6px;
+  color:var(--accent-strong);
+}
+
+pre{
+  background:var(--bg-elevated-2);
+  border:0.5px solid var(--border);
+  border-radius:8px;
+  padding:1rem 1.1rem;
+  overflow-x:auto;
+  font-family:var(--font-mono);
+  font-size:13px;
+  line-height:1.7;
+}
+pre code{background:none;border:none;padding:0;}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 1.5rem;
+  font-size:14px;
+}
+th,td{
+  text-align:left;
+  padding:8px 12px;
+  border-bottom:0.5px solid var(--border);
+}
+th{
+  color:var(--text-secondary);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:0.03em;
+  border-bottom:0.5px solid var(--border-strong);
+}
+tr:last-child td{border-bottom:none;}
+
+.callout{
+  border:0.5px solid var(--border-strong);
+  border-left:2px solid var(--accent);
+  background:var(--bg-elevated);
+  border-radius:8px;
+  padding:1rem 1.25rem;
+  margin:1.5rem 0;
+  font-size:14px;
+  color:var(--text-secondary);
+}
+.callout.warn{border-left-color:var(--accent-warm);}
+.callout strong{color:var(--text);}
+
+/* ---------- トップページ：カードグリッド ---------- */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:1.5rem;
+}
+.card{
+  display:block;
+  border:0.5px solid var(--border);
+  border-radius:10px;
+  padding:1.1rem 1.25rem;
+  background:var(--bg-elevated);
+  text-decoration:none;
+  color:var(--text);
+  transition:border-color 0.12s ease, transform 0.12s ease;
+}
+.card:hover{
+  border-color:var(--border-strong);
+  text-decoration:none;
+  transform:translateY(-1px);
+}
+.card .addr{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--accent);
+}
+.card .card-title{
+  font-weight:700;
+  font-size:15px;
+  margin:6px 0 3px;
+}
+.card .card-desc{
+  font-size:13px;
+  color:var(--text-secondary);
+  margin:0;
+}
+
+/* ---------- ページ送り（隣接ルーム風フッター） ---------- */
+.page-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:3.5rem;
+  padding-top:1.5rem;
+  border-top:0.5px solid var(--border);
+}
+.page-nav a{
+  flex:1;
+  border:0.5px solid var(--border);
+  border-radius:8px;
+  padding:0.85rem 1rem;
+  text-decoration:none;
+  color:var(--text);
+  font-size:13px;
+}
+.page-nav a:hover{border-color:var(--border-strong);text-decoration:none;}
+.page-nav .dir{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-muted);
+  margin-bottom:4px;
+}
+.page-nav .next{text-align:right;margin-left:auto;}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width:860px){
+  .layout{flex-direction:column;}
+  .sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+    top:auto;
+  }
+  .main{padding:2rem 1.25rem 3rem;}
+  .card-grid{grid-template-columns:1fr;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .card{transition:none;}
+}

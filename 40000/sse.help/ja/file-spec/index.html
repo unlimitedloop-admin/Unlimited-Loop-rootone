@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インターフェースファイル仕様 | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="file-spec">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$04 / FILE SPECIFICATION</p>
+      <h1>インターフェースファイル仕様</h1>
+      <div class="version-tag">Ver.1.00</div>
+
+      <p class="lead">
+        本エディタとゲームアプリの間でやり取りされるファイルの構成と役割について説明します。
+        詳細な内部スキーマは各設計書（BD-005〜BD-007）を参照してください。
+      </p>
+
+      <h2>ファイル構成</h2>
+      <table>
+        <tr><th>ファイル</th><th>拡張子</th><th>役割</th></tr>
+        <tr><td>プロジェクトファイル</td><td><code>.sseproj</code></td><td>エディタ専用のプロジェクト管理データ</td></tr>
+        <tr><td>ステージファイル</td><td><code>.ssestage</code></td><td>ステージ本体（TileMap・ページ情報等）</td></tr>
+        <tr><td>マップデータ</td><td><code>.bin</code></td><td>ゲーム実行用の描画専用バイナリ</td></tr>
+        <tr><td>ステージ定義</td><td><code>.def</code></td><td>ゲームロジック定義（ノード配置・属性・イベント等）</td></tr>
+        <tr><td>タイル画像</td><td><code>.png</code> / <code>.bmp</code></td><td>タイルパレット画像</td></tr>
+      </table>
+
+      <h2>データの責務分離</h2>
+      <p>
+        本エディタは「編集用データ」「ゲーム実行用データ」を明確に分離して管理します。
+      </p>
+      <table>
+        <tr><th>ファイル</th><th>責務</th></tr>
+        <tr><td><code>.sseproj</code> / <code>.ssestage</code></td><td>エディタの正規データ（唯一の編集対象）</td></tr>
+        <tr><td><code>.bin</code></td><td>マップ構造の派生データ（常に再生成可能）</td></tr>
+        <tr><td><code>.def</code></td><td>ゲームロジック定義データ</td></tr>
+      </table>
+
+      <h3>.sseproj（プロジェクトファイル）</h3>
+      <p>
+        複数のステージへの参照（StageFilePath）とプロジェクト全体のブックマーク一覧を保持します。
+        ステージの実データそのものは保持しません。
+      </p>
+      <pre><code>Project.sseproj
+ └ BaseDirectory
+     ├ Stage001.ssestage
+     ├ Stage002.ssestage
+     └ Stage003.ssestage</code></pre>
+
+      <h3>.ssestage（ステージファイル）</h3>
+      <p>
+        ステージ単位の TileMap・ページ情報・タグ割り当てなど、編集内容の実データを保持します。
+      </p>
+
+      <h3>.bin（マップデータ）</h3>
+      <p>
+        描画専用の固定長バイナリデータです。1ページあたり <code>0x100</code> byte で構成され、
+        先頭 16 byte がページヘッダ、残り 240 byte がタイルデータです。
+      </p>
+      <table>
+        <tr><th>アドレス</th><th>項目</th><th>内容</th></tr>
+        <tr><td>$00</td><td>MagicStart</td><td>固定値 0xA5（ヘッダ識別）</td></tr>
+        <tr><td>$01</td><td>RoomId</td><td>自分自身の部屋番号</td></tr>
+        <tr><td>$02〜$07</td><td>隣接部屋番号</td><td>左・右・上・下・手前・奥（未接続は 0xFF）</td></tr>
+        <tr><td>$08〜$0B</td><td>スクロール種別</td><td>左・右・上・下（0:fixed / 1:free / 2:loop）</td></tr>
+        <tr><td>$0C</td><td>Z</td><td>Z座標（階層）</td></tr>
+        <tr><td>$0D</td><td>Flags</td><td>演出・状態フラグ（bit単位）</td></tr>
+        <tr><td>$0F</td><td>MagicEnd</td><td>固定値 0x5A（ヘッダ終端）</td></tr>
+      </table>
+
+      <h3>.def（ステージ定義データ）</h3>
+      <p>
+        ノード（配置座標）、タイル属性、エンティティ、イベントなど、ゲームロジックに関わる
+        情報を JSON 形式で保持します。人間可読で拡張性の高いデータです。
+      </p>
+      <pre><code>{
+  "version": "1.0",
+  "stage": {},
+  "nodes": [],
+  "tileAttributes": {},
+  "entities": [],
+  "events": [],
+  "triggers": [],
+  "scripts": []
+}</code></pre>
+
+      <div class="callout">
+        <strong>設計方針</strong><br>
+        <code>.def</code> が唯一の正規データであり、<code>.bin</code> は常に <code>.def</code> から
+        再生成可能な派生データとして扱います。
+      </div>
+
+      <div class="page-nav">
+        <a href="../commands/index.html">
+          <span class="dir">&larr; 前へ</span>
+          コマンドリファレンス
+        </a>
+        <a class="next" href="../support.html">
+          <span class="dir">次へ &rarr;</span>
+          サポート
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

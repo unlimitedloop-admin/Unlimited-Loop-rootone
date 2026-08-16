@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基本的な使い方 | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="basics">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$02 / BASICS</p>
+      <h1>基本的な使い方</h1>
+      <div class="version-tag">Ver.1.00</div>
+
+      <p class="lead">
+        プロジェクトの作成からステージの出力までの、基本的な作業の流れを説明します。
+      </p>
+
+      <h2>全体の流れ</h2>
+      <pre><code>プロジェクト作成 / 読み込み
+  ↓
+タイルセット読み込み
+  ↓
+ステージ作成
+  ↓
+マップ編集（タイル配置）
+  ↓
+ページ接続の設定（ノードエディタ）
+  ↓
+プロジェクト保存
+  ↓
+BIN 出力（ゲームアプリへ）</code></pre>
+
+      <h2>1. プロジェクトを作成する</h2>
+      <p>
+        <code>File &gt; New Project</code>（Ctrl+P）から新規プロジェクトを作成します。
+        プロジェクトファイル（<code>.sseproj</code>）は、複数のステージファイル（<code>.ssestage</code>）への
+        参照を管理する、プロジェクト全体の管理ファイルです。
+      </p>
+
+      <h2>2. タイルセットを読み込む</h2>
+      <p>
+        <code>File &gt; Import TileSet</code> からタイル画像（PNG / BMP）を読み込みます。
+        読み込んだ画像は 16×16 px 単位で分割され、タイルパレットに一覧表示されます。
+      </p>
+
+      <h2>3. ステージを作成する</h2>
+      <p>
+        <code>File &gt; New Stage</code>（Ctrl+N）で新しいステージを追加します。
+        1つのステージは複数のページ（部屋）で構成され、1ページは 16×15 タイル（256×240 px）です。
+      </p>
+
+      <h2>4. マップを編集する</h2>
+      <p>
+        タイルパレットから配置したいタイルを選択し、マップビュー上でクリックまたはドラッグして配置します。
+      </p>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>左クリック / ドラッグ</td><td>タイル配置</td></tr>
+        <tr><td>右クリック または Alt+クリック</td><td>タイル取得（スポイト）</td></tr>
+        <tr><td>Shift+クリック</td><td>塗りつぶし</td></tr>
+        <tr><td>Delete</td><td>タイル削除</td></tr>
+      </table>
+      <p>
+        詳しい操作方法は「コマンドリファレンス」を参照してください。
+      </p>
+
+      <h2>5. ページ同士を接続する</h2>
+      <p>
+        Page Node Editor（F11）を開くと、ページ同士の接続関係を視覚的に編集できます。
+        設定済みのページの上下左右に自動で候補位置が表示されるので、右クリックメニューから
+        新規ページを作成・接続していきます。
+      </p>
+
+      <h2>6. 保存する</h2>
+      <p>
+        <code>File &gt; Save Project</code>（Ctrl+Shift+S）でプロジェクト全体を保存します。
+        現在編集中のステージのみ保存したい場合は <code>File &gt; Save Stage</code>（Ctrl+S）を使用します。
+      </p>
+
+      <h2>7. ゲームアプリ用データを出力する</h2>
+      <p>
+        <code>File &gt; Export BIN</code> で現在のステージを、<code>File &gt; Export All Stages</code> で
+        すべてのステージをバイナリファイル（<code>.bin</code>）として出力します。出力されたデータは
+        ゲームプログラム側から読み込んで使用します。
+      </p>
+
+      <div class="callout">
+        タグ・ブックマーク・マーカーといった補助機能や、メタタイル、タイル検索・置換などの
+        効率化機能については、今後このページから各詳細ページへリンクしていく予定です。
+      </div>
+
+      <div class="page-nav">
+        <a href="../about.html">
+          <span class="dir">&larr; 前へ</span>
+          このエディタについて
+        </a>
+        <a class="next" href="../commands/index.html">
+          <span class="dir">次へ &rarr;</span>
+          コマンドリファレンス
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

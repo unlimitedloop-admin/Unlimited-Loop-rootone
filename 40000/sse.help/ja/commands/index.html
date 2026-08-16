@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コマンドリファレンス | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="commands">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$03 / COMMAND REFERENCE</p>
+      <h1>コマンドリファレンス</h1>
+      <div class="version-tag">Ver.1.00</div>
+
+      <p class="lead">
+        メニューバーの各コマンドとショートカットキーの一覧です。無効化されているコマンドは
+        グレーアウト表示されます。
+      </p>
+
+      <h2>File</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>New Project</td><td>Ctrl+P</td><td>新規プロジェクト作成</td></tr>
+        <tr><td>Open Project</td><td>Ctrl+Shift+O</td><td>プロジェクト読込み</td></tr>
+        <tr><td>Save Project</td><td>Ctrl+Shift+S</td><td>プロジェクト保存</td></tr>
+        <tr><td>Save Project As...</td><td>—</td><td>プロジェクトを名前を付けて保存</td></tr>
+        <tr><td>Close Project</td><td>—</td><td>プロジェクトを閉じる</td></tr>
+        <tr><td>New Stage</td><td>Ctrl+N</td><td>新規ステージ作成</td></tr>
+        <tr><td>Import Stage...</td><td>—</td><td>ステージを取り込み</td></tr>
+        <tr><td>Save Stage</td><td>Ctrl+S</td><td>現在ステージ保存</td></tr>
+        <tr><td>Reload Stage</td><td>—</td><td>ステージ再読込み</td></tr>
+        <tr><td>Drop Stage</td><td>—</td><td>ステージ削除</td></tr>
+        <tr><td>Add Page</td><td>Ctrl+T</td><td>ページ追加</td></tr>
+        <tr><td>Duplicate Page</td><td>—</td><td>ページ複製</td></tr>
+        <tr><td>Remove Page</td><td>—</td><td>ページ削除</td></tr>
+        <tr><td>Import TileSet</td><td>—</td><td>タイルセット画像読込み</td></tr>
+        <tr><td>Export BIN</td><td>—</td><td>現在ステージ出力</td></tr>
+        <tr><td>Export All Stages</td><td>—</td><td>全ステージ出力</td></tr>
+        <tr><td>Quit</td><td>Alt+F4</td><td>アプリ終了</td></tr>
+      </table>
+
+      <h2>Edit</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Undo</td><td>Ctrl+Z</td><td>操作取消</td></tr>
+        <tr><td>Redo</td><td>Ctrl+Y</td><td>操作再実行</td></tr>
+        <tr><td>Cut</td><td>Ctrl+X</td><td>選択範囲切り取り</td></tr>
+        <tr><td>Copy</td><td>Ctrl+C</td><td>選択範囲コピー</td></tr>
+        <tr><td>Paste</td><td>Ctrl+V</td><td>貼り付け</td></tr>
+        <tr><td>Delete</td><td>Delete</td><td>削除</td></tr>
+        <tr><td>Fill</td><td>F</td><td>選択範囲を選択タイルで埋める</td></tr>
+        <tr><td>Select All Same Tile</td><td>Ctrl+Shift+A</td><td>同一タイル選択</td></tr>
+        <tr><td>Select Empty Tile</td><td>Ctrl+Shift+E</td><td>空タイル選択</td></tr>
+        <tr><td>Invert Selection</td><td>Ctrl+I</td><td>選択範囲反転</td></tr>
+        <tr><td>Clear Selection</td><td>Esc</td><td>選択解除</td></tr>
+        <tr><td>Find Tile...</td><td>Ctrl+F</td><td>タイル検索</td></tr>
+        <tr><td>Find Tile On Map</td><td>F3</td><td>マップ上からタイル検索</td></tr>
+        <tr><td>Find Next Tile</td><td>F4</td><td>次候補へ移動</td></tr>
+        <tr><td>Find Previous Tile</td><td>Shift+F4</td><td>前候補へ移動</td></tr>
+        <tr><td>Replace Tile...</td><td>Ctrl+H</td><td>タイル置換</td></tr>
+        <tr><td>Clear Search Highlight</td><td>Shift+Esc</td><td>検索強調解除</td></tr>
+        <tr><td>Add Bookmark</td><td>Ctrl+B</td><td>現在ページをブックマークへ追加</td></tr>
+        <tr><td>Clear All Bookmark</td><td>—</td><td>全てのブックマークを削除</td></tr>
+        <tr><td>Read-Only Mode</td><td>—</td><td>読み取り専用モード</td></tr>
+      </table>
+
+      <h2>View</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Grid Lines</td><td>G</td><td>グリッド表示</td></tr>
+        <tr><td>Tile Preview</td><td>T</td><td>タイルプレビュー</td></tr>
+        <tr><td>Show Tile Numbers</td><td>L</td><td>タイル番号表示</td></tr>
+        <tr><td>Row Numbers</td><td>R</td><td>行番号表示</td></tr>
+        <tr><td>Column Numbers</td><td>C</td><td>列番号表示</td></tr>
+        <tr><td>Tile Info</td><td>I</td><td>タイル情報表示</td></tr>
+        <tr><td>Marker Overlay</td><td>M</td><td>マーカー表示</td></tr>
+        <tr><td>Zoom In</td><td>Ctrl++</td><td>拡大</td></tr>
+        <tr><td>Zoom Out</td><td>Ctrl+-</td><td>縮小</td></tr>
+        <tr><td>Reset Zoom</td><td>Ctrl+0</td><td>倍率リセット</td></tr>
+        <tr><td>Tool Bar</td><td>—</td><td>ツールバー表示</td></tr>
+        <tr><td>Status Bar</td><td>—</td><td>ステータスバー表示</td></tr>
+      </table>
+
+      <h2>Tools</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Pen</td><td>P</td><td>ペンモードに切り替え</td></tr>
+        <tr><td>Selection</td><td>S</td><td>選択範囲モードに切り替え</td></tr>
+        <tr><td>Bucket</td><td>B</td><td>バケツモードに切り替え</td></tr>
+        <tr><td>Marker</td><td>K</td><td>マーカーモードに切り替え</td></tr>
+        <tr><td>Options...</td><td>—</td><td>エディタプロパティ設定</td></tr>
+      </table>
+
+      <h2>Navigation</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Next Page</td><td>PageDown</td><td>次ページ</td></tr>
+        <tr><td>Previous Page</td><td>PageUp</td><td>前ページ</td></tr>
+        <tr><td>First Page</td><td>Ctrl+Home</td><td>先頭ページ</td></tr>
+        <tr><td>Last Page</td><td>Ctrl+End</td><td>最終ページ</td></tr>
+        <tr><td>Go Right Room</td><td>Ctrl+→</td><td>右隣接ページ</td></tr>
+        <tr><td>Go Left Room</td><td>Ctrl+←</td><td>左隣接ページ</td></tr>
+        <tr><td>Go Up Room</td><td>Ctrl+↑</td><td>上隣接ページ</td></tr>
+        <tr><td>Go Down Room</td><td>Ctrl+↓</td><td>下隣接ページ</td></tr>
+        <tr><td>Jump Page...</td><td>Ctrl+J</td><td>ページジャンプ</td></tr>
+        <tr><td>Back</td><td>Alt+←</td><td>Z座標-1</td></tr>
+        <tr><td>Forward</td><td>Alt+→</td><td>Z座標+1</td></tr>
+      </table>
+
+      <h2>Window</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Map View</td><td>F6</td><td>マップビュー表示</td></tr>
+        <tr><td>Stage Explorer</td><td>F7</td><td>ステージ管理</td></tr>
+        <tr><td>Properties Window</td><td>F8</td><td>プロパティ表示</td></tr>
+        <tr><td>Bookmark List</td><td>F9</td><td>ブックマーク一覧</td></tr>
+        <tr><td>Tag Manager</td><td>Ctrl+F7</td><td>タグ管理</td></tr>
+        <tr><td>Marker Manager</td><td>Ctrl+F8</td><td>マーカー管理</td></tr>
+        <tr><td>Stage Map Viewer</td><td>F10</td><td>ステージ構造ビュー</td></tr>
+        <tr><td>Page Node Editor</td><td>F11</td><td>ページノード編集</td></tr>
+        <tr><td>MetaTile Editor</td><td>F12</td><td>メタタイル編集</td></tr>
+        <tr><td>Reset Window Layout</td><td>—</td><td>レイアウト初期化</td></tr>
+      </table>
+
+      <h2>Help</h2>
+      <table>
+        <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>Contents</td><td>F1</td><td>ヘルプ表示（このサイトを開きます）</td></tr>
+        <tr><td>Shortcuts</td><td>—</td><td>ショートカット一覧</td></tr>
+        <tr><td>About StageSmith Editor</td><td>—</td><td>バージョン情報</td></tr>
+      </table>
+
+      <div class="page-nav">
+        <a href="../basics/index.html">
+          <span class="dir">&larr; 前へ</span>
+          基本的な使い方
+        </a>
+        <a class="next" href="../file-spec/index.html">
+          <span class="dir">次へ &rarr;</span>
+          インターフェースファイル仕様
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

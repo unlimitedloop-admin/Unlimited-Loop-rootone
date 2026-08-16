@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用語集 | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.glossary-term{font-weight:700;color:var(--text);margin:0 0 2px;font-size:15px;}
+.glossary-term code{font-weight:400;}
+.glossary-def{margin:0 0 1.4rem;color:var(--text-secondary);font-size:14px;}
+</style>
+</head>
+<body data-page="glossary">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$06 / GLOSSARY</p>
+      <h1>用語集</h1>
+      <div class="version-tag">Ver.1.00</div>
+
+      <p class="lead">エディタ内やドキュメントで使われる用語をまとめています。</p>
+
+      <h2>基本構造</h2>
+
+      <p class="glossary-term">プロジェクト（<code>.sseproj</code>）</p>
+      <p class="glossary-def">複数のステージをまとめて管理する、エディタの最上位単位。実データは持たず、各ステージファイルへの参照とブックマーク一覧を保持する。</p>
+
+      <p class="glossary-term">ステージ（<code>.ssestage</code>）</p>
+      <p class="glossary-def">1つの面（ワールド）に相当する単位。複数のページで構成される。</p>
+
+      <p class="glossary-term">ページ</p>
+      <p class="glossary-def">画面1枚分（16×15タイル）に相当する編集単位。ゲーム内の「部屋」に対応する。</p>
+
+      <p class="glossary-term">タイル</p>
+      <p class="glossary-def">マップを構成する最小単位の画像パーツ（16×16 px）。</p>
+
+      <p class="glossary-term">TileMap</p>
+      <p class="glossary-def">ページ内のタイル配置情報。</p>
+
+      <h2>ノード関連</h2>
+
+      <p class="glossary-term">ノード</p>
+      <p class="glossary-def">ページの配置座標・接続関係を表す情報。Page Node Editor 上で編集する。</p>
+
+      <p class="glossary-term">RoomId</p>
+      <p class="glossary-def">ページに割り当てられる部屋番号。<code>.bin</code> のページヘッダで参照される。</p>
+
+      <p class="glossary-term">Z座標</p>
+      <p class="glossary-def">3D的な奥行きではなく、階層切り替えによるページ配置管理のための補助的な値。</p>
+
+      <h2>編集補助機能</h2>
+
+      <p class="glossary-term">タグ</p>
+      <p class="glossary-def">ステージやページに付与する分類・状態情報（例：TODO, WIP, BOSS）。プロジェクト単位で定義を管理する。</p>
+
+      <p class="glossary-term">ブックマーク</p>
+      <p class="glossary-def">任意のページへ素早く移動するための目印。プロジェクト全体で一意に管理され、保存される。</p>
+
+      <p class="glossary-term">マーカー</p>
+      <p class="glossary-def">タイル単位の一時的な視覚目印。デバッグや動線確認に使用し、既定では保存されない。</p>
+
+      <p class="glossary-term">メタタイル</p>
+      <p class="glossary-def">複数タイルを組み合わせたプリセットタイル。繰り返し使うパターンをまとめて配置できる。</p>
+
+      <h2>ファイル・出力関連</h2>
+
+      <p class="glossary-term"><code>.bin</code></p>
+      <p class="glossary-def">ゲーム実行用の描画専用バイナリファイル。タイル配置とページヘッダのみを保持する。</p>
+
+      <p class="glossary-term"><code>.def</code></p>
+      <p class="glossary-def">ノード配置・タイル属性・エンティティ・イベントなど、ゲームロジックに関する定義データ（JSON）。</p>
+
+      <p class="glossary-term">ページヘッダ</p>
+      <p class="glossary-def"><code>.bin</code> の各ページ先頭16byteに格納される、部屋番号・隣接情報・スクロール種別などのメタ情報。</p>
+
+      <div class="page-nav">
+        <a href="support.html">
+          <span class="dir">&larr; 前へ</span>
+          サポート
+        </a>
+        <a class="next" href="license.html">
+          <span class="dir">次へ &rarr;</span>
+          ライセンス
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
