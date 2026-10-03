@@ -12,9 +12,9 @@
 
   <main class="main">
     <div class="content">
-      <p class="eyebrow">$03 / COMMAND REFERENCE</p>
+      <p class="eyebrow">$04 / COMMAND REFERENCE</p>
       <h1>コマンドリファレンス</h1>
-      <div class="version-tag">Ver.1.00</div>
+      <div class="version-tag">Ver.1.10</div>
 
       <p class="lead">
         メニューバーの各コマンドとショートカットキーの一覧です。無効化されているコマンドは
@@ -52,19 +52,22 @@
         <tr><td>Copy</td><td>Ctrl+C</td><td>選択範囲コピー</td></tr>
         <tr><td>Paste</td><td>Ctrl+V</td><td>貼り付け</td></tr>
         <tr><td>Delete</td><td>Delete</td><td>削除</td></tr>
-        <tr><td>Fill</td><td>F</td><td>選択範囲を選択タイルで埋める</td></tr>
+        <tr><td>Fill</td><td>F / Insert</td><td>選択範囲を選択タイルで埋める</td></tr>
         <tr><td>Select All Same Tile</td><td>Ctrl+Shift+A</td><td>同一タイル選択</td></tr>
         <tr><td>Select Empty Tile</td><td>Ctrl+Shift+E</td><td>空タイル選択</td></tr>
         <tr><td>Invert Selection</td><td>Ctrl+I</td><td>選択範囲反転</td></tr>
         <tr><td>Clear Selection</td><td>Esc</td><td>選択解除</td></tr>
         <tr><td>Find Tile...</td><td>Ctrl+F</td><td>タイル検索</td></tr>
         <tr><td>Find Tile On Map</td><td>F3</td><td>マップ上からタイル検索</td></tr>
-        <tr><td>Find Next Tile</td><td>F4</td><td>次候補へ移動</td></tr>
-        <tr><td>Find Previous Tile</td><td>Shift+F4</td><td>前候補へ移動</td></tr>
+        <tr><td>Find Next Tile</td><td>F4</td><td>次候補へ移動（オブジェクトツール使用中は Object List の次の結果へ）</td></tr>
+        <tr><td>Find Previous Tile</td><td>Shift+F4</td><td>前候補へ移動（オブジェクトツール使用中は Object List の前の結果へ）</td></tr>
         <tr><td>Replace Tile...</td><td>Ctrl+H</td><td>タイル置換</td></tr>
         <tr><td>Clear Search Highlight</td><td>Shift+Esc</td><td>検索強調解除</td></tr>
         <tr><td>Add Bookmark</td><td>Ctrl+B</td><td>現在ページをブックマークへ追加</td></tr>
-        <tr><td>Clear All Bookmark</td><td>—</td><td>全てのブックマークを削除</td></tr>
+        <tr><td>Clear All Bookmarks</td><td>—</td><td>全てのブックマークを削除</td></tr>
+        <tr><td>Clear Page Markers</td><td>—</td><td>現在ページのマーカーを削除</td></tr>
+        <tr><td>Clear Stage Markers</td><td>—</td><td>現在ステージのマーカーを削除</td></tr>
+        <tr><td>Clear All Markers</td><td>—</td><td>全てのマーカーを削除</td></tr>
         <tr><td>Read-Only Mode</td><td>—</td><td>読み取り専用モード</td></tr>
       </table>
 
@@ -78,6 +81,7 @@
         <tr><td>Column Numbers</td><td>C</td><td>列番号表示</td></tr>
         <tr><td>Tile Info</td><td>I</td><td>タイル情報表示</td></tr>
         <tr><td>Marker Overlay</td><td>M</td><td>マーカー表示</td></tr>
+        <tr><td>Show Objects</td><td>E</td><td>オブジェクト（敵・開始位置）表示</td></tr>
         <tr><td>Zoom In</td><td>Ctrl++</td><td>拡大</td></tr>
         <tr><td>Zoom Out</td><td>Ctrl+-</td><td>縮小</td></tr>
         <tr><td>Reset Zoom</td><td>Ctrl+0</td><td>倍率リセット</td></tr>
@@ -88,11 +92,12 @@
       <h2>Tools</h2>
       <table>
         <tr><th>メニュー</th><th>ショートカット</th><th>概要</th></tr>
-        <tr><td>Pen</td><td>P</td><td>ペンモードに切り替え</td></tr>
-        <tr><td>Selection</td><td>S</td><td>選択範囲モードに切り替え</td></tr>
-        <tr><td>Bucket</td><td>B</td><td>バケツモードに切り替え</td></tr>
-        <tr><td>Marker</td><td>K</td><td>マーカーモードに切り替え</td></tr>
-        <tr><td>Options...</td><td>—</td><td>エディタプロパティ設定</td></tr>
+        <tr><td>Pen</td><td>P / Ctrl+1</td><td>ペンモードに切り替え</td></tr>
+        <tr><td>Selection</td><td>S / Ctrl+2</td><td>選択範囲モードに切り替え</td></tr>
+        <tr><td>Bucket</td><td>B / Ctrl+3</td><td>バケツモードに切り替え</td></tr>
+        <tr><td>Marker</td><td>K / Ctrl+4</td><td>マーカーモードに切り替え</td></tr>
+        <tr><td>Object</td><td>O / Ctrl+5</td><td>オブジェクト配置モードに切り替え</td></tr>
+        <tr><td>Options...</td><td>—</td><td>エディタプロパティ設定（後述）</td></tr>
       </table>
 
       <h2>Navigation</h2>
@@ -118,12 +123,63 @@
         <tr><td>Stage Explorer</td><td>F7</td><td>ステージ管理</td></tr>
         <tr><td>Properties Window</td><td>F8</td><td>プロパティ表示</td></tr>
         <tr><td>Bookmark List</td><td>F9</td><td>ブックマーク一覧</td></tr>
+        <tr><td>Object Palette</td><td>Ctrl+F9</td><td>オブジェクトパレット（画像シート・テンプレート）</td></tr>
+        <tr><td>Object List</td><td>Ctrl+F10</td><td>オブジェクトの一覧・検索</td></tr>
         <tr><td>Tag Manager</td><td>Ctrl+F7</td><td>タグ管理</td></tr>
         <tr><td>Marker Manager</td><td>Ctrl+F8</td><td>マーカー管理</td></tr>
         <tr><td>Stage Map Viewer</td><td>F10</td><td>ステージ構造ビュー</td></tr>
         <tr><td>Page Node Editor</td><td>F11</td><td>ページノード編集</td></tr>
         <tr><td>MetaTile Editor</td><td>F12</td><td>メタタイル編集</td></tr>
         <tr><td>Reset Window Layout</td><td>—</td><td>レイアウト初期化</td></tr>
+      </table>
+
+      <h2>ツールバー</h2>
+      <p>
+        主なコマンドはツールバーからも実行できます。Ver.1.10 では次のボタンを追加しました。
+      </p>
+      <table>
+        <tr><th>ボタン</th><th>ショートカット</th><th>概要</th></tr>
+        <tr><td>オブジェクト配置</td><td>O</td><td>オブジェクト配置モードに切り替え</td></tr>
+        <tr><td>オブジェクト表示切替</td><td>E</td><td>View &gt; Show Objects と同じ</td></tr>
+        <tr><td>マーカー表示切替</td><td>M</td><td>View &gt; Marker Overlay と同じ</td></tr>
+      </table>
+
+      <h2>右クリックメニュー</h2>
+      <table>
+        <tr><th>場所</th><th>メニュー</th><th>概要</th></tr>
+        <tr><td>マップビュー</td><td>現在のページをブックマークに追加 / ブックマークを解除</td><td>現在のページのブックマークを付ける・外す</td></tr>
+        <tr><td>マップビュー</td><td>このタイル（XX）を検索...</td><td>クリックしたタイルの番号を入れてタイル検索を開く</td></tr>
+        <tr><td>マップビュー</td><td>ページのタイルをクリア</td><td>ページ全体をタイルクリア時のタイル番号で埋める（Undo 可）</td></tr>
+        <tr><td>Stage Explorer（ページ）</td><td>ブックマークを追加 / ブックマークを削除</td><td>そのページのブックマークを付ける・外す</td></tr>
+        <tr><td>メタタイルパレット</td><td>メタタイルエディタを起動...</td><td>MetaTile Editor を開く</td></tr>
+        <tr><td>Stage Explorer（ステージ）</td><td>このステージのオブジェクトをすべて削除...</td><td>ステージ内の全オブジェクトを削除（Undo 可）</td></tr>
+        <tr><td>Stage Explorer（ページ）</td><td>このページのオブジェクトをすべて削除...</td><td>ページ内の全オブジェクトを削除（Undo 可）</td></tr>
+        <tr><td>Object Palette（テンプレート）</td><td>テンプレートを編集... / テンプレートを削除</td><td>テンプレートの変更・削除</td></tr>
+        <tr><td>Object List</td><td>すべて選択（Ctrl+A）</td><td>一覧の結果をすべて選択</td></tr>
+        <tr><td>Object List</td><td>選択を削除...（Delete）</td><td>一覧で選んだオブジェクトを削除</td></tr>
+        <tr><td>Object List</td><td>一覧の結果をすべて削除...</td><td>絞り込んだ結果をまとめて削除</td></tr>
+      </table>
+
+      <h2>オブジェクトツールの操作</h2>
+      <table>
+        <tr><th>操作</th><th>概要</th></tr>
+        <tr><td>左クリック（何もない所）</td><td>選択中のテンプレートを配置</td></tr>
+        <tr><td>左クリック（オブジェクト上）＋ドラッグ</td><td>選択・移動</td></tr>
+        <tr><td>右クリック（オブジェクト上）</td><td>削除</td></tr>
+        <tr><td>矢印キー / Shift+矢印キー</td><td>選択中のオブジェクトを 1px / 8px 移動</td></tr>
+        <tr><td>Delete</td><td>選択中のオブジェクトを削除</td></tr>
+        <tr><td>Esc</td><td>選択解除（プレイヤー開始位置の設定モードも解除）</td></tr>
+        <tr><td>F4 / Shift+F4</td><td>Object List の次・前の結果へ移動</td></tr>
+      </table>
+
+      <h2>Options ダイアログ</h2>
+      <p><code>Tools &gt; Options...</code> で開くエディタの設定です。設定は <code>SSE_Config.ini</code> に保存されます。</p>
+      <table>
+        <tr><th>タブ</th><th>設定</th></tr>
+        <tr><td>General</td><td>タイル番号の表示形式、ページ移動時の選択タイル維持、ページノードエディタのプレビュー、タイルクリア時のタイル番号</td></tr>
+        <tr><td>Project</td><td>ステージごとのサブフォルダ、プロジェクトのサブディレクトリ化、プロジェクトのデフォルト保存先</td></tr>
+        <tr><td>File</td><td>バイナリ出力先の初期フォルダ</td></tr>
+        <tr><td>Object</td><td>画像シートの追加時に、同名の .json（分割定義）を自動で読み込む（OFF なら毎回選択ダイアログを開く）</td></tr>
       </table>
 
       <h2>Help</h2>
@@ -135,9 +191,9 @@
       </table>
 
       <div class="page-nav">
-        <a href="../basics/index.html">
+        <a href="../features/metatiles.html">
           <span class="dir">&larr; 前へ</span>
-          基本的な使い方
+          メタタイル
         </a>
         <a class="next" href="../file-spec/index.html">
           <span class="dir">次へ &rarr;</span>

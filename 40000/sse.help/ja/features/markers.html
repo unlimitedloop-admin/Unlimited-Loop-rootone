@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マーカー | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="features-markers">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$03.3 / MARKERS</p>
+      <h1>マーカー</h1>
+      <div class="version-tag">Ver.1.10</div>
+
+      <p class="lead">
+        マーカーは、タイルに付ける一時的な目印です。あとで直したい場所や、プレイヤーの動線の確認などに使います。
+        マップのデータは変わらず、ファイルにも保存されません。
+      </p>
+
+      <h2>マーカーを付ける・消す</h2>
+      <p>
+        マーカーツール（K / Ctrl+4、ツールバーのマーカーボタン）に切り替えて、マップ上を操作します。
+        マーカーツールに切り替えると、マーカーの表示（Marker Overlay）が自動的に ON になります。
+      </p>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>左クリック</td><td>マーカーを付ける（すでにあれば消す）</td></tr>
+        <tr><td>左ドラッグ</td><td>なぞった場所に続けて付ける（すでにある所はそのまま）</td></tr>
+        <tr><td>右クリック</td><td>マーカーを消す</td></tr>
+      </table>
+
+      <h2>マーカーをたどる</h2>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>Ctrl+M</td><td>次のマーカーへ移動</td></tr>
+        <tr><td>Ctrl+Shift+M</td><td>前のマーカーへ移動</td></tr>
+      </table>
+      <p>
+        マーカーは<strong>付けた順</strong>にたどります。別のページにあるマーカーへは、ページを切り替えて移動します。
+        最後のマーカーの次は最初のマーカーに戻ります。現在のマーカーは枠線で囲んで表示されます。
+      </p>
+
+      <h2>表示と色</h2>
+      <ul>
+        <li><code>View &gt; Marker Overlay</code>（M）またはツールバーのマーカー表示ボタンで、マーカーの表示を切り替えます</li>
+        <li><code>Window &gt; Marker Manager</code>（Ctrl+F8）の「色を変更...」で、マーカーの色を変えられます（すべてのマーカーで1色）</li>
+      </ul>
+
+      <h2>まとめて消す</h2>
+      <table>
+        <tr><th>メニュー</th><th>内容</th></tr>
+        <tr><td><code>Edit &gt; Clear Page Markers</code></td><td>現在のページのマーカーを消す</td></tr>
+        <tr><td><code>Edit &gt; Clear Stage Markers</code></td><td>現在のステージのマーカーを消す</td></tr>
+        <tr><td><code>Edit &gt; Clear All Markers</code></td><td>すべてのマーカーを消す</td></tr>
+      </table>
+
+      <div class="callout warn">
+        マーカーはエディタを起動している間だけの作業メモです。<strong>ファイルには保存されず</strong>、
+        エディタを終了すると消えます。残しておきたい情報は、ページの Remarks やタグを使ってください。
+      </div>
+
+      <div class="page-nav">
+        <a href="bookmarks.html">
+          <span class="dir">&larr; 前へ</span>
+          ブックマーク
+        </a>
+        <a class="next" href="metatiles.html">
+          <span class="dir">次へ &rarr;</span>
+          メタタイル
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

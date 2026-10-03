@@ -17,9 +17,9 @@
 
   <main class="main">
     <div class="content">
-      <p class="eyebrow">$06 / GLOSSARY</p>
+      <p class="eyebrow">$07 / GLOSSARY</p>
       <h1>用語集</h1>
-      <div class="version-tag">Ver.1.00</div>
+      <div class="version-tag">Ver.1.10</div>
 
       <p class="lead">エディタ内やドキュメントで使われる用語をまとめています。</p>
 
@@ -54,16 +54,42 @@
       <h2>編集補助機能</h2>
 
       <p class="glossary-term">タグ</p>
-      <p class="glossary-def">ステージやページに付与する分類・状態情報（例：TODO, WIP, BOSS）。プロジェクト単位で定義を管理する。</p>
+      <p class="glossary-def">ステージやページに付与する分類・状態情報（例：TODO, WIP, BOSS）。プロジェクト単位で定義を管理する。（→ <a href="features/tags.html">タグ</a>）</p>
 
       <p class="glossary-term">ブックマーク</p>
-      <p class="glossary-def">任意のページへ素早く移動するための目印。プロジェクト全体で一意に管理され、保存される。</p>
+      <p class="glossary-def">任意のページへ素早く移動するための目印。プロジェクト全体で一意に管理され、保存される。（→ <a href="features/bookmarks.html">ブックマーク</a>）</p>
 
       <p class="glossary-term">マーカー</p>
-      <p class="glossary-def">タイル単位の一時的な視覚目印。デバッグや動線確認に使用し、既定では保存されない。</p>
+      <p class="glossary-def">タイル単位の一時的な視覚目印。デバッグや動線確認に使用し、ファイルには保存されない。（→ <a href="features/markers.html">マーカー</a>）</p>
 
       <p class="glossary-term">メタタイル</p>
-      <p class="glossary-def">複数タイルを組み合わせたプリセットタイル。繰り返し使うパターンをまとめて配置できる。</p>
+      <p class="glossary-def">複数タイルを組み合わせたプリセットタイル。繰り返し使うパターンをまとめて配置できる。ステージごとに保存される。（→ <a href="features/metatiles.html">メタタイル</a>）</p>
+
+      <h2>オブジェクト関連</h2>
+
+      <p class="glossary-term">オブジェクト（エンティティ）</p>
+      <p class="glossary-def">マップ上にタイルとは別に配置する敵などのこと。<code>.def</code> の <code>entities</code> として出力される。位置は部屋内のピクセル座標で、足元の中心を指す。</p>
+
+      <p class="glossary-term">kind</p>
+      <p class="glossary-def">オブジェクトの種類を表す値。ゲーム側の敵定義の id（例：<code>metall</code>）を指定する。</p>
+
+      <p class="glossary-term">画像シート</p>
+      <p class="glossary-def">オブジェクトの表示に使う画像。同じ大きさのコマに分割して使い、分割の仕方は同名の <code>.json</code>（分割定義）から読み込む。</p>
+
+      <p class="glossary-term">テンプレート</p>
+      <p class="glossary-def">画像シートの1コマと、kind などの既定値を組にしたもの。Object Palette で選んでマップに配置する。プロジェクト全体で共有する。</p>
+
+      <p class="glossary-term">敵定義</p>
+      <p class="glossary-def">ゲーム側で敵ごとの性能や見た目を定めた JSON ファイル（<code>assets/data/enemies</code>）。エディタは kind・カラーパターンの候補を得るために読み込む。</p>
+
+      <p class="glossary-term">カラーパターン（パレットプリセット）</p>
+      <p class="glossary-def">敵定義の <code>palette_presets</code> で定めた色替えの種類（例：default / yellow / blue / red）。オブジェクトの Palette で選ぶ。</p>
+
+      <p class="glossary-term">プレイヤー開始位置</p>
+      <p class="glossary-def">ステージ開始時にプレイヤーが立つ位置。<code>.def</code> の <code>stage.start</code> として出力される。</p>
+
+      <p class="glossary-term">リスポーン</p>
+      <p class="glossary-def">部屋に入り直したときに敵が再び出現するかどうかの設定（always / until_defeated / once）。部屋ごとの既定値と、オブジェクトごとの指定がある。</p>
 
       <h2>ファイル・出力関連</h2>
 

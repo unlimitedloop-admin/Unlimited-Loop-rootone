@@ -12,9 +12,9 @@
 
   <main class="main">
     <div class="content">
-      <p class="eyebrow">$04 / FILE SPECIFICATION</p>
+      <p class="eyebrow">$05 / FILE SPECIFICATION</p>
       <h1>インターフェースファイル仕様</h1>
-      <div class="version-tag">Ver.1.00</div>
+      <div class="version-tag">Ver.1.10</div>
 
       <p class="lead">
         本エディタとゲームアプリの間でやり取りされるファイルの構成と役割について説明します。
@@ -29,6 +29,17 @@
         <tr><td>マップデータ</td><td><code>.bin</code></td><td>ゲーム実行用の描画専用バイナリ</td></tr>
         <tr><td>ステージ定義</td><td><code>.def</code></td><td>ゲームロジック定義（ノード配置・属性・イベント等）</td></tr>
         <tr><td>タイル画像</td><td><code>.png</code> / <code>.bmp</code></td><td>タイルパレット画像</td></tr>
+        <tr><td>エディタ設定</td><td><code>SSE_Config.ini</code></td><td>エディタの表示状態・オプション設定（エディタ本体と同じフォルダ）</td></tr>
+      </table>
+
+      <h3>参照のみ行うファイル（Ver.1.10〜）</h3>
+      <p>オブジェクトの配置で使います。エディタからは読み込むだけで、書き換えません。</p>
+      <table>
+        <tr><th>ファイル</th><th>例</th><th>用途</th></tr>
+        <tr><td>画像シート</td><td><code>*.png</code></td><td>オブジェクトの表示に使う画像（コマ単位に分割）</td></tr>
+        <tr><td>画像シートの分割定義</td><td><code>*.json</code></td><td>コマの大きさ・並び（<code>{"Loader":{"tileWidth":32,"tileHeight":32,"tilesX":4,"tilesY":6}}</code>）</td></tr>
+        <tr><td>敵定義（ゲーム側）</td><td><code>assets/data/enemies/*.json</code></td><td>Kind の候補・カラーパターン（<code>palette_presets</code>）</td></tr>
+        <tr><td>NES パレット（ゲーム側）</td><td><code>assets/system/nes_palette.txt</code></td><td>カラーパターンの色替え表示</td></tr>
       </table>
 
       <h2>データの責務分離</h2>
@@ -44,18 +55,34 @@
 
       <h3>.sseproj（プロジェクトファイル）</h3>
       <p>
-        複数のステージへの参照（StageFilePath）とプロジェクト全体のブックマーク一覧を保持します。
+        複数のステージへの参照（StageFilePath）と、プロジェクト全体で共有する情報
+        （ブックマーク・タグ・画像シート・テンプレート・敵定義の参照先）を保持します。
         ステージの実データそのものは保持しません。
       </p>
       <pre><code>Project.sseproj
- └ BaseDirectory
-     ├ Stage001.ssestage
-     ├ Stage002.ssestage
-     └ Stage003.ssestage</code></pre>
+ ├ BaseDirectory
+ │   ├ Stage001.ssestage
+ │   ├ Stage002.ssestage
+ │   └ Stage003.ssestage
+ ├ Bookmarks / Tags
+ ├ SpriteSheets       … 画像シート（画像・分割定義のパスと分割値）
+ ├ EntityTemplates    … 配置テンプレート（シートのコマ＋既定の Kind など）
+ ├ EnemyDefinitionDirectory … 敵定義フォルダ
+ └ NesPalettePath     … NES パレット</code></pre>
 
       <h3>.ssestage（ステージファイル）</h3>
       <p>
         ステージ単位の TileMap・ページ情報・タグ割り当てなど、編集内容の実データを保持します。
+        Ver.1.10 で、オブジェクト配置に関する次の項目を追加しました。
+      </p>
+      <table>
+        <tr><th>項目</th><th>内容</th><th>.def での出力先</th></tr>
+        <tr><td><code>PlayerStart</code></td><td>プレイヤー開始位置（ページと足元中心の座標）</td><td><code>stage.start</code></td></tr>
+        <tr><td><code>Pages[].EnemyRespawn</code></td><td>部屋ごとの敵リスポーンの既定値</td><td><code>nodes[].enemyRespawn</code></td></tr>
+        <tr><td><code>Pages[].Entities</code></td><td>部屋に配置したオブジェクト（ID・座標・Kind・Palette など）</td><td><code>entities[]</code></td></tr>
+      </table>
+      <p>
+        これらの項目が無い以前のバージョンのファイルも、そのまま読み込めます。
       </p>
 
       <h3>.bin（マップデータ）</h3>
@@ -68,7 +95,7 @@
         <tr><td>$00</td><td>MagicStart</td><td>固定値 0xA5（ヘッダ識別）</td></tr>
         <tr><td>$01</td><td>RoomId</td><td>自分自身の部屋番号</td></tr>
         <tr><td>$02〜$07</td><td>隣接部屋番号</td><td>左・右・上・下・手前・奥（未接続は 0xFF）</td></tr>
-        <tr><td>$08〜$0B</td><td>スクロール種別</td><td>左・右・上・下（0:fixed / 1:free / 2:loop）</td></tr>
+        <tr><td>$08〜$0B</td><td>スクロール種別</td><td>左・右・上・下（0:None / 1:Free / 2:Page / 3:Auto / 4:ObjectFollow / 5:EventDriven / 6:Loop）</td></tr>
         <tr><td>$0C</td><td>Z</td><td>Z座標（階層）</td></tr>
         <tr><td>$0D</td><td>Flags</td><td>演出・状態フラグ（bit単位）</td></tr>
         <tr><td>$0F</td><td>MagicEnd</td><td>固定値 0x5A（ヘッダ終端）</td></tr>
@@ -89,6 +116,35 @@
   "triggers": [],
   "scripts": []
 }</code></pre>
+
+      <h4>エンティティ（entities）</h4>
+      <p>
+        マップに配置したオブジェクトは、1体ずつ次の形式で出力されます。
+      </p>
+      <pre><code>{
+  "type": "enemy",
+  "id": "metall_1",
+  "roomId": 0,
+  "position": { "x": 224, "y": 193 },
+  "properties": {
+    "kind": "metall",
+    "palette": "default",
+    "facing": "left",
+    "respawn": "until_defeated",
+    "despawnOffscreen": false
+  }
+}</code></pre>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td><code>id</code></td><td>ステージ内で一意の識別子</td></tr>
+        <tr><td><code>roomId</code></td><td>配置したページの RoomId</td></tr>
+        <tr><td><code>position</code></td><td>部屋内のピクセル座標（X 0〜255、Y 0〜239）。<strong>足元の中心</strong>を指します</td></tr>
+        <tr><td><code>properties.kind</code></td><td>敵定義の id（必須）</td></tr>
+        <tr><td><code>properties.palette</code> ほか</td><td>カラーパターン・向き・リスポーン・画面外で消えるか。未設定の項目は出力せず、ゲーム側の既定値になります</td></tr>
+      </table>
+      <p>
+        出力前に内容が確認され、ゲーム側で読み込めない内容があると出力を中止します（「基本的な使い方」の 8 を参照）。
+      </p>
 
       <div class="callout">
         <strong>設計方針</strong><br>

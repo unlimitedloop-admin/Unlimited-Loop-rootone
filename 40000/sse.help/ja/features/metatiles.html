@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メタタイル | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="features-metatiles">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$03.4 / METATILES</p>
+      <h1>メタタイル</h1>
+      <div class="version-tag">Ver.1.10</div>
+
+      <p class="lead">
+        メタタイルは、複数のタイルを組み合わせて1つにまとめたものです。
+        足場や壁など、同じ形で何度も使うタイルの組み合わせを登録しておくと、1回のクリックで配置できます。
+      </p>
+
+      <h2>メタタイルを作る</h2>
+      <p>
+        <code>Window &gt; MetaTile Editor</code>（F12）を開きます。
+        メタタイルパレットの右クリックメニュー「メタタイルエディタを起動...」からも開けます。
+      </p>
+      <p>画面は次の3つの領域に分かれています。</p>
+      <table>
+        <tr><th>領域</th><th>内容</th></tr>
+        <tr><td>Tile Palette</td><td>ステージのタイルセット。クリックで置くタイルを選びます</td></tr>
+        <tr><td>Edit Canvas</td><td>メタタイルを描く場所</td></tr>
+        <tr><td>Preview</td><td>できあがりの確認。Ctrl+マウスホイールで拡大・縮小します</td></tr>
+      </table>
+      <p>Edit Canvas での操作：</p>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>左クリック / 左ドラッグ</td><td>選んだタイルを置く</td></tr>
+        <tr><td>右クリック / 右ドラッグ</td><td>タイルを消す（空きマスにする）</td></tr>
+        <tr><td>中クリック</td><td>そのマスのタイルを選ぶ（スポイト）</td></tr>
+        <tr><td>Ctrl+Z / Ctrl+Y</td><td>元に戻す / やり直し</td></tr>
+      </table>
+      <p>上部のツールバー：</p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>Saved</td><td>保存済みのメタタイルを選んで、編集し直す</td></tr>
+        <tr><td>Name</td><td>メタタイルの名前</td></tr>
+        <tr><td>Size</td><td>大きさ（2×2 / 4×4 / 8×8 / 1×4 / 4×1）</td></tr>
+        <tr><td>New</td><td>新しいメタタイルを作り始める</td></tr>
+        <tr><td>Save</td><td>保存する（編集し直している場合は上書き）</td></tr>
+        <tr><td>Save As</td><td>別のメタタイルとして新しく保存する</td></tr>
+        <tr><td>Delete</td><td>選んでいるメタタイルを削除する（確認あり）</td></tr>
+        <tr><td>Clear</td><td>キャンバスを空にする</td></tr>
+      </table>
+
+      <h2>メタタイルを配置する</h2>
+      <p>
+        メタタイルパレット（Stage Explorer の下）で、保存したメタタイルを選びます。
+        マウスを乗せると ID・名前・大きさが表示されます。
+        マップ上をクリックすると、その位置を左上としてメタタイルが置かれます。ドラッグすると続けて置けます。
+      </p>
+      <ul>
+        <li>空きマスの部分は配置されず、元のタイルがそのまま残ります</li>
+        <li>ドラッグで続けて置いた分は、まとめて1回の Undo で元に戻せます</li>
+        <li>Alt を押している間はメタタイルを置かず、スポイト（タイルの取得）になります</li>
+        <li>タイルパレットで普通のタイルを選ぶと、メタタイルの選択は解除されます</li>
+        <li>オブジェクトツール使用中は、メタタイルは置かれません</li>
+      </ul>
+
+      <h2>保存</h2>
+      <p>
+        メタタイルは<strong>ステージごと</strong>に、各 <code>.ssestage</code> に保存されます。
+        別のステージで使う場合は、そのステージで作り直してください。
+        MetaTile Editor で保存・削除した内容は、ステージの未保存の変更として扱われるので、Save Stage / Save Project で保存してください。
+      </p>
+
+      <div class="page-nav">
+        <a href="markers.html">
+          <span class="dir">&larr; 前へ</span>
+          マーカー
+        </a>
+        <a class="next" href="../commands/index.html">
+          <span class="dir">次へ &rarr;</span>
+          コマンドリファレンス
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

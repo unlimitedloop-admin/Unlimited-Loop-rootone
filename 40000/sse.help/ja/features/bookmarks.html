@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブックマーク | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="features-bookmarks">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$03.2 / BOOKMARKS</p>
+      <h1>ブックマーク</h1>
+      <div class="version-tag">Ver.1.10</div>
+
+      <p class="lead">
+        ブックマークは、よく見るページへすぐに移動するための目印です。
+        プロジェクト全体で管理するので、ステージをまたいで移動できます。
+      </p>
+
+      <h2>ブックマークを付ける・外す</h2>
+      <p>次のいずれかの操作で、現在のページにブックマークを付けます。すでに付いている場合は外れます。</p>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>Ctrl+B / <code>Edit &gt; Add Bookmark</code></td><td>現在のページのブックマークを付ける・外す</td></tr>
+        <tr><td>マップビューの右クリックメニュー</td><td>「現在のページをブックマークに追加」／「ブックマークを解除」</td></tr>
+        <tr><td>Stage Explorer のページの右クリックメニュー</td><td>「ブックマークを追加」／「ブックマークを削除」</td></tr>
+      </table>
+      <p>
+        ブックマークの名前（Label）には、最初はページ名が入ります。
+        ブックマークの追加・削除・編集は Undo（Ctrl+Z）で元に戻せます。
+      </p>
+
+      <h2>ブックマークの目印</h2>
+      <ul>
+        <li>Stage Explorer で、ブックマークしたページの名前の後ろに <strong>★</strong> が付きます</li>
+        <li>ブックマークしたページを開いているとき、ページナビバー（ページ番号の表示欄）にブックマークのアイコンが表示されます</li>
+      </ul>
+
+      <h2>Bookmark List で移動する</h2>
+      <p>
+        <code>Window &gt; Bookmark List</code>（F9）で、ブックマークの一覧（Stage / Page / Label）を表示します。
+      </p>
+      <table>
+        <tr><th>操作</th><th>内容</th></tr>
+        <tr><td>行をダブルクリック</td><td>そのページへ移動</td></tr>
+        <tr><td>列の見出しをクリック</td><td>その列で並べ替え</td></tr>
+        <tr><td>右クリック &gt; Edit</td><td>名前（Label）と説明（Description）を編集</td></tr>
+        <tr><td>右クリック &gt; Delete</td><td>ブックマークを削除</td></tr>
+      </table>
+      <p>
+        すべてのブックマークを消す場合は <code>Edit &gt; Clear All Bookmarks</code> を使います（確認あり、Undo 可）。
+      </p>
+
+      <h2>保存</h2>
+      <p>
+        ブックマークは <code>.sseproj</code> に保存され、プロジェクトを開いたときに復元されます。
+        ステージを削除すると、そのステージのブックマークも一緒に削除されます。
+        ページを削除した場合、そのページのブックマークは Bookmark List に表示されなくなります。
+      </p>
+
+      <div class="page-nav">
+        <a href="tags.html">
+          <span class="dir">&larr; 前へ</span>
+          タグ
+        </a>
+        <a class="next" href="markers.html">
+          <span class="dir">次へ &rarr;</span>
+          マーカー
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

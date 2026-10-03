@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja" data-prefix="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タグ | StageSmith Editor ヘルプ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="features-tags">
+<div class="layout">
+  <nav class="sidebar" id="sidebar-mount" aria-label="目次"></nav>
+
+  <main class="main">
+    <div class="content">
+      <p class="eyebrow">$03.1 / TAGS</p>
+      <h1>タグ</h1>
+      <div class="version-tag">Ver.1.10</div>
+
+      <p class="lead">
+        タグは、ステージやページに付ける分類・状態の印です。「TODO」「WIP」「BOSS」のように、
+        作業の進み具合や内容をひと目で分かるようにできます。
+      </p>
+
+      <h2>タグを作る</h2>
+      <p>
+        <code>Window &gt; Tag Manager</code>（Ctrl+F7）を開きます。タグはプロジェクト全体で共有され、
+        どのステージ・ページにも付けられます。
+      </p>
+      <table>
+        <tr><th>項目</th><th>内容</th></tr>
+        <tr><td>Label</td><td>タグの名前</td></tr>
+        <tr><td>Color</td><td>タグの色。「変更...」から選びます</td></tr>
+        <tr><td>Icon</td><td>タグのアイコン。「選択...」から、用意されたアイコンか任意の画像を選びます。「クリア」でアイコンなしにします</td></tr>
+        <tr><td>Priority</td><td>優先度（0〜999）。<strong>値が小さいほど優先</strong>されます（表示の順番と代表タグの決定に使います）</td></tr>
+      </table>
+      <ul>
+        <li><strong>New</strong>：新しいタグの入力を始めます</li>
+        <li><strong>Save</strong>：入力内容を保存します（一覧で選んだタグを編集中なら、そのタグを更新します）</li>
+        <li><strong>Delete</strong>：選んだタグを削除します。付けていたすべてのステージ・ページからも外れます</li>
+      </ul>
+      <p>
+        アイコンに選んだ画像は、プロジェクトフォルダの <code>TagIcons</code> フォルダにコピーされて使われます。
+      </p>
+
+      <h2>タグを付ける・外す</h2>
+      <p>
+        Properties ウィンドウ（F8）の Stage 欄または Page 欄にある「Tags」の「編集...」を押すと、
+        タグの一覧がチェックボックスで表示されます。付けたいタグにチェックを入れて OK を押します。
+        チェックを外せば、そのタグは外れます。この操作は Undo（Ctrl+Z）で元に戻せます。
+      </p>
+
+      <h2>タグの表示</h2>
+      <table>
+        <tr><th>場所</th><th>表示</th></tr>
+        <tr><td>Properties ウィンドウ</td><td>付いているタグが、色とアイコン付きのバッジで並びます（Priority の順）</td></tr>
+        <tr><td>Stage Explorer</td><td>ステージ・ページ名の文字色が、<strong>代表タグ</strong>の色になります</td></tr>
+        <tr><td>Page Node Editor</td><td>選んだページの情報欄に、付いているタグの名前が表示されます</td></tr>
+      </table>
+      <div class="callout">
+        <strong>代表タグ</strong><br>
+        複数のタグが付いている場合、Priority の値が最も小さいタグ（同じ値なら名前順で先のもの）が代表になります。
+        文字色は、背景に対して読みやすいように明るさが補正されます。
+      </div>
+
+      <h2>保存</h2>
+      <p>
+        タグの定義（名前・色・アイコン・優先度）は <code>.sseproj</code> に、どのステージ・ページに付けたかは
+        各 <code>.ssestage</code> に保存されます。Tag Manager での変更もプロジェクトの未保存の変更として扱われるので、
+        Save Project で保存してください。
+      </p>
+
+      <div class="page-nav">
+        <a href="index.html">
+          <span class="dir">&larr; 前へ</span>
+          機能ガイド
+        </a>
+        <a class="next" href="bookmarks.html">
+          <span class="dir">次へ &rarr;</span>
+          ブックマーク
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
